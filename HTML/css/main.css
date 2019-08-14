@@ -8,25 +8,98 @@
 .div-center {
 	margin: 0 auto;
 }
+.float-left{
+	float: left;
+}
+.float-right{
+	float: right;
+}
 
 .main{
-	/* border: 1px solid black; */
+	border: 1px solid black;
 	min-width: 1100px;
 }
 /*header*/
 .header{
-	height: 276px;
-	border: 2px solid red;
+	height: 240px;
+	border: 1px solid red;
 }
+.header-top{
+	height: 30px;
+}
+.header-menu{
+	padding-right: 20px;
+}
+.header-middle{
+	height: 150px;
+	border: 1px solid violet;
+}
+.header-bottom{
+	height: 40px;
+	border: 1px solid blue;
+}
+.main-min{
+	width: 1080px;
+	height: 100%;
+	border: 1px solid black;
+}
+
+/* 카테고리 */
+.header-category{
+	float: left;
+	padding-top: 5px;
+	width: 700px;
+}
+.header-category li{
+	list-style: none;
+	float: left;
+	padding-left: 14px;
+}
+
+/* 검색창 */
+.search-box{
+	width: 340px;
+	height: 38px;
+	
+}
+.search{
+	float: left;
+	width: 300px;
+	height: 38px;
+	padding: 3px 10px;
+	background-color: yellow;
+}
+.search input{
+	width:280px;
+	height: 28px;
+	/* border: none;
+	outline: none; */
+	font-size:20px;
+	line-height: 28px;
+	font-weight: bold;
+}
+.search-btn{
+	float: right;
+	display: inline-block;
+	width: 40px;
+	height: 38px;
+	background-color: red;
+	padding:5px;
+}
+.search-icon{
+	font-size: 30px;
+}
+
+
 
 /*middle*/
 .middle{
 height: 276px;
-width: 500px;
-border: 2px solid yellow;
+width: 1080px;
+border: 1px solid yellow;
 }
 /*footer*/
 .footer{
 height: 276px;
-border: 2px solid green;
+border: 1px solid green;
 }
