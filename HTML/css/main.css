@@ -111,7 +111,7 @@ width: 1080px;
 	border: 1px solid green !important;/* !important 우선순위로 하겠다는 의미*/
 }
 .main-img{
-	height: 450px;
+	height: 600px;
 	border: 1px solid red;
 	width: 100%;
 	padding: 10px;
@@ -140,6 +140,13 @@ width: 1080px;
 	width:calc( 94% / 3 );
 	height: calc( 95% / 2 );
 	border: 1px solid black;
+}
+.new-icon{
+	width: 100px;
+	height: 50px;
+	font-size: 30px;
+	border: 1px solid red;
+	margin: 0 10px 10px 0;
 }
 
 /*footer*/
