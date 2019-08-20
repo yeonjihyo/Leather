@@ -34,6 +34,7 @@
 .header-middle{
 	height: 200px;
 	position: relative;
+	padding: 10px;
 }
 .header-bottom{
 	height: 50px;
@@ -64,31 +65,32 @@
 /* 카테고리 */
 .header-category{
 	float: left;
-	padding-top: 5px;
-	width: 700px;
+	padding-top: 10px;
+
 }
 .header-category li{
+	text-align: center;
 	list-style: none;
 	float: left;
-	padding-left: 14px;
-
+	padding-left: 35px;
+	font-size: 20px;
+	font-weight: bold;
 }
 
 /* 검색창 */
 .search-box{
-	width: 340px;
+	width: 300px;
 	height: 38px;
-	
 }
 .search{
 	float: left;
-	width: 300px;
+	width: 260px;
 	height: 38px;
 	padding: 3px 10px;
 	border: 1px solid #192d55;
 }
 .search input{
-	width:280px;
+	width:240px;
 	height: 28px;
 	/* border: none;
 	outline: none; */
@@ -102,10 +104,10 @@
 	width: 40px;
 	height: 38px;
 	background-color: #192d55;
-	padding:5px;
+	padding:7px;
 }
 .search-icon{
-	font-size: 30px;
+	font-size: 20px;
 	color: white;
 }
 
