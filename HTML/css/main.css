@@ -21,7 +21,7 @@
 }
 /*header*/
 .header{
-	height: 240px;
+	height: 280px;
 	border: 1px solid red;
 }
 .header-top{
@@ -29,9 +29,10 @@
 }
 .header-menu{
 	padding-right: 20px;
+	text-decoration: none;
 }
 .header-middle{
-	height: 160px;
+	height: 200px;
 	position: relative;
 }
 .header-bottom{
@@ -41,6 +42,14 @@
 	width: 1080px;
 	height: 100%;
 	/* border: 1px solid black; */
+}
+
+.header-menu a{
+	color: black;
+	font-size:8px;
+	line-height: 10px;
+	font-weight: bold;
+	text-decoration: none;
 }
 /*로고*/
 .header-logo{
@@ -62,7 +71,6 @@
 	list-style: none;
 	float: left;
 	padding-left: 14px;
-	border-bottom: 2px solid navy;
 
 }
 
@@ -77,7 +85,7 @@
 	width: 300px;
 	height: 38px;
 	padding: 3px 10px;
-	background-color: yellow;
+	border: 1px solid #192d55;
 }
 .search input{
 	width:280px;
@@ -85,7 +93,7 @@
 	/* border: none;
 	outline: none; */
 	font-size:20px;
-	line-height: 28px;
+	line-height: 36px;
 	font-weight: bold;
 }
 .search-btn{
@@ -93,11 +101,12 @@
 	display: inline-block;
 	width: 40px;
 	height: 38px;
-	background-color: red;
+	background-color: #192d55;
 	padding:5px;
 }
 .search-icon{
 	font-size: 30px;
+	color: white;
 }
 
 
@@ -113,15 +122,16 @@ width: 1080px;
 	border: 1px solid green !important;/* !important 우선순위로 하겠다는 의미*/
 }
 .main-img{
-	height: 600px;
+	height: 750px;
 	border: 1px solid red;
 	width: 100%;
-	padding: 10px;
+	padding: 20px 10px;
 }
 .main-info{
 	width: 100%;
-	height: 300px;
+	height: 240px;
 	border: 1px solid blue;
+	padding: 20px 12px;
 }
 
 /*메인 제품 new,best*/
@@ -132,17 +142,25 @@ width: 1080px;
 	height: 100%;
 	border: 1px solid blue;
 	margin-right: 5px;
+	height: 720px;
 	padding: 10px 0 0 10px;
+}
+.product-box{
+	margin: 0 15px;
 }
 .new,
 .best{
 	float: left;
 	margin-right: 10px;
 	margin-bottom: 10px;
-	width:calc( 94% / 3 );
-	height: calc( 95% / 2 );
+	width: 230px;
+	height: 200px;
 	border: 1px solid black;
 }
+.product-icon{
+	height: 70px;
+}
+.best-icon,
 .new-icon,
 .more-icon{
 	width: 80px;
@@ -152,8 +170,23 @@ width: 1080px;
 	margin: 0 10px 10px 0;
 }
 
+/*메인하단,정보*/
+.info-box{
+	border: 1px solid navy;
+	float: left;
+	width: 200px;
+	height: 175px;
+	margin: 5px;
+}
 /*footer*/
 .footer{
 height: 276px;
 border: 1px solid green;
+}
+.footer-info{
+	border: 1px solid red;
+	text-align: center;
+	font-size: 11px;
+	color: #757575;
+	line-height: 18px;
 }
