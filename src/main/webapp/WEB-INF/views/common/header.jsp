@@ -8,7 +8,7 @@
 <!--header-->
 		<div class="header">
 			<div class="main-min div-center">
-				<div class="header-top border">
+				<div class="header-top">
 					<div class= "header-menu float-right">
 						<a href="#" >Home</a> | 
 						<a href="#">로그인</a> |
@@ -17,7 +17,7 @@
 						<a href="#">회원정보수정</a>
 					</div>
 				</div>
-				<div class="header-middle border border-top-0 ">
+				<div class="header-middle">
 					<div class="header-logo div-center">로고</div>
 					<div class="search-box float-right">
 						<form action="#" >
@@ -26,7 +26,7 @@
 						</form>
 					</div>
 				</div>
-				<div class="header-bottom border border-top-0">
+				<div class="header-bottom">
 					<ul class="header-category">
 						<li>실</li>
 						<li>공구</li>

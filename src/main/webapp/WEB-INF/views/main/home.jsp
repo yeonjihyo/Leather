@@ -4,12 +4,20 @@
 <head>
 	<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/main.css">
 	<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/common.css">
+	<script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/main.js"></script>
 </head>
 <title>JH Leather</title>
 <!--middle-->
 	<div class=" div-center middle">
-		<div class="img-slide border"></div>
-		<div class="main-img border border-top-0">
+		<div class="img-slide">
+			<ul>
+				<li><img alt="" src="<%=request.getContextPath()%>/resources/img/main/slide1.jpg"></li>
+				<li><img alt="" src="<%=request.getContextPath()%>/resources/img/main/slide2.jpg"></li>
+				<li><img alt="" src="<%=request.getContextPath()%>/resources/img/main/slide3.jpg"></li>
+				<li><img alt="" src="<%=request.getContextPath()%>/resources/img/main/slide4.jpg"></li>
+			</ul>
+		</div>
+		<div class="main-img">
 			<div class="main-new">
 				<div class="product-icon">
 					<div class="new-icon float-left">new</div>

@@ -6,8 +6,10 @@ width: 1080px;
 .img-slide{
 	width: 100%;
 	height: 500px;
-	border: 1px solid green !important;/* !important 우선순위로 하겠다는 의미*/
+	padding-top : 20px;
 }
+.img-slide ul {position: absolute; margin: 0px; padding:0; list-style: none; }
+.img-slide ul li {float: left; width: 340px; height: 210px; margin:0; padding:0;}
 .main-img{
 	height: 750px;
 	border: 1px solid red;

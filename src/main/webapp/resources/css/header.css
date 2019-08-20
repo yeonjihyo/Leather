@@ -4,6 +4,7 @@
 }
 .header-top{
 	height: 30px;
+	border-bottom : 1px solid #dee2e6;
 }
 .header-menu{
 	padding-right: 20px;
@@ -13,16 +14,17 @@
 	height: 200px;
 	position: relative;
 	padding: 10px;
+	border-bottom : 1px solid #dee2e6;
 }
 .header-bottom{
 	height: 50px;
+	border-bottom : 1px solid #dee2e6;
 }
 .main-min{
 	width: 1080px;
 	height: 100%;
 	/* border: 1px solid black; */
 }
-
 .header-menu a{
 	color: black;
 	font-size:8px;
