@@ -1,0 +1,6 @@
+﻿#192d55
+
+회색선 
+#dee2e6 !important
+
+<%=request.getContextPath()%>/resources/img/main/이미지슬라이드1.jsp
