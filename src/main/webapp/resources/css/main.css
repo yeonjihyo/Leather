@@ -1,0 +1,67 @@
+/*middle*/
+.middle{
+width: 1080px;
+/* border: 1px solid yellow; */
+}
+.img-slide{
+	width: 100%;
+	height: 500px;
+	border: 1px solid green !important;/* !important 우선순위로 하겠다는 의미*/
+}
+.main-img{
+	height: 750px;
+	border: 1px solid red;
+	width: 100%;
+	padding: 20px 10px;
+}
+.main-info{
+	width: 100%;
+	height: 240px;
+	border: 1px solid blue;
+	padding: 20px 12px;
+}
+
+/*메인 제품 new,best*/
+.main-new,
+.main-best{
+	float: left;
+	width: calc( 99% / 2 );
+	height: 100%;
+	border: 1px solid blue;
+	margin-right: 5px;
+	height: 720px;
+	padding: 10px 0 0 10px;
+}
+.product-box{
+	margin: 0 15px;
+}
+.new,
+.best{
+	float: left;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	width: 230px;
+	height: 200px;
+	border: 1px solid black;
+}
+.product-icon{
+	height: 70px;
+}
+.best-icon,
+.new-icon,
+.more-icon{
+	width: 80px;
+	height: 50px;
+	font-size: 30px;
+	border: 1px solid red;
+	margin: 0 10px 10px 0;
+}
+
+/*메인하단,정보*/
+.info-box{
+	border: 1px solid navy;
+	float: left;
+	width: 200px;
+	height: 175px;
+	margin: 5px;
+}

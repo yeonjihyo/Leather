@@ -1,0 +1,12 @@
+/*footer*/
+.footer{
+height: 276px;
+border: 1px solid green;
+}
+.footer-info{
+	text-align: center;
+	font-size: 11px;
+	color: #757575;
+	line-height: 18px;
+	margin-top : 10px;
+}
