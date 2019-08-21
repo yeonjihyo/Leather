@@ -48,7 +48,7 @@
 			</div>
 		</div>
 		<!-- 메인하단.정보 -->
-		<div class="main-info border border-top-0">
+		<div class="main-info">
 			<div class="info-box map-info">지도</div>
 			<div class="info-box instagram">인스타</div>
 			<!-- <div class="info-box qna"></div> -->
