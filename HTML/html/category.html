@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+	<link rel="stylesheet" href="/css/category.css">
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+	<script>
+
+		$(function(){
+			$(".header-category li").hover(function(){
+				$('ul:first',this).show();
+			}, function(){
+				$('ul:first',this).hide();
+			});
+			$(".header-category>li:has(ul)>a").each( function() {
+				$(this).html( $(this).html()+' &or;' );
+			});
+		});
+
+	</script>
+	<title>Document</title>
+</head>
+<body>
+	<div class='header-bottom'>
+			<ul class="header-category">
+				<li><a href="#">실</a>
+					<ul>
+						<li><a href="#">비니모</a></li>
+						<li><a href="#">린카블레</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+</body>
+</html>

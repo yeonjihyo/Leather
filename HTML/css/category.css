@@ -1,0 +1,37 @@
+body { margin: 0; }
+.header-bottom {
+  background: hotpink;
+  display: inline-block;
+  width: 100%;
+}
+.header-category { 
+	margin: 0; 
+	padding: 0; 
+}
+.header-category li {
+  float: left;
+  list-style:none;
+  position: relative;
+}
+.header-category li:hover { background: white; }
+.header-category li:hover>a { color: hotpink; }
+.header-category a {
+  color: white;
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+.header-category ul {
+  background: #eee;
+  border: 1px solid silver;
+  display: none;
+  padding: 0;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 180px;
+}
+.header-category ul li { float: none; }
+.header-category ul li:hover { background: #ddd; }
+.header-category ul li:hover a { color: black; }
+.header-category ul a { color: black; }
