@@ -18,7 +18,9 @@
 					</div>
 				</div>
 				<div class="header-middle">
-					<div class="header-logo div-center">로고</div>
+					<div class="header-logo div-center">
+						<img src="<%=request.getContextPath()%>/resources/img/main/logo.png">
+					</div>
 					<div class="search-box float-right">
 						<form action="#" >
 							<div class="search"><input type="text"></div>
