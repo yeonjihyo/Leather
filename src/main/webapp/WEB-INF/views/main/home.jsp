@@ -9,7 +9,7 @@
 <title>JH Leather</title>
 <!--middle-->
 	<div class=" div-center middle">
-		<div class="img-slide">
+		<div class="imgSlide">
 			<ul>
 				<li><img alt="" src="<%=request.getContextPath()%>/resources/img/main/slide1.jpg"></li>
 				<li><img alt="" src="<%=request.getContextPath()%>/resources/img/main/slide2.jpg"></li>
