@@ -56,17 +56,19 @@ public class HomeController {
 		boolean isMember = memberService.getMember(id) != null; //id를 통해 일치하는 회원정보를 가져와서 회원정보가 null이 아니면 true 아니면 false 
 	     return isMember;
 	}
-//로그인
+	//로그인
 	@RequestMapping(value= "/signin",method=RequestMethod.GET)
-	public ModelAndView mainGet(ModelAndView mv) throws Exception{
+	public ModelAndView signinGet(ModelAndView mv){
 		
 		
 	    mv.setViewName("/member/signin");
 	    return mv;
 	}
 	@RequestMapping(value= "/signin",method=RequestMethod.POST)
-	public String mainPost(MemberVO loginInfo,Model model) throws Exception{
-		
+	public String signinPost(MemberVO loginInfo){
+		//System.out.println(loginInfo); //로그인jsp에서 로그인할 정보가 잘 넘어오는지 찍어본다
+		MemberVO user = memberService.signin(loginInfo);
+		System.out.println(user);
 		
 	    return "redirect:/";
 	}

@@ -35,49 +35,8 @@
 		width: 500px;
 		
 	}
-	.btnBox{
-		width: 440px;
-		padding: 15px 157px 0 157px;
-	}
 	</style>
-	<script type="text/javascript">
-		var isCheck = false;
-		
-		$(document).ready(function(){
-			
-			$('#signup').submit(function(){
-				if(!isCheck){
-					alert('아이디 중복검사를 하세요 ')
-					return false;
-			}
-		});
-			
-			$('#dup').click(function(){
-				var id=$('input[name=id]').val(); //서버로 아이디값을 보내기 위해 입력받은 아이디의 정보를 가져오고 
-				
-				$.ajax({
-			        async:true, //비동기방식
-			        type:'POST',
-			        data:id, //{'id':id}
-			        url: "<%=request.getContextPath()%>"+"/dup",
-			        dataType:"json",
-			        contentType:"application/json; charset=UTF-8",
-			        success : function(data){ 
-			            if(!data){
-			            	alert('회원가입이 가능한 아이디입니다.');
-			            	isCheck=true;
-			            }else{
-			            	alert('이미 가입된 회원입니다.');
-			            	isCheck=false;
-			            }
-			        }
-			    });
-			});
-			$('input[name=id]').change(function(){
-				isCheck= false;
-			});
-		});	
-	</script>
+	
 </head>
 <body>
 	<div class="signup-top div-center">
@@ -85,14 +44,14 @@
 	</div>
 	<div class="signupOutline div-center">
 		<div class="signupBox div-center">
-			<form method="post" action="" id="signup"><!-- 개인정보니까 post로  액션따로지정안하면 현재페이지로?????-->
+			<form method="post" action="<%=request.getContextPath()%>/signin" id="signin"><!-- 개인정보니까 post로  액션따로지정안하면 현재페이지로?????-->
 				<div class="row">
 					<label class="col-4" >아이디</label>
-					<input type="text"class="form-control col-8" name="id" placeholder="아이디">
+					<input type="text"class="form-control col-8" name="member_id" placeholder="아이디">
 				</div>
 				<div class="row">
 					<label class="col-4" >비밀번호</label>
-					<input type="text"class="form-control col-8" name="pw" placeholder="비밀번호">
+					<input type="password"class="form-control col-8" name="member_pw" placeholder="비밀번호">
 				</div>
 				<button type="submit" class="btn btn-navy col-12">로그인</button>
 			</form>

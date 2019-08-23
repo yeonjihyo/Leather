@@ -6,4 +6,6 @@ public interface MemberService {
 
 	MemberVO getMember(String member_id);
 
+	MemberVO signin(MemberVO loginInfo);
+
 }
