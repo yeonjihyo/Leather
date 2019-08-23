@@ -31,4 +31,14 @@ public class MemberServiceImp implements MemberService{
 		}
 		return null;
 	}
+
+	@Override
+	public void signup(MemberVO mVo) {
+		if(mVo ==null) {
+			return;
+		}
+		String encPw =passwordEncoder.encode(mVo.getMember_pw());//입력한 비번을 암호화 시켜라 
+		mVo.setMember_pw(encPw);
+		memberDao.signup(mVo);
+	}
 }

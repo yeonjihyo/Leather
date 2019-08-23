@@ -8,4 +8,6 @@ public interface MemberService {
 
 	MemberVO signin(MemberVO loginInfo);
 
+	void signup(MemberVO mVo);
+
 }

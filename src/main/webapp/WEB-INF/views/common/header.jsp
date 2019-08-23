@@ -18,7 +18,9 @@
 					<div class= "header-menu float-right">
 						<a href="<%=request.getContextPath()%>/" >Home</a> | 
 						<a href="<%=request.getContextPath()%>/signin">로그인</a> |
-						<a href="<%=request.getContextPath()%>/member/signup">회원가입</a> |
+						<c:if test="${user eq null}">
+							<a href="<%=request.getContextPath()%>/signup">회원가입</a> |
+						</c:if>
 						<a href="#">장바구니</a> |
 						<a href="#">회원정보수정</a>
 					</div>

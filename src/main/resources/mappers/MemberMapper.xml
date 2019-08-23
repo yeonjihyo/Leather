@@ -6,4 +6,9 @@
   <select id="getMember" resultType="kr.green.leather.vo.MemberVO">
     select * from member where member_id = #{member_id}
   </select>
+  <!-- signup -->
+  <insert id="signup">
+  	insert into member(member_id,member_pw,member_name,member_address,member_email,member_grade)
+  		value (#{member_id},#{member_pw},#{member_name},#{member_address},#{member_email},#{member_grade});
+  </insert>
 </mapper> 

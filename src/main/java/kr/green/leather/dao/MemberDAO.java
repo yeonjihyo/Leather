@@ -6,4 +6,6 @@ public interface MemberDAO {
 
 	MemberVO getMember(String member_id);
 
+	void signup(MemberVO mVo);
+
 }
