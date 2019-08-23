@@ -17,16 +17,18 @@
 				<div class="header-top">
 					<div class= "header-menu float-right">
 						<a href="<%=request.getContextPath()%>/" >Home</a> | 
-						<a href="#">로그인</a> |
+						<a href="<%=request.getContextPath()%>/signin">로그인</a> |
 						<a href="<%=request.getContextPath()%>/member/signup">회원가입</a> |
 						<a href="#">장바구니</a> |
 						<a href="#">회원정보수정</a>
 					</div>
 				</div>
-				<div class="header-middle">
-					<div class="header-logo div-center">
-						<img src="<%=request.getContextPath()%>/resources/img/main/logo.png">
-					</div>
+				<div class="header-middle div-center">
+					<a href="<%=request.getContextPath()%>/">
+						<div class="header-logo div-center">
+							<img src="<%=request.getContextPath()%>/resources/img/main/logo.png">
+						</div>
+					</a>
 					<div class="search-box float-right">
 						<form action="#" >
 							<div class="search"><input type="text"></div>
