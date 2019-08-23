@@ -47,7 +47,8 @@ public class HomeController {
 	@RequestMapping(value= "/signup" , method=RequestMethod.POST)
 	public ModelAndView signupPost(ModelAndView mv, MemberVO mVo){
 		memberService.signup(mVo);
-		mv.setViewName("/member/signup");
+		System.out.println(mVo);
+		mv.setViewName("redirect:/");
 	    return mv;
 	}
 	@RequestMapping(value ="/dup")

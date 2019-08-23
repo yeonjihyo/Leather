@@ -53,12 +53,12 @@
 		});
 			
 			$('#dup').click(function(){
-				var id=$('input[name=id]').val(); //서버로 아이디값을 보내기 위해 입력받은 아이디의 정보를 가져오고 
+				var id=$('input[name=member_id]').val(); //서버로 아이디값을 보내기 위해 입력받은 아이디의 정보를 가져오고 
 				
 				$.ajax({
 			        async:true, //비동기방식
 			        type:'POST',
-			        data:id, //{'id':id}
+			        data:member_id, //{'id':id}
 			        url: "<%=request.getContextPath()%>"+"/dup",
 			        dataType:"json",
 			        contentType:"application/json; charset=UTF-8",
@@ -85,20 +85,20 @@
 	</div>
 	<div class="signupOutline div-center">
 		<div class="signupBox div-center">
-			<form method="post" action="" id="signup"><!-- 개인정보니까 post로  액션따로지정안하면 현재페이지로?????-->
+			<form method="post" action="<%=request.getContextPath()%>/signup" id="signup"><!-- 개인정보니까 post로  액션따로지정안하면 현재페이지로?????-->
 				<div class="row">
 					<label class="col-4" >아이디</label>
-					<input type="text"class="form-control col-8" name="id" placeholder="아이디">
+					<input type="text"class="form-control col-8" name="member_id" placeholder="아이디">
 				</div>
 				<div>
-					<label id="id-error" class="offset-4 col-8 error p-0" for="id"></label>
+					<label id="id-error" class="offset-4 col-8 error p-0" for="member_id"></label>
 				</div>
 				<div>
 					<button type="button" class="btn btn-navy offset-4 col-8" id="dup">아이디 중복확인</button>
 				</div>
 				<div class="row">
 					<label class="col-4">비밀번호</label>
-					<input type="password"class="form-control col-8" name="pw" placeholder="비밀번호" id="pw">
+					<input type="password"class="form-control col-8" name="member_pw" placeholder="비밀번호" id="pw">
 				</div>
 				<div class="row">
 					<label class="col-4">비밀번호확인</label>
@@ -106,19 +106,19 @@
 				</div>
 				<div class="row">
 					<label class="col-4" >이름</label>
-					<input type="text"class="form-control col-8" name="name" placeholder="이름">
+					<input type="text"class="form-control col-8" name="member_name" placeholder="이름">
 				</div>
 				<div class="row">
 					<label class="col-4" >핸드폰번호</label>
-					<input type="text"class="form-control col-8" name="phone" placeholder="핸드폰번호">
+					<input type="text"class="form-control col-8" name="member_phone" placeholder="핸드폰번호">
 				</div>
 				<div class="row">
 					<label class="col-4" >주소</label>
-					<input type="text"class="form-control col-8" name="address" placeholder="주소">
+					<input type="text"class="form-control col-8" name="member_address" placeholder="주소">
 				</div>
 				<div class="row">
 					<label class="col-4">이메일</label>
-					<input type="email"class="form-control col-8" name="email" placeholder="이메일">
+					<input type="email"class="form-control col-8" name="member_email" placeholder="이메일">
 				</div>
 				<div class="btnBox div-center">
 					<button class="btn btn-navy">가입</button>
