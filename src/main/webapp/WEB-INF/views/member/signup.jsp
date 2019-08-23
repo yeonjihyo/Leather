@@ -21,10 +21,17 @@
 		font-size: 100px;
 		color: red;
 	}
+	.container{}
 	.signupBox{
 		padding: 30px;
+		width: 600px;
 	}
-	.
+	.btnBox{
+		padding-top: 15px;
+		width: 600px;
+		padding-bottom : 30px;
+		border-bottom: 3px solid  #192d55;
+	}
 	</style>
 	<script type="text/javascript">
 		var isCheck = false;
@@ -69,8 +76,8 @@
 	<div class="signup-top div-center">
 		<h3>회원가입</h3>
 	</div>
-	<div class="signupBox">
-		<div class="offset-4 col-4">
+	<div class="container">
+		<div class="signupBox offset-3 col-6 ">
 			<form method="post" action="" id="signup"><!-- 개인정보니까 post로  액션따로지정안하면 현재페이지로?????-->
 				<div class="row">
 					<label class="col-4" >아이디</label>
@@ -106,9 +113,9 @@
 					<label class="col-4">이메일</label>
 					<input type="email"class="form-control col-7" name="email" placeholder="이메일">
 				</div>
-				<div class="offset-8 col-3 clearfix p-0 div-center">
-					<button class="btn btn-navy float-right">가입</button>
-					<button class="btn btn-navy float-right">취소</button>
+				<div class="btnBox offset-8 col-4 clearfix div-center ">
+					<button class="btn btn-navy">가입</button>
+					<button class="btn btn-navy">취소</button>
 				</div>
 			</form>
 		</div>
