@@ -7,30 +7,37 @@
 	<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/common.css">
 	<title>회원가입</title>
 	<style>
+	.container{
+	padding-bottom: 100px;
+	}
 	.signup-top{
 	padding-top: 50px;
-	padding-bottom:10px;
-	border-bottom: 3px solid  #192d55;
+	padding-bottom:30px;
+	
 	width: 500px;
 	text-align: center;
 	}
 	.row{
 		margin: 5px 0px;
+		
 	}
 	.fab.fa-amazon{
 		font-size: 100px;
 		color: red;
 	}
-	.container{}
+	.signupOutline{
+	    border-top: 3px solid  #192d55;
+	    border-bottom :3px solid  #192d55;
+    	width: 500px;
+    }
 	.signupBox{
 		padding: 30px;
-		width: 600px;
+		width: 500px;
+		
 	}
 	.btnBox{
-		padding-top: 15px;
-		width: 600px;
-		padding-bottom : 30px;
-		border-bottom: 3px solid  #192d55;
+		width: 440px;
+		padding: 15px 157px 0 157px;
 	}
 	</style>
 	<script type="text/javascript">
@@ -76,44 +83,44 @@
 	<div class="signup-top div-center">
 		<h3>회원가입</h3>
 	</div>
-	<div class="container">
-		<div class="signupBox offset-3 col-6 ">
+	<div class="signupOutline div-center">
+		<div class="signupBox div-center">
 			<form method="post" action="" id="signup"><!-- 개인정보니까 post로  액션따로지정안하면 현재페이지로?????-->
 				<div class="row">
 					<label class="col-4" >아이디</label>
-					<input type="text"class="form-control col-7" name="id" placeholder="아이디">
+					<input type="text"class="form-control col-8" name="id" placeholder="아이디">
 				</div>
 				<div>
-					<label id="id-error" class="offset-4 col-7 error p-0" for="id"></label>
+					<label id="id-error" class="offset-4 col-8 error p-0" for="id"></label>
 				</div>
 				<div>
-					<button type="button" class="btn btn-navy offset-4 col-7" id="dup">아이디 중복확인</button>
+					<button type="button" class="btn btn-navy offset-4 col-8" id="dup">아이디 중복확인</button>
 				</div>
 				<div class="row">
 					<label class="col-4">비밀번호</label>
-					<input type="password"class="form-control col-7" name="pw" placeholder="비밀번호" id="pw">
+					<input type="password"class="form-control col-8" name="pw" placeholder="비밀번호" id="pw">
 				</div>
 				<div class="row">
 					<label class="col-4">비밀번호확인</label>
-					<input type="password"class="form-control col-7" name="pw2"placeholder="비밀번호확인">
+					<input type="password"class="form-control col-8" name="pw2"placeholder="비밀번호확인">
 				</div>
 				<div class="row">
 					<label class="col-4" >이름</label>
-					<input type="text"class="form-control col-7" name="name" placeholder="이름">
+					<input type="text"class="form-control col-8" name="name" placeholder="이름">
 				</div>
 				<div class="row">
 					<label class="col-4" >핸드폰번호</label>
-					<input type="text"class="form-control col-7" name="phone" placeholder="핸드폰번호">
+					<input type="text"class="form-control col-8" name="phone" placeholder="핸드폰번호">
 				</div>
 				<div class="row">
 					<label class="col-4" >주소</label>
-					<input type="text"class="form-control col-7" name="address" placeholder="주소">
+					<input type="text"class="form-control col-8" name="address" placeholder="주소">
 				</div>
 				<div class="row">
 					<label class="col-4">이메일</label>
-					<input type="email"class="form-control col-7" name="email" placeholder="이메일">
+					<input type="email"class="form-control col-8" name="email" placeholder="이메일">
 				</div>
-				<div class="btnBox offset-8 col-4 clearfix div-center ">
+				<div class="btnBox div-center">
 					<button class="btn btn-navy">가입</button>
 					<button class="btn btn-navy">취소</button>
 				</div>
