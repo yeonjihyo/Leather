@@ -16,9 +16,9 @@
 			<div class="main-min div-center">
 				<div class="header-top">
 					<div class= "header-menu float-right">
-						<a href="#" >Home</a> | 
+						<a href="<%=request.getContextPath()%>/" >Home</a> | 
 						<a href="#">로그인</a> |
-						<a href="#">회원가입</a> |
+						<a href="<%=request.getContextPath()%>/member/signup">회원가입</a> |
 						<a href="#">장바구니</a> |
 						<a href="#">회원정보수정</a>
 					</div>

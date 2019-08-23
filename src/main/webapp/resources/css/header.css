@@ -41,7 +41,7 @@
  height: 135x;
  left: 450px;
  top : 30px;
- border-bottom : 3px solid #192d55 ;
+/* border-bottom : 3px solid #192d55 ;*/
 }
 
 /* 카테고리 */
@@ -63,7 +63,7 @@
 }
 .header-category li a{
 	text-decoration: none;
-	color: black;
+	color: #192d55;
 	padding : 0px;
 }
 .header-category li:hover>a { color : #192d55;}
