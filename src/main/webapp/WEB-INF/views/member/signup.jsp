@@ -50,10 +50,13 @@
 					alert('아이디 중복검사를 하세요 ')
 					return false;
 			}
+				
+			alert('회원가입에 성공했습니다.');
+			return true;
 		});
 			
 			$('#dup').click(function(){
-				var id=$('input[name=member_id]').val(); //서버로 아이디값을 보내기 위해 입력받은 아이디의 정보를 가져오고 
+				var member_id=$('input[name=member_id]').val(); //서버로 아이디값을 보내기 위해 입력받은 아이디의 정보를 가져오고 
 				
 				$.ajax({
 			        async:true, //비동기방식
@@ -73,7 +76,7 @@
 			        }
 			    });
 			});
-			$('input[name=id]').change(function(){
+			$('input[name=member_id]').change(function(){
 				isCheck= false;
 			});
 		});	
