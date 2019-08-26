@@ -1,0 +1,8 @@
+package kr.green.leather.controller;
+
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class ProductController {
+
+}

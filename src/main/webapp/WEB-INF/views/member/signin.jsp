@@ -42,20 +42,22 @@
 	<div class="signup-top div-center">
 		<h3>로그인</h3>
 	</div>
-	<div class="signupOutline div-center">
-		<div class="signupBox div-center">
-			<form method="post" action="<%=request.getContextPath()%>/signin" id="signin"><!-- 개인정보니까 post로  액션따로지정안하면 현재페이지로?????-->
-				<div class="row">
-					<label class="col-4" >아이디</label>
-					<input type="text"class="form-control col-8" name="member_id" placeholder="아이디">
-				</div>
-				<div class="row">
-					<label class="col-4" >비밀번호</label>
-					<input type="password"class="form-control col-8" name="member_pw" placeholder="비밀번호">
-				</div>
-				<button type="submit" class="btn btn-navy col-12">로그인</button>
-			</form>
+	<c:if test="${user eq null}">
+		<div class="signupOutline div-center">
+			<div class="signupBox div-center">
+				<form method="post" action="<%=request.getContextPath()%>/signin" id="signin"><!-- 개인정보니까 post로  액션따로지정안하면 현재페이지로?????-->
+					<div class="row">
+						<label class="col-4" >아이디</label>
+						<input type="text"class="form-control col-8" name="member_id" placeholder="아이디">
+					</div>
+					<div class="row">
+						<label class="col-4" >비밀번호</label>
+						<input type="password"class="form-control col-8" name="member_pw" placeholder="비밀번호">
+					</div>
+					<button type="submit" class="btn btn-navy col-12">로그인</button>
+				</form>
+			</div>
 		</div>
-	</div>
+	</c:if>
 </body>
 </html>

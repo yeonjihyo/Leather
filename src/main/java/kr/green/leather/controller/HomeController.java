@@ -66,12 +66,18 @@ public class HomeController {
 	    return mv;
 	}
 	@RequestMapping(value= "/signin",method=RequestMethod.POST)
-	public String signinPost(MemberVO loginInfo){
+	public String signinPost(MemberVO loginInfo,Model model){
 		//System.out.println(loginInfo); //로그인jsp에서 로그인할 정보가 잘 넘어오는지 찍어본다
 		MemberVO user = memberService.signin(loginInfo);
 		System.out.println(user);
+		model.addAttribute("user", user);
 		
 	    return "redirect:/";
 	}
-
+	//로그아웃
+	@RequestMapping(value= "/signout",method=RequestMethod.GET)
+	public String signoutGet(HttpServletRequest r){
+		r.getSession().removeAttribute("user");
+	    return "redirect:/";
+	}
 }
