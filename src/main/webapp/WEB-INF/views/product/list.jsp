@@ -10,14 +10,13 @@
 	
 	.productList{
 		width: 1080px;
-		border : 1px solid black;
+		/*border : 1px solid black;*/
 		position: relative;
 		height: 2000px;
 		padding: 50px 10px;
 	}
 	.categoryName{
-		padding-bottom: 30px; 
-		border : 1px solid red;
+		margin-bottom: 30px;
 	}
 	.productSort{
 		padding-right: 20px;
@@ -40,7 +39,6 @@
 	.productInfo{
 		display: inline-block;
 		float: left;
-		border : 1px solid blue;
 		
 	}
 	.info{
@@ -80,8 +78,8 @@
 					        			<img src="#">
 					        		</a>
 				        		</div>
-				        		<div class="productName div-center"  style=" margin-top: 15px; width: 260px; height: 45px; text-align: center;">
-					        		<b><a style=" margin-top: 10px; border-top: 2px solid #192d55;" href="<%=request.getContextPath()%>/product/display?product_code=${board.product_code}">${product.product_title}</a></b><br>
+				        		<div class="productName div-center"  style="padding-top5px; margin-top: 15px; width: 260px; text-align: center;">
+					        		<b><a style=" margin-top: 20px; border-top: 2px solid #192d55;" href="<%=request.getContextPath()%>/product/display?product_code=${board.product_code}">${product.product_title}</a></b><br>
 					        		<b>${product.product_price}원</b>
 				        		</div>
 							</td>
