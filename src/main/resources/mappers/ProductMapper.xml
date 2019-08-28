@@ -4,6 +4,27 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="kr.green.leather.dao.ProductDAO">
   <select id="selectProductList" resultType="kr.green.leather.vo.ProductVO">
-    select * from product where product_state = 'I'
+    select * from product where 
+    <choose>
+   		<when test='product_state.equals("I") ||product_state.equals("D")'> 
+   			product_state=#{product_state}
+   		</when>
+    	<otherwise>
+    		product_state='I' or product_state='D'
+   		</otherwise>
+    </choose>
+    order by product_code desc limit #{cri.pageStart},#{cri.perPageNum}
+    <!-- dao에서 param이 붙었기 때문에 앞에 cri.가 붙어야 함  -->
+  </select>
+  <select id="selectCountList" resultType="int">
+    select count(*) from product where 
+    <choose>
+   		<when test='product_state.equals("I") ||product_state.equals("D")'> 
+   			product_state=#{product_state}
+   		</when>
+    	<otherwise>
+    		product_state='I' or product_state='D'
+   		</otherwise>
+    </choose>
   </select>
 </mapper> 

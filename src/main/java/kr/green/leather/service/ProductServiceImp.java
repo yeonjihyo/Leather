@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import kr.green.leather.dao.ProductDAO;
+import kr.green.leather.pagination.Criteria;
 import kr.green.leather.vo.ProductVO;
 
 @Service
@@ -16,9 +17,15 @@ public class ProductServiceImp implements ProductService{
 	ProductDAO productDao;
 
 	@Override
-	public ArrayList<ProductVO> getProductList() {
+	public ArrayList<ProductVO> getProductList(Criteria cri, String product_state) {
 		// TODO Auto-generated method stub
-		return productDao.selectProductList();
+		return productDao.selectProductList(cri, product_state);
+	}
+
+	@Override
+	public int getTotalCount(Criteria cri, String product_state) {
+		// TODO Auto-generated method stub
+		return productDao.selectCountList(cri, product_state);
 	}
 
 }
