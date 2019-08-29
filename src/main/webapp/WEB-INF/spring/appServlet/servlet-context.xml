@@ -38,10 +38,18 @@
 	<beans:bean id="loginInterceptor" 
 	class="kr.green.leather.interceptor.LoginInterceptor"></beans:bean>
 	<interceptors>
-    <interceptor>
+    	<interceptor>
 	        <mapping path="/signin"/><!-- <mapping path="">의 경로가 발생되면 loginInterceptor를 해라  -->
 	        <beans:ref bean="loginInterceptor"/>
 	    </interceptor>
+	    <interceptor>
+	        <mapping path="/admin/**"/>
+	        <beans:ref bean="adminInterceptor"/>
+	    </interceptor>
+	    
 	</interceptors>
+	
+	<beans:bean id="adminInterceptor" 
+	class="kr.green.leather.interceptor.AdminInterceptor"></beans:bean>
 	
 </beans:beans>

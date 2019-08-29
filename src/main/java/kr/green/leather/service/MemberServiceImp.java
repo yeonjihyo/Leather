@@ -1,10 +1,13 @@
 package kr.green.leather.service;
 
+import java.util.ArrayList;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import kr.green.leather.dao.MemberDAO;
+import kr.green.leather.pagination.Criteria;
 import kr.green.leather.vo.MemberVO;
 
 @Service
@@ -40,5 +43,24 @@ public class MemberServiceImp implements MemberService{
 		String encPw =passwordEncoder.encode(mVo.getMember_pw());//입력한 비번을 암호화 시켜라 
 		mVo.setMember_pw(encPw);
 		memberDao.signup(mVo);
+	}
+
+	@Override
+	public ArrayList<MemberVO> getAllMember(Criteria cri) {
+		// TODO Auto-generated method stub
+		return memberDao.getAllMember(cri);
+	}
+
+	@Override
+	public int getTotalCount() {
+		// TODO Auto-generated method stub
+		return  memberDao.getTotalCount();
+	}
+
+	@Override
+	public void updateAuthority(MemberVO mVo) {
+		// TODO Auto-generated method stub
+		
+		memberDao.updateAuthority(mVo);
 	}
 }

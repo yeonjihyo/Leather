@@ -10,4 +10,21 @@
   	insert into member(member_id,member_pw,member_name,member_phone,member_address,member_email)
   		value (#{member_id},#{member_pw},#{member_name},#{member_phone},#{member_address},#{member_email});
   </insert>
+  
+  <!-- 관리자 회원정보권한  -->
+  <select id="getAllMember" resultType="kr.green.leather.vo.MemberVO"> 
+  	select * from member 
+  	order by member_id asc
+  	limit #{pageStart}, #{perPageNum};;
+  </select>
+  <select id="getTotalCount" resultType="int">
+  	select count(*) from member;
+  </select>
+  <update id="updateAuthority">
+  	update member
+  		set
+  			member_authority = #{member_authority}
+		where 
+			member_id=#{member_id}
+  </update>
 </mapper> 

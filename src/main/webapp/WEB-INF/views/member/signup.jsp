@@ -5,6 +5,10 @@
 
 <head>
 	<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/common.css">
+	<script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/jquery.validate.js"></script>
+	<script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/additional-methods.js"></script>
+	
+	
 	<title>회원가입</title>
 	<style>
 	.container{
@@ -104,7 +108,10 @@
 		$('#dup').click(function(){
 			var member_id=$('input[name=member_id]').val(); //서버로 아이디값을 보내기 위해 입력받은 아이디의 정보를 가져오고 
 			//id유효성검사 
-			
+			if(member_id == ""){
+				alert('아이디를 입력하세요.');
+				return;
+			}
 			$.ajax({
 		        async:true,
 		        type:'POST',
@@ -127,7 +134,7 @@
 			isCheck= false;
 		});
 		
-		$("form").validate({
+		$("#signup").validate({
 	        rules: {
 	        	member_id: {
 	                required : true,
@@ -155,7 +162,7 @@
 	        },
 	        //규칙체크 실패시 출력될 메시지
 	        messages : {
-	        	member_id: {
+	        	member_id: { 
 	                required : "필수로입력하세요",
 	                minlength : "최소 {0}글자이상이어야 합니다",
 	                maxlength : "최대 {0}글자이하이어야 합니다"

@@ -8,6 +8,8 @@ public class MemberVO {
 	private String member_address;
 	private String member_email;
 	private String member_grade;
+	private String member_authority;
+	
 	public String getMember_id() {
 		return member_id;
 	}
@@ -50,12 +52,21 @@ public class MemberVO {
 	public void setMember_grade(String member_grade) {
 		this.member_grade = member_grade;
 	}
+	public String getMember_authority() {
+		return member_authority;
+	}
+	public void setMember_authority(String member_authority) {
+		this.member_authority = member_authority;
+	}
 	@Override
 	public String toString() {
 		return "MemberVO [member_id=" + member_id + ", member_pw=" + member_pw + ", member_name=" + member_name
 				+ ", member_phone=" + member_phone + ", member_address=" + member_address + ", member_email="
-				+ member_email + ", member_grade=" + member_grade + "]";
+				+ member_email + ", member_grade=" + member_grade + ", member_authority=" + member_authority + "]";
 	}
+	
+	
+	
 	
 	
 }
