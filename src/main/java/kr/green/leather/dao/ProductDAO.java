@@ -16,6 +16,8 @@ public interface ProductDAO {
 
 	ProductVO selectProduct(@Param("product_code")String product_code);
 
+	void insertProduct(@Param("product")ProductVO product);
+
 
 
 }

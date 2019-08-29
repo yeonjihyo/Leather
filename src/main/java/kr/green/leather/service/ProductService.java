@@ -13,4 +13,6 @@ public interface ProductService {
 
 	ProductVO getProduct(String product_code);
 
+	void registerProduct(ProductVO pVo);
+
 }

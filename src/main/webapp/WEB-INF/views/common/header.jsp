@@ -75,7 +75,6 @@
 								<li><a href="#">수성본드</a></li>
 								<li><a href="#">본드지우개</a></li>
 								<li><a href="#">본드헤라&공병&매트</a></li>
-								<li><a href="#">귀터만</a></li>
 							</ul>
 						</li>
 						<li><a href="#">금속장식&도구</a>

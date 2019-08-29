@@ -23,7 +23,7 @@ public class ProductController {
 	@Autowired
 	PageMakerService pageMakerService;
 	
-	//게시판리스트
+	//제품리스트
 	@RequestMapping(value= "/product/list",method=RequestMethod.GET)
 	public ModelAndView productListGet(ModelAndView mv, Criteria cri){
 		String product_state ="I";
@@ -41,7 +41,7 @@ public class ProductController {
 	    return mv;
 	}
 	
-	//게시글 상세
+	//제품 상세
 		@RequestMapping(value= "/product/display",method=RequestMethod.GET)
 		public ModelAndView productDisplayGet(ModelAndView mv,String product_code, Criteria cri){
 			ProductVO product=productService.getProduct(product_code);
@@ -50,5 +50,16 @@ public class ProductController {
 		    mv.addObject("cri",cri);
 		    return mv;
 		}
+	//제품 등록
+		@RequestMapping(value= "/product/register",method=RequestMethod.GET)
+		public ModelAndView productRegisterGet(ModelAndView mv) throws Exception{
 
+		    mv.setViewName("/product/register");
+		    return mv;
+		}
+		@RequestMapping(value= "/product/register",method=RequestMethod.POST)
+		public String productRegisterPost(ProductVO pVo) throws Exception{
+			productService.registerProduct(pVo);
+		    return "redirect:/product/list";
+		}
 }

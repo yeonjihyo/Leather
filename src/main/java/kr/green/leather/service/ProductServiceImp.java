@@ -34,4 +34,10 @@ public class ProductServiceImp implements ProductService{
 		return productDao.selectProduct(product_code);
 	}
 
+	@Override
+	public void registerProduct(ProductVO pVo) {
+		productDao.insertProduct(pVo);
+		
+	}
+
 }
