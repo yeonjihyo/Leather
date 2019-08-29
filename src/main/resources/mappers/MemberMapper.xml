@@ -7,7 +7,7 @@
     select * from member where member_id = #{member_id};
   </select>
   <insert id="signup">
-  	insert into member(member_id,member_pw,member_name,member_phone,member_address,member_email,member_grade)
-  		value (#{member_id},#{member_pw},#{member_name},#{member_phone},#{member_address},#{member_email},#{member_grade});
+  	insert into member(member_id,member_pw,member_name,member_phone,member_address,member_email)
+  		value (#{member_id},#{member_pw},#{member_name},#{member_phone},#{member_address},#{member_email});
   </insert>
 </mapper> 
