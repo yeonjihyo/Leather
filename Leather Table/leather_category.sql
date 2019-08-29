@@ -18,37 +18,29 @@ USE `leather`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `order`
+-- Table structure for table `category`
 --
 
-DROP TABLE IF EXISTS `order`;
+DROP TABLE IF EXISTS `category`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
-CREATE TABLE `order` (
-  `order_num` varchar(45) NOT NULL,
-  `order_member_id` varchar(16) DEFAULT NULL,
-  `order_product_code` varchar(45) NOT NULL,
-  `order_progress` varchar(10) DEFAULT NULL,
-  `order_date` datetime DEFAULT CURRENT_TIMESTAMP,
-  `order_pw` int(11) DEFAULT NULL,
-  `order_ismember` varchar(5) DEFAULT NULL,
-  `order_deliverycost` varchar(10) DEFAULT NULL,
-  `basket_total` int(11) NOT NULL,
-  PRIMARY KEY (`order_num`),
-  KEY `order_member_id_idx` (`order_member_id`),
-  KEY `order_product_code_idx` (`order_product_code`),
-  CONSTRAINT `order_member_id` FOREIGN KEY (`order_member_id`) REFERENCES `member` (`member_id`),
-  CONSTRAINT `order_product_code` FOREIGN KEY (`order_product_code`) REFERENCES `product` (`product_code`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE `category` (
+  `num` int(11) NOT NULL AUTO_INCREMENT,
+  `main` varchar(3) DEFAULT NULL,
+  `sub` varchar(3) DEFAULT NULL,
+  `name` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`num`)
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `order`
+-- Dumping data for table `category`
 --
 
-LOCK TABLES `order` WRITE;
-/*!40000 ALTER TABLE `order` DISABLE KEYS */;
-/*!40000 ALTER TABLE `order` ENABLE KEYS */;
+LOCK TABLES `category` WRITE;
+/*!40000 ALTER TABLE `category` DISABLE KEYS */;
+INSERT INTO `category` VALUES (1,'001','001','비니모MBT'),(2,'001','002','린카블레'),(3,'001','003','세라필'),(4,'001','004','귀터만'),(5,'002','001','재단도구'),(6,'002','002','망치'),(7,'002','003','가죽공예바늘'),(8,'002','004','포니&툴렉'),(9,'003','001','페니체'),(10,'003','002','국산기리메'),(11,'003','003','지아디니'),(12,'003','004','수성염료&약품'),(13,'003','005','약칠도구(롤러)'),(14,'004','001','수성본드'),(15,'004','002','본드지우개'),(16,'004','003','본드헤라&공병&매트'),(17,'005','001','장식웃지'),(18,'005','002','종발'),(19,'006','001','원형펀치');
+/*!40000 ALTER TABLE `category` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -60,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-08-29 17:37:11
+-- Dump completed on 2019-08-29 17:37:09

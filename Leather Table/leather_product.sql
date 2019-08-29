@@ -26,7 +26,7 @@ DROP TABLE IF EXISTS `product`;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `product` (
   `product_code` varchar(45) NOT NULL,
-  `product_title` varchar(45) NOT NULL,
+  `product_title` varchar(255) NOT NULL,
   `product_contents` longtext NOT NULL,
   `product_maincategory` varchar(45) DEFAULT NULL,
   `product_subcategory` varchar(45) DEFAULT NULL,
@@ -36,6 +36,8 @@ CREATE TABLE `product` (
   `product_made` varchar(45) DEFAULT NULL,
   `product_stock` int(11) NOT NULL,
   `product_cnt` int(11) NOT NULL DEFAULT '1',
+  `product_state` varchar(5) DEFAULT 'I',
+  `product_writer` varchar(16) DEFAULT NULL,
   PRIMARY KEY (`product_code`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -46,7 +48,7 @@ CREATE TABLE `product` (
 
 LOCK TABLES `product` WRITE;
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
-INSERT INTO `product` VALUES ('thread001','린카블레532 ROUGE 128','린카블레532 ROUGE 128 (가죽공예실)',NULL,NULL,NULL,'프랑스',33000,'린카블레',100,1);
+INSERT INTO `product` VALUES ('thread001','린카블레532 ROUGE 1','린카블레532 ROUGE 128 (가죽공예실)',NULL,NULL,NULL,'프랑스',33000,'린카블레',100,1,'I',NULL),('thread0011','린카블레532 ROUGE 1','린카블레532 ROUGE 128 (가죽공예실)',NULL,NULL,NULL,'프랑스',33000,'린카블레',100,1,'I',NULL),('thread002','린카블레532 PIVOINE 2','린카블레532 PIVOINE 125',NULL,NULL,NULL,'프랑스',33000,'린카블레',100,1,'I',NULL),('thread0021','린카블레532 PIVOINE 2','린카블레532 PIVOINE 125',NULL,NULL,NULL,'프랑스',33000,'린카블레',100,1,'I',NULL),('thread003','린카블레532 GAZON 3','린카블레532 GAZON 436',NULL,NULL,NULL,'프랑스',33000,'린카블레',100,1,'I',NULL),('thread0031','린카블레532 GAZON 3','린카블레532 GAZON 436',NULL,NULL,NULL,'프랑스',33000,'린카블레',100,1,'I',NULL),('thread004','린카블레532 JAUNE 4','린카블레532 JAUNE 508',NULL,NULL,NULL,'프랑스',33000,'린카블레',100,1,'I',NULL),('thread0041','린카블레532 JAUNE 4','린카블레532 JAUNE 508',NULL,NULL,NULL,'프랑스',33000,'린카블레',100,1,'I',NULL),('thread005','린카블레532 ORANGER5211','린카블레532 ORANGER419',NULL,NULL,NULL,'프랑스',33000,'린카블레',100,1,'I',NULL),('thread0051','린카블레532 ORANGER5211','린카블레532 ORANGER419',NULL,NULL,NULL,'프랑스',33000,'린카블레',100,1,'I',NULL),('thread006','린카블레532 ROY 6','린카블레532 ROY 665',NULL,NULL,NULL,'프랑스',33000,'린카블레',100,1,'I',NULL),('thread0061','린카블레532 ROY 6','린카블레532 ROY 665',NULL,NULL,NULL,'프랑스',33000,'린카블레',100,1,'I',NULL),('thread007','린카블레532 VERT7','린카블레532 VERT767',NULL,NULL,NULL,'프랑스',33000,'린카블레',100,1,'I',NULL),('thread0071','린카블레532 VERT7','린카블레532 VERT767',NULL,NULL,NULL,'프랑스',33000,'린카블레',100,1,'I',NULL);
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -59,4 +61,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-08-16 15:05:03
+-- Dump completed on 2019-08-29 17:37:10
