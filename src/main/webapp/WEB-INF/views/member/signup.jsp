@@ -68,6 +68,7 @@
 			}
 			var regex = /^\w*(\d[A-z]|[A-z]\d)\w*$/;
 			var member_id=$('input[name=member_id]').val();
+			var member_pw=$('input[name=member_pw]').val();
 			if(!regex.test(member_id)){
 				alert('아이디는 영문자와 숫자를 반드시 1개이상 포함해야 합니다.');
 				return false;
@@ -80,6 +81,10 @@
 				alert('비밀번호는 8~16자리입니다.');
 				return false;
 			}	
+			if(!regex.test(member_pw)){
+				alert('비밀번호는 영문자와 숫자를 반드시 1개이상 포함해야 합니다.');
+				return false;
+			}
 			if(!checkSame('#signup input[name=member_pw]','#signup input[name=member_pw2]')){
 				alert('비밀번호와 일치하지 않습니다.');
 				return false;
