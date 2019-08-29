@@ -5,6 +5,7 @@
 
 <head>
 	<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/common.css">
+	<!-- 아래 순서 바뀌면 안됨  -->
 	<script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/jquery.validate.js"></script>
 	<script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/additional-methods.js"></script>
 	
