@@ -5,7 +5,6 @@
 <html>
 <head>
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/common.css">
-<script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/header.js"></script>
 
 <meta charset="UTF-8">
 <title>회원리스트</title>
