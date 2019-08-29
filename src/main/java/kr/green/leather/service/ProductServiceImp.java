@@ -28,4 +28,10 @@ public class ProductServiceImp implements ProductService{
 		return productDao.selectCountList(cri, product_state);
 	}
 
+	@Override
+	public ProductVO getProduct(String product_code) {
+		// TODO Auto-generated method stub
+		return productDao.selectProduct(product_code);
+	}
+
 }

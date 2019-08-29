@@ -11,4 +11,6 @@ public interface ProductService {
 
 	int getTotalCount(Criteria cri, String product_state);
 
+	ProductVO getProduct(String product_code);
+
 }

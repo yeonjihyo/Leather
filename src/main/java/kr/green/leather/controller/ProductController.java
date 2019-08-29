@@ -40,5 +40,15 @@ public class ProductController {
 	    mv.addObject("pageMaker",pm);
 	    return mv;
 	}
+	
+	//게시글 상세
+		@RequestMapping(value= "/product/display",method=RequestMethod.GET)
+		public ModelAndView productDisplayGet(ModelAndView mv,String product_code, Criteria cri){
+			ProductVO product=productService.getProduct(product_code);
+		    mv.setViewName("/product/display");
+		    mv.addObject("product",product);
+		    mv.addObject("cri",cri);
+		    return mv;
+		}
 
 }

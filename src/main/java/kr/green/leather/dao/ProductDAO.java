@@ -14,4 +14,8 @@ public interface ProductDAO {
 
 	int selectCountList(@Param("cri")Criteria cri,@Param("product_state")String product_state);
 
+	ProductVO selectProduct(@Param("product_code")String product_code);
+
+
+
 }

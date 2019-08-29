@@ -5,12 +5,12 @@
 
 <head>
 	<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/common.css">
-	<title>제품리스트</title>
+	<title>제품상세페이지</title>
 	<style>
 	</style>
 	
 </head>
 <body>
-	
+	ssdsdsadsada
 </body>
 </html>
