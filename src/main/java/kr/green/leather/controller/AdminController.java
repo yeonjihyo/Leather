@@ -43,7 +43,7 @@ public class AdminController {
 		
 		return mv;
 	}
-	@RequestMapping (value= "/admin/user/update", method=RequestMethod.GET)
+	@RequestMapping (value= "/admin/user/update", method=RequestMethod.GET)//템플릿을 사용했기 떄문에 경로가 3개일경우 tiles-def.xml에 추가를 해줘야한다.
 	public ModelAndView adminUserUpdateGet(ModelAndView mv,  Criteria cri, MemberVO mVo) {
 		System.out.println("dminUserUpdateGet mvo" + mVo);
 		memberService.updateAuthority(mVo);
