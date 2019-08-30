@@ -4,7 +4,7 @@ $(function(){
 	}, function(){
 		$('ul:first',this).hide();
 	});
-	$(".header-category>li:has(ul)>a").each( function() {
+	/*$(".header-category>li:has(ul)>a").each( function() {
 		$(this).html( $(this).html()+' &or;' );
-	});
+	});*/
 });
