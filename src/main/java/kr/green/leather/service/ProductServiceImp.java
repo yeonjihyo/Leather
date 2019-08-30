@@ -17,9 +17,9 @@ public class ProductServiceImp implements ProductService{
 	ProductDAO productDao;
 
 	@Override
-	public ArrayList<ProductVO> getProductList(Criteria cri, String product_state) {
+	public ArrayList<ProductVO> getProductList(Criteria cri, String product_state, String product_maincategory, String product_subcategory) {
 		// TODO Auto-generated method stub
-		return productDao.selectProductList(cri, product_state);
+		return productDao.selectProductList(cri, product_state,product_maincategory,product_subcategory);
 	}
 
 	@Override
@@ -38,6 +38,12 @@ public class ProductServiceImp implements ProductService{
 	public void registerProduct(ProductVO pVo) {
 		productDao.insertProduct(pVo);
 		
+	}
+
+	@Override
+	public ArrayList<ProductVO> getProductList(Criteria cri, String product_state, String product_maincategory) {
+		// TODO Auto-generated method stub
+		return  productDao.selectCategoryList(cri, product_state,product_maincategory);
 	}
 
 }

@@ -7,7 +7,9 @@
     select * from product where 
     <choose>
    		<when test='product_state.equals("I") ||product_state.equals("D")'> 
-   			product_state=#{product_state}
+   			product_state=#{product_state} and
+   			product_maincategory=#{product_maincategory} and
+   			product_subcategory=#{product_subcategory}
    		</when>
     	<otherwise>
     		product_state='I' or product_state='D'
@@ -15,6 +17,18 @@
     </choose>
     order by product_code desc limit #{cri.pageStart},#{cri.perPageNum}
     <!-- dao에서 param이 붙었기 때문에 앞에 cri.가 붙어야 함  -->
+  </select>
+  <select id="selectCategoryList" resultType="kr.green.leather.vo.ProductVO">
+  	select * from product where 
+    <choose>
+   		<when test='product_state.equals("I") ||product_state.equals("D")'> 
+   			product_state=#{product_state} and
+   			product_maincategory=#{product_maincategory}
+   		</when>
+    	<otherwise>
+    		product_state='I' or product_state='D'
+   		</otherwise>
+    </choose>
   </select>
   <select id="selectCountList" resultType="int">
     select count(*) from product where 

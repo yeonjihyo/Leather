@@ -33,7 +33,7 @@ public class HomeController {
 //		System.out.println(mVo);
 		
 		mv.setViewName("/main/home");
-	    mv.addObject("setHeader", "안녕하세요");
+	   
 	    return mv;
 	}
 	//회원가입

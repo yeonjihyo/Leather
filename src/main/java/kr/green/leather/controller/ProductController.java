@@ -25,16 +25,25 @@ public class ProductController {
 	
 	//제품리스트
 	@RequestMapping(value= "/product/list",method=RequestMethod.GET)
-	public ModelAndView productListGet(ModelAndView mv, Criteria cri){
+	public ModelAndView productListGet(ModelAndView mv, Criteria cri, String product_maincategory, String product_subcategory){
 		String product_state ="I";
 		int num=4;
 		cri.setPerPageNum(num);
 		int displayPageNum=2;
-		ArrayList<ProductVO> list = productService.getProductList(cri,product_state);
+		
+		ArrayList<ProductVO> list;
+		
+		if(product_subcategory != null) {
+			list = productService.getProductList(cri,product_state,product_maincategory,product_subcategory);
+		}else {
+			list = productService.getProductList(cri,product_state,product_maincategory);
+		}
+		
 		int totalCount = productService.getTotalCount(cri,product_state);
-		System.out.println(totalCount);
+		//System.out.println(totalCount);
+		
 		PageMaker pm = pageMakerService.getPageMaker(displayPageNum,cri,totalCount); 
-		System.out.println(pm);
+		//System.out.println(pm);
 	    mv.setViewName("/product/list");
 	    mv.addObject("list",list);
 	    mv.addObject("pageMaker",pm);
