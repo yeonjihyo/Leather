@@ -22,10 +22,12 @@
 							<a href="<%=request.getContextPath()%>/signin">로그인</a> |
 							<a href="<%=request.getContextPath()%>/signup">회원가입</a>
 						</c:if>
+						
 						<c:if test="${user ne null}">
 							<a href="#">회원정보수정</a> |
 							<a href="<%=request.getContextPath()%>/signout">로그아웃</a>
 						</c:if>	
+						
 					</div>	
 				</div>
 				<div class="header-middle div-center">
@@ -88,7 +90,7 @@
 						</li>
 						<li><a href="">핸들보강재 &or;</a></li>
 						<li><a href="">가죽끈 &or;</a></li>
-						<!--<li><a href="#">ALL</a></li>  -->
+						<li><a href="">ALL</a></li>
 					</ul>	
 				</div>
 			</div>
