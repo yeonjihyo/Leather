@@ -27,26 +27,34 @@ public class ProductController {
 	@RequestMapping(value= "/product/list",method=RequestMethod.GET)
 	public ModelAndView productListGet(ModelAndView mv, Criteria cri, String product_maincategory, String product_subcategory){
 		String product_state ="I";
-		int num=4;
-		cri.setPerPageNum(num);
+		cri.setPerPageNum(4);
 		int displayPageNum=2;
+		//System.out.println(cri);
 		
 		ArrayList<ProductVO> list;
-		
-		if(product_subcategory != null) {
-			list = productService.getProductList(cri,product_state,product_maincategory,product_subcategory);
-		}else {
-			list = productService.getProductList(cri,product_state,product_maincategory);
+		int totalCount=0;
+		//System.out.println(product_maincategory +"," + product_subcategory);
+		if((product_maincategory == null || product_maincategory.length() ==0) && (product_subcategory == null || product_subcategory.length() ==0)) {
+			list = productService.getProductList(cri,product_state);
+			totalCount = productService.getTotalCount(cri,product_state);
 		}
-		
-		int totalCount = productService.getTotalCount(cri,product_state);
-		//System.out.println(totalCount);
+		else if(product_subcategory != null && product_subcategory.length() !=0) {
+			list = productService.getProductList(cri,product_state,product_maincategory,product_subcategory);
+			totalCount = productService.getTotalCount(cri,product_state,product_maincategory,product_subcategory);
+		}else{
+			list = productService.getProductList(cri,product_state,product_maincategory);
+			totalCount = productService.getTotalCount(cri,product_state,product_maincategory);
+		}
+	
 		
 		PageMaker pm = pageMakerService.getPageMaker(displayPageNum,cri,totalCount); 
-		//System.out.println(pm);
+		
+		
 	    mv.setViewName("/product/list");
 	    mv.addObject("list",list);
 	    mv.addObject("pageMaker",pm);
+	    mv.addObject("product_maincategory",product_maincategory);
+	    mv.addObject("product_subcategory",product_subcategory);
 	    return mv;
 	}
 	

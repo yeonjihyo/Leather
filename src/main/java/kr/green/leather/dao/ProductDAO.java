@@ -21,6 +21,13 @@ public interface ProductDAO {
 
 	ArrayList<ProductVO> selectCategoryList(@Param("cri")Criteria cri, @Param("product_state")String product_state, @Param("product_maincategory")String product_maincategory);
 
+	ArrayList<ProductVO> getProductListAll(@Param("cri")Criteria cri,  @Param("product_state")String product_state);
+
+	int selectCountCategoryList(@Param("cri")Criteria cri, @Param("product_state")String product_state, @Param("product_maincategory")String product_maincategory,
+			@Param("product_subcategory")String product_subcategory);
+
+	int selectCountListAll(@Param("cri")Criteria cri, @Param("product_state")String product_state, @Param("product_maincategory")String product_maincategory);
+
 
 
 }

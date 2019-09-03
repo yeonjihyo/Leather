@@ -46,4 +46,23 @@ public class ProductServiceImp implements ProductService{
 		return  productDao.selectCategoryList(cri, product_state,product_maincategory);
 	}
 
+	@Override
+	public ArrayList<ProductVO> getProductList(Criteria cri, String product_state) {
+		// TODO Auto-generated method stub
+		return productDao.getProductListAll(cri, product_state);
+	}
+
+	@Override
+	public int getTotalCount(Criteria cri, String product_state, String product_maincategory,
+			String product_subcategory) {
+		// TODO Auto-generated method stub
+		return productDao.selectCountCategoryList(cri, product_state,product_maincategory,product_subcategory);
+	}
+
+	@Override
+	public int getTotalCount(Criteria cri, String product_state, String product_maincategory) {
+		// TODO Auto-generated method stub
+		return productDao.selectCountListAll(cri, product_state,product_maincategory);
+	}
+
 }
