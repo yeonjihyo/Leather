@@ -89,12 +89,13 @@
   <select id="selectProduct" resultType="kr.green.leather.vo.ProductVO">
   	select * from product where product_code=#{product_code} 
   </select>
+  
   <!-- 게시글등록 -->
   <insert id="insertProduct">
   	insert into product(product_code,product_title,product_contents,product_maincategory,product_subcategory,
-  						product_origin,product_price,product_made,product_stock,product_writer) 
+  						product_origin,product_price,product_made,product_stock) 
   		value(#{product.product_code},#{product.product_title},#{product.product_contents},#{product.product_maincategory},
-  				#{product.product_subcategory},#{product.product_origin},#{product.product_price},#{product.product_made},#{product.product_stock},#{product.},product_writer)
+  				#{product.product_subcategory},#{product.product_origin},#{product.product_price},#{product.product_made},#{product.product_stock})
   </insert>
   
 </mapper> 

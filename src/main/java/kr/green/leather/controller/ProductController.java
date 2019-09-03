@@ -58,15 +58,7 @@ public class ProductController {
 	    return mv;
 	}
 	
-	//제품 상세
-		@RequestMapping(value= "/product/display",method=RequestMethod.GET)
-		public ModelAndView productDisplayGet(ModelAndView mv,String product_code, Criteria cri){
-			ProductVO product=productService.getProduct(product_code);
-		    mv.setViewName("/product/display");
-		    mv.addObject("product",product);
-		    mv.addObject("cri",cri);
-		    return mv;
-		}
+	
 	//제품 등록
 		@RequestMapping(value= "/product/register",method=RequestMethod.GET)
 		public ModelAndView productRegisterGet(ModelAndView mv) throws Exception{
@@ -75,8 +67,23 @@ public class ProductController {
 		    return mv;
 		}
 		@RequestMapping(value= "/product/register",method=RequestMethod.POST)
-		public String productRegisterPost(ProductVO pVo) throws Exception{
+		public ModelAndView productRegisterPost(ModelAndView mv,ProductVO pVo) throws Exception{
+			System.out.println("productRegisterPost pVo : " + pVo);
 			productService.registerProduct(pVo);
-		    return "redirect:/product/list";
+			 mv.setViewName("redirect:/product/list");
+		    return mv;
 		}
+		
+		
+		
+		
+		//제품 상세
+				@RequestMapping(value= "/product/display",method=RequestMethod.GET)
+				public ModelAndView productDisplayGet(ModelAndView mv,String product_code, Criteria cri){
+					ProductVO product=productService.getProduct(product_code);
+				    mv.setViewName("/product/display");
+				    mv.addObject("product",product);
+				    mv.addObject("cri",cri);
+				    return mv;
+				}
 }

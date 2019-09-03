@@ -27,3 +27,6 @@
     background-color: #192d55;
     border-color: #192d55;
 }
+.border-bottom{
+	border-bottom: 3px solid #192d55 !important; 
+}

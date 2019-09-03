@@ -14,6 +14,8 @@ public class ProductVO {
 	private int product_cnt;
 	private String product_state;
 	private String product_writer;
+	
+	
 	public String getProduct_code() {
 		return product_code;
 	}
