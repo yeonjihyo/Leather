@@ -12,7 +12,7 @@
 		width: 1080px;
 		/*border : 1px solid black;*/
 		position: relative;
-		height: 2000px;
+		height: 500px;
 		padding: 50px 10px;
 	}
 	.categoryName{
@@ -31,7 +31,7 @@
 		font-weight: bold;
 		text-decoration: none;
 }
-	.list{
+	.lists{
 		position: absolute;
 		width: 1080px;
 		height: 300px;
@@ -55,10 +55,9 @@
 	
 </head>
 <body>
-	
-		<div class="productList div-center">
+		<div class="productList div-center" >
 			<!-- 카테고리 이름 -->
-			<div class="categoryName"><h2>|실</h2></div>
+			<div class="categoryName"><h2> | ${product_maincategory} </h2></div>
 			<!-- 제품정렬-->
 			<div class="productSort">
 				<a href="#">최신순</a> |
@@ -67,14 +66,14 @@
 				<a href="#">인기순</a> |
 			</div>
 			<!-- 제품리스트 -->
-			<table class="list">
+			<table class="lists">
 		    	<c:if test="${list.size() ne 0}">
 		    		<!--items: 컨트롤러에서 가져올애, var : 여기서사용할끄집어낼이름  --> 
 		    		<c:forEach items="${list}" var="product"> 
 			      		<tr class="productInfo">
 			      			<td class="info">
 					        	<div class="productImg div-center" >
-					        		<a href="#">
+					        		<a href="<%=request.getContextPath()%>/product/display?product_code=${product.product_code}">
 					        			<img src="#">
 					        		</a>
 				        		</div>
@@ -94,31 +93,33 @@
 		     	 </c:if>
 	     	 </table>
      	</div>
-     	
+	   <a href="<%=request.getContextPath()%>/product/register">
+			<button type="button" class="btn btn-navy">등록</button>
+		</a>
    	<!-- 페이지네이션 -->
    	<ul class="pagination" style="justify-content: center;">
 	    <c:if test="${pageMaker.prev}">
 	        <li class="page-item">
-	            <a class="page-link" href="<%=request.getContextPath()%>/product/list?page=${pageMaker.startPage-1}"><i class="fas fa-chevron-left"></i></a>
+	            <a class="page-link" href="<%=request.getContextPath()%>/product/list?product_maincategory=${product_maincategory}&product_subcategory=${product_subcategory}&page=${pageMaker.startPage-1}"><i class="fas fa-chevron-left"></i></a>
 	        </li>
 	    </c:if>
 	    <c:forEach begin="${pageMaker.startPage }" end="${pageMaker.endPage}" var="index">
 	        <c:choose>
 	        <c:when test="${pageMaker.criteria.page != index }">
 		        <li class="page-item">
-		            <a class="page-link" href="<%=request.getContextPath()%>/product/list?page=${index}">${index}</a>
+		            <a class="page-link" href="<%=request.getContextPath()%>/product/list?product_maincategory=${product_maincategory}&product_subcategory=${product_subcategory}&page=${index}">${index}</a>
 		        </li>
 	        </c:when>
 	        <c:otherwise>
 	        	<li class="page-item active">
-		            <a class="page-link" href="<%=request.getContextPath()%>/product/list?page=${index}">${index}</a>
+		            <a class="page-link" href="<%=request.getContextPath()%>/product/list?product_maincategory=${product_maincategory}&product_subcategory=${product_subcategory}&page=${index}">${index}</a>
 		        </li>
 	        </c:otherwise>
 	        </c:choose>
 	    </c:forEach>
 	    <c:if test="${pageMaker.next}">
 	        <li class="page-item">
-	            <a class="page-link" href="<%=request.getContextPath()%>/product/list?page=${pageMaker.endPage+1}"><i class="fas fa-chevron-right"></i></a>
+	            <a class="page-link" href="<%=request.getContextPath()%>/product/list?product_maincategory=${product_maincategory}&product_subcategory=${product_subcategory}&page=${pageMaker.endPage+1}"><i class="fas fa-chevron-right"></i></a>
 	        </li>
 	    </c:if>
 	</ul>
