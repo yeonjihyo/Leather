@@ -100,13 +100,15 @@
 			  <label>첨부파일</label>
 			  <input type="text" class="form-control" name="file" value="">
 			</div>
-			<a href="<%=request.getContextPath()%>/product/list">
-				<button type="button" class="btn btn-navy">목록</button>
-			</a>
-			<button class="btn btn-navy">등록하기</button>
-			<a href="<%=request.getContextPath()%>/product/list">
-				<button type="button" class="btn btn-navy">취소</button>
-			</a>
+			<div class="div-center border-bottom col-6" style="padding : 10px 0;" >
+				<a href="<%=request.getContextPath()%>/product/list">
+					<button type="button" class="btn btn-navy">목록</button>
+				</a>
+				<button class="btn btn-navy">등록하기</button>
+				<a href="<%=request.getContextPath()%>/product/list">
+					<button type="button" class="btn btn-navy">취소</button>
+				</a>
+			</div>
 		</div>
 	</form>
 </body>
