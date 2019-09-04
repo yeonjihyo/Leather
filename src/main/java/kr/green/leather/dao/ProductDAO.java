@@ -28,6 +28,8 @@ public interface ProductDAO {
 
 	int selectCountListAll(@Param("cri")Criteria cri, @Param("product_state")String product_state, @Param("product_maincategory")String product_maincategory);
 
+	void updateProduct(@Param("product")ProductVO product);
+
 
 
 }

@@ -93,9 +93,23 @@
   <!-- 게시글등록 -->
   <insert id="insertProduct">
   	insert into product(product_code,product_title,product_contents,product_maincategory,product_subcategory,
-  						product_origin,product_price,product_made,product_stock) 
+  						product_origin,product_price,product_made,product_stock,file) 
   		value(#{product.product_code},#{product.product_title},#{product.product_contents},#{product.product_maincategory},
-  				#{product.product_subcategory},#{product.product_origin},#{product.product_price},#{product.product_made},#{product.product_stock})
+  				#{product.product_subcategory},#{product.product_origin},#{product.product_price},#{product.product_made},#{product.product_stock},#{product.file})
   </insert>
   
+  <update id="updateProduct">
+  	update product
+  		set 
+  			product_title =#{product.product_title},
+  			product_contents=#{product.product_contents},
+  			product_maincategory=#{product.product_maincategory},
+  			product_subcategory=#{product.product_subcategory},
+  			product_origin=#{product.product_origin},
+  			product_price=#{product.product_price},
+  			product_made=#{product.product_made},
+  			product_stock=#{product.product_stock},
+  			file=#{product.file}
+  		where product_code=#{product.product_code}
+  </update>
 </mapper> 

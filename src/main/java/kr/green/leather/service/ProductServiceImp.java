@@ -67,9 +67,9 @@ public class ProductServiceImp implements ProductService{
 
 	@Override
 	public ProductVO increaseViews(ProductVO product) {
-//		int views = product.getViews();
-//		product.setViews(views+1);
-//		productDao.updateProduct(product);
+		int views = product.getProduct_views();
+		product.setProduct_views(views+1);
+		productDao.updateProduct(product);
 		return product;
 	}
 

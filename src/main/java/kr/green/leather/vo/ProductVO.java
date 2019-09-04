@@ -101,14 +101,13 @@ public class ProductVO {
 		return file;
 	}
 	public String getFileName() {
-		if(file == null) {
+		//UUID가 제거되도록 코드작성
+		//4d781699-bc2c-4f4e-aa2a-9ebb87ff9d3e_2.jpg => 2.jpg가 되도록
+		if(file ==null) {
 			return "";
 		}
 		int index = file.indexOf("_");
-		if(index == -1) {
-			return "";
-		}
-		return file.substring(index+1);//언더바 다음부터 보이게 해라
+		return file.substring(index+1);
 	}
 	public void setFile(String file) {
 		this.file = file;

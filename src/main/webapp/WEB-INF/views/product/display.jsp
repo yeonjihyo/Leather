@@ -86,8 +86,13 @@
 		      <a class="nav-link" href="#">반품/교환</a>
 		    </li>
 		</ul>
-		${product.product_contents}
-		${product.file}
+		<div>
+			${product.product_contents}
+			<img src="<%=request.getContextPath() %>/resources/upload${product.file}">
+		</div>
+		<div>
+		
+		</div>
 		<!-- 리뷰 -->
 		
   	</div>
