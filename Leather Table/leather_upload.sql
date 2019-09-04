@@ -33,7 +33,7 @@ CREATE TABLE `upload` (
   PRIMARY KEY (`upload_no`),
   KEY `upload_product_code_idx` (`upload_product_code`),
   CONSTRAINT `upload_product_code` FOREIGN KEY (`upload_product_code`) REFERENCES `product` (`product_code`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -54,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-08-29 17:37:10
+-- Dump completed on 2019-09-04 17:17:47
