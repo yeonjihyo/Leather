@@ -98,7 +98,11 @@
 			</div>
 			
 			<div class="form-group col-6 div-center">
-			  <label>첨부파일</label>
+			  <label>대표첨부파일</label>
+			  <input type="file" class="form-control" name="file2" value="">
+			</div>
+			<div class="form-group col-6 div-center">
+			  <label>상품첨부파일</label>
 			  <input type="file" class="form-control" name="file2" value="">
 			</div>
 			<div class="div-center border-bottom col-6" style="padding : 10px 0;" >
