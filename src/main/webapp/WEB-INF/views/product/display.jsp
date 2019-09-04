@@ -9,8 +9,10 @@
 	<style>
 	.detail{
 	width:1080px;
-	height: 800px;
-	padding: 130px 10px 80px 10px;
+	height: 600px;
+	margin: 130px 10px 50px 10px;
+	padding-top: 30px;
+	border-top : 3px solid #192d55 !important; 
 	}
 	.product-image{
 	border : 1px solid black;
@@ -46,7 +48,7 @@
 		<!-- 제품이미지 -->
 		<div class="product-image float-left clearfix">
 			<div class="img-box">
-				<img alt="" src="<%=request.getContextPath()%>/resources/img/product${product.file}">
+				<img src="<%=request.getContextPath() %>/resources/upload${product.file}" alt="" style="width: 480px; height: 480px;">
 			</div>
 		</div>
 		<!-- 제품정보 -->
@@ -56,12 +58,12 @@
 			</div>
 		 	<div class="product-infimation">
 		 		<ul class="col-4">
-			 		<li>상품코드 :</li>
-			 		<li>제조사 :</li>
-			 		<li>원산지 :</li>
+			 		<li>상품코드 : ${product.product_code}</li>
+			 		<li>제조사 : ${product.product_made}</li>
+			 		<li>원산지 : ${product.product_origin}</li>
 			 		<li>수량 :<input type="number" min="1" style="margin-left:20px; width: 100px;"></li>
-			 		<li>재고수량 :</li>
-			 		<li>금액 :</li>
+			 		<li>재고수량 : ${product.product_stock}</li>
+			 		<li>금액 : ${product.product_price}원</li>
 		 		</ul>
 		 	</div>
 		 	<div class="product-order float-left">
@@ -88,7 +90,7 @@
 		</ul>
 		<div>
 			${product.product_contents}
-			<img src="<%=request.getContextPath() %>/resources/upload${product.file}">
+			<img src="<%=request.getContextPath() %>/resources/upload${product.file}" alt="" style="width: 480px; height: 480px;">
 		</div>
 		<div>
 		
