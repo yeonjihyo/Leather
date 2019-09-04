@@ -23,4 +23,6 @@ public interface ProductService {
 
 	int getTotalCount(Criteria cri, String product_state, String product_maincategory);
 
+	ProductVO increaseViews(ProductVO product);
+
 }

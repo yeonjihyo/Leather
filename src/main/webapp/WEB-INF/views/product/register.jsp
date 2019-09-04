@@ -5,6 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/common.css">
 <title>제품 등록</title>
 <style>
 	h3{
@@ -28,7 +29,7 @@
 </script>
 <body><!-- 괄호안은 속성명임 -->
 	<h3 class="col-6 div-center border-bottom">|제품 등록</h3>
-	<form  action="<%=request.getContextPath()%>/product/register" method="post"  style="padding-top: 20px;" id="register-form">
+	<form  action="<%=request.getContextPath()%>/product/register" method="post" enctype="multipart/form-data" style="padding-top: 20px;" id="register-form">
 		<div class="container-fluid">
 		<input type="hidden" name="product_maincategory" >
 		<input type="hidden" name="product_subcategory" >
@@ -98,7 +99,7 @@
 			
 			<div class="form-group col-6 div-center">
 			  <label>첨부파일</label>
-			  <input type="text" class="form-control" name="file" value="">
+			  <input type="file" class="form-control" name="file2" value="">
 			</div>
 			<div class="div-center border-bottom col-6" style="padding : 10px 0;" >
 				<a href="<%=request.getContextPath()%>/product/list">

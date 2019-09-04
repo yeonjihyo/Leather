@@ -27,6 +27,19 @@
     background-color: #192d55;
     border-color: #192d55;
 }
+.btn-navy2{
+		color : #fff;
+		background-color:   #192d55 !important;
+}
+.btn-navy2:hover {
+    color: #192d55;
+    background-color:  #fff !important;
+    border-color: #192d55 ;
+}
 .border-bottom{
 	border-bottom: 3px solid #192d55 !important; 
+}
+.display-none{
+	display: none;
+	
 }

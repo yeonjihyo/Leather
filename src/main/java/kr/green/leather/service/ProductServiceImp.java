@@ -65,4 +65,12 @@ public class ProductServiceImp implements ProductService{
 		return productDao.selectCountListAll(cri, product_state,product_maincategory);
 	}
 
+	@Override
+	public ProductVO increaseViews(ProductVO product) {
+//		int views = product.getViews();
+//		product.setViews(views+1);
+//		productDao.updateProduct(product);
+		return product;
+	}
+
 }

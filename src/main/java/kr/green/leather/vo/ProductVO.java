@@ -14,6 +14,9 @@ public class ProductVO {
 	private int product_cnt;
 	private String product_state;
 	private String product_writer;
+	private String file;
+	private int product_views;
+	
 	
 	
 	public String getProduct_code() {
@@ -94,6 +97,28 @@ public class ProductVO {
 	public void setProduct_writer(String product_writer) {
 		this.product_writer = product_writer;
 	}
+	public String getFile() {
+		return file;
+	}
+	public String getFileName() {
+		if(file == null) {
+			return "";
+		}
+		int index = file.indexOf("_");
+		if(index == -1) {
+			return "";
+		}
+		return file.substring(index+1);//언더바 다음부터 보이게 해라
+	}
+	public void setFile(String file) {
+		this.file = file;
+	}
+	public int getProduct_views() {
+		return product_views;
+	}
+	public void setProduct_views(int product_views) {
+		this.product_views = product_views;
+	}
 	@Override
 	public String toString() {
 		return "ProductVO [product_code=" + product_code + ", product_title=" + product_title + ", product_contents="
@@ -101,8 +126,10 @@ public class ProductVO {
 				+ product_subcategory + ", product_subsubcategory=" + product_subsubcategory + ", product_origin="
 				+ product_origin + ", product_price=" + product_price + ", product_made=" + product_made
 				+ ", product_stock=" + product_stock + ", product_cnt=" + product_cnt + ", product_state="
-				+ product_state + ", product_writer=" + product_writer + "]";
+				+ product_state + ", product_writer=" + product_writer + ", file=" + file + ", product_views="
+				+ product_views + "]";
 	}
+	
 	
 	
 	
