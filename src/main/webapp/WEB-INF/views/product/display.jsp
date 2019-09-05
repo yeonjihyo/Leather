@@ -86,17 +86,19 @@
 		    </li>
 		    <li class="nav-item">
 		      <a class="nav-link" href="#">반품/교환</a>
-		    </li>
+		    </li>s
 		</ul>
+		<!-- 제품상세 -->
 		<div>
 			${product.product_contents}
-			<img src="<%=request.getContextPath() %>/resources/upload${product.contentsfile}" alt="" style="width: 480px; height: 480px;">
-		</div>
-		<div>
-		
+			<img class="div-center" src="<%=request.getContextPath() %>/resources/upload${product.contentsfile}" alt="" style="width: 1080px">
 		</div>
 		<!-- 리뷰 -->
-		
+		<div class"review"></div>
+		<!-- Q&A -->
+		<div></div>
+		<!-- 반품/교환 -->
+		<div></div>
   	</div>
 
 </body>
