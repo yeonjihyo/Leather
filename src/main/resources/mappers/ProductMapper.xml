@@ -130,7 +130,9 @@
   			product_price=#{product.product_price},
   			product_made=#{product.product_made},
   			product_stock=#{product.product_stock},
-  			file=#{product.file}
+  			file=#{product.file},
+  			contentsfile=#{product.contentsfile},
+  			product_views=#{product.product_views}
   		where product_code=#{product.product_code}
   </update>
 </mapper> 
