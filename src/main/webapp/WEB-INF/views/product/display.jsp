@@ -31,6 +31,7 @@
 	font-size: 20px;
 	padding:15px;
 	width: 500px;
+	color: black;
 	}
 	.product-order{
 	width: 600px;
@@ -74,7 +75,7 @@
 	</div>
 	<!-- 제품설명 -->
 	<div>
-		<ul class="nav nav-tabs nav-justified product-tab" style="width: 1080px;">
+		<ul class="nav nav-tabs nav-justified product-tab" style="width: 1080px; margin-bottom : 20px;">
 		    <li class="nav-item">
 		      <a class="nav-link active" href="#">제품설명</a>
 		    </li>
@@ -86,7 +87,7 @@
 		    </li>
 		    <li class="nav-item">
 		      <a class="nav-link" href="#">반품/교환</a>
-		    </li>s
+		    </li>
 		</ul>
 		<!-- 제품상세 -->
 		<div>
