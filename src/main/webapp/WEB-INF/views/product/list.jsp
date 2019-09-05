@@ -77,8 +77,8 @@
 					        			<img src="<%=request.getContextPath() %>/resources/upload${product.file}" style="width: 200px; height: 200px;">
 					        		</a>
 				        		</div>
-				        		<div class="productName div-center"  style="padding-top5px; margin-top: 15px; width: 260px; text-align: center;">
-					        		<b><a style=" margin-top: 20px; border-top: 2px solid #192d55;" href="<%=request.getContextPath()%>/product/display?product_code=${product.product_code}">${product.product_title}</a></b><br>
+				        		<div class="productName div-center"  style="border-top: 2px solid #192d55; padding-top:5px; margin-top: 15px; width: 220px; text-align: center;">
+					        		<b><a style=" margin-top: 20px;" href="<%=request.getContextPath()%>/product/display?product_code=${product.product_code}">${product.product_title}</a></b><br>
 					        		<b>${product.product_price}원</b>
 				        		</div>
 							</td>
