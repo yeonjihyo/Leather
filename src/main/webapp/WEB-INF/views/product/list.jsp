@@ -48,7 +48,7 @@
 	.productImg{
 		width: 200px;
 		height: 200px;
-		border : 1px solid red;
+		/*border : 1px solid red;*/
 		
 	}
 	</style>
@@ -74,7 +74,7 @@
 			      			<td class="info">
 					        	<div class="productImg div-center" >
 					        		<a href="<%=request.getContextPath()%>/product/display?product_code=${product.product_code}">
-					        			<img src="<%=request.getContextPath() %>/resources/upload${product.file}">
+					        			<img src="<%=request.getContextPath() %>/resources/upload${product.file}" style="width: 200px; height: 200px;">
 					        		</a>
 				        		</div>
 				        		<div class="productName div-center"  style="padding-top5px; margin-top: 15px; width: 260px; text-align: center;">
@@ -93,9 +93,11 @@
 		     	 </c:if>
 	     	 </table>
      	</div>
-	   <a href="<%=request.getContextPath()%>/product/register">
-			<button type="button" class="btn btn-navy">등록</button>
-		</a>
+     	<c:if test="${user.member_authority eq 'ADMIN'}">
+		    <a href="<%=request.getContextPath()%>/product/register">
+				<button type="button" class="btn btn-navy">등록</button>
+			</a>
+		</c:if>
    	<!-- 페이지네이션 -->
    	<ul class="pagination" style="justify-content: center;">
 	    <c:if test="${pageMaker.prev}">

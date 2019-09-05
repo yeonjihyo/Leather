@@ -77,11 +77,15 @@ public class ProductController {
 		    return mv;
 		}
 		@RequestMapping(value= "/product/register",method=RequestMethod.POST)
-		public ModelAndView productRegisterPost(ModelAndView mv,ProductVO pVo,MultipartFile file2) throws Exception{
+		public ModelAndView productRegisterPost(ModelAndView mv,ProductVO pVo,MultipartFile file2,MultipartFile file3) throws Exception{
 			//System.out.println("productRegisterPost pVo : " + pVo);
 			if(file2.getOriginalFilename().length() != 0) {
 				String file = UploadFileUtils.uploadFile(uploadPath, file2.getOriginalFilename(),file2.getBytes());
 				pVo.setFile(file);
+			}
+			if(file3.getOriginalFilename().length() != 0) {
+				String contentsfile = UploadFileUtils.uploadFile(uploadPath, file3.getOriginalFilename(),file3.getBytes());
+				pVo.setContentsfile(contentsfile);
 			}
 			
 			

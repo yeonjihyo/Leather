@@ -103,7 +103,7 @@
 			</div>
 			<div class="form-group col-6 div-center">
 			  <label>상품첨부파일</label>
-			  <input type="file" class="form-control" name="file2" value="">
+			  <input type="file" class="form-control" name="file3" value="">
 			</div>
 			<div class="div-center border-bottom col-6" style="padding : 10px 0;" >
 				<a href="<%=request.getContextPath()%>/product/list">

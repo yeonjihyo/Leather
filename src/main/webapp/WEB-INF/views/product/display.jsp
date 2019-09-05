@@ -15,10 +15,10 @@
 	border-top : 3px solid #192d55 !important; 
 	}
 	.product-image{
-	border : 1px solid black;
+	/*border : 1px solid black;*/
 	width: 520px;
 	height: 520px;
-	padding: 20px;
+	/*padding: 20px;*/
 	}
 	.product-info{
 	display: inline-block;
@@ -48,7 +48,7 @@
 		<!-- 제품이미지 -->
 		<div class="product-image float-left clearfix">
 			<div class="img-box">
-				<img src="<%=request.getContextPath() %>/resources/upload${product.file}" alt="" style="width: 480px; height: 480px;">
+				<img src="<%=request.getContextPath() %>/resources/upload${product.file}" alt="" style="width: 520px; height: 520px;">
 			</div>
 		</div>
 		<!-- 제품정보 -->
@@ -90,7 +90,7 @@
 		</ul>
 		<div>
 			${product.product_contents}
-			<img src="<%=request.getContextPath() %>/resources/upload${product.file}" alt="" style="width: 480px; height: 480px;">
+			<img src="<%=request.getContextPath() %>/resources/upload${product.contentsfile}" alt="" style="width: 480px; height: 480px;">
 		</div>
 		<div>
 		

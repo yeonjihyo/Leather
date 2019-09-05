@@ -1,5 +1,9 @@
 package kr.green.leather.vo;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class ProductVO {
 	private String product_code;
 	private String product_title;
@@ -16,8 +20,8 @@ public class ProductVO {
 	private String product_writer;
 	private String file;
 	private int product_views;
-	
-	
+	private Date product_registered;
+	private String contentsfile;
 	
 	public String getProduct_code() {
 		return product_code;
@@ -118,6 +122,28 @@ public class ProductVO {
 	public void setProduct_views(int product_views) {
 		this.product_views = product_views;
 	}
+	public String getProduct_registered() {
+		//날자와 시간을 원하는 형식으로 보이게 하기위한 방법
+		SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		return f.format(product_registered);
+	}
+	public void setProduct_registered(Date product_registered) {
+		this.product_registered = product_registered;
+	}
+	public void setProduct_registered(String product_registered) {
+		SimpleDateFormat transFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		try {
+			this.product_registered = transFormat.parse(product_registered);
+		}catch (ParseException e) {
+			e.printStackTrace();
+		}
+	}
+	public String getContentsfile() {
+		return contentsfile;
+	}
+	public void setContentsfile(String contentsfile) {
+		this.contentsfile = contentsfile;
+	}
 	@Override
 	public String toString() {
 		return "ProductVO [product_code=" + product_code + ", product_title=" + product_title + ", product_contents="
@@ -126,19 +152,12 @@ public class ProductVO {
 				+ product_origin + ", product_price=" + product_price + ", product_made=" + product_made
 				+ ", product_stock=" + product_stock + ", product_cnt=" + product_cnt + ", product_state="
 				+ product_state + ", product_writer=" + product_writer + ", file=" + file + ", product_views="
-				+ product_views + "]";
+				+ product_views + ", product_registered=" + product_registered + ", contentsfile=" + contentsfile + "]";
 	}
 	
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }
+	
+	
+	
