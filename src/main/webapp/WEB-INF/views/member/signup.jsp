@@ -121,7 +121,7 @@
 		        dataType:"json",
 		        contentType:"application/json; charset=UTF-8",
 		        success : function(data){ 
-		            if(!data.isMember){
+		            if(!data){
 		            	alert('회원가입이 가능한 아이디입니다.');
 		            	isCheck=true;
 		            }else{

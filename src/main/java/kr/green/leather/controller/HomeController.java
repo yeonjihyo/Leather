@@ -54,6 +54,7 @@ public class HomeController {
 	@RequestMapping(value ="/dup")
 	@ResponseBody
 	public boolean idcheck(@RequestBody String member_id){
+		System.out.println(member_id);
 		boolean isMember = memberService.getMember(member_id) != null; //id를 통해 일치하는 회원정보를 가져와서 회원정보가 null이 아니면 true 아니면 false 
 	     return isMember;
 	}
