@@ -39,8 +39,10 @@ CREATE TABLE `product` (
   `product_state` varchar(5) DEFAULT 'I',
   `product_writer` varchar(16) DEFAULT NULL,
   `product_image` varchar(45) DEFAULT NULL,
-  `produc_views` int(11) NOT NULL DEFAULT '0',
-  `file` varchar(255) DEFAULT NULL,
+  `product_views` int(11) NOT NULL DEFAULT '0',
+  `file` varchar(255) DEFAULT NULL COMMENT '대표첨부파일',
+  `product_registered` datetime DEFAULT CURRENT_TIMESTAMP,
+  `contentsfile` varchar(255) DEFAULT NULL COMMENT '상품첨부파일',
   PRIMARY KEY (`product_code`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -51,7 +53,7 @@ CREATE TABLE `product` (
 
 LOCK TABLES `product` WRITE;
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
-INSERT INTO `product` VALUES ('','s11111111111','','001','001',NULL,'s',10000,'s',100,1,'I',NULL,NULL,0,'/2019/09/04/10db047b-77d3-4659-bfcf-e4c0668df30d_1.jpg'),('143252262','1231414','1','003','005',NULL,'1',10000,'1',100,1,'I',NULL,NULL,0,NULL),('ddd22','dfdfd','a','001','001',NULL,'s',10000,'s',100,1,'I',NULL,NULL,0,'/2019/09/04/51e16fb8-08b3-4633-aa34-da49634fcbd7_1.jpg'),('eeee','eeeeeee2222','e','001','001',NULL,'1',10000,'s',100,1,'I',NULL,NULL,0,NULL),('thread001','린카블레532 ROUGE 1','린카블레532 ROUGE 128 (가죽공예실)','001','002',NULL,'프랑스',33000,'린카블레',100,1,'I',NULL,NULL,0,NULL),('thread0011','린카블레532 ROUGE 2','린카블레532 ROUGE 128 (가죽공예실)','001','002',NULL,'프랑스',33000,'린카블레',100,1,'I',NULL,NULL,0,NULL),('thread002','린카블레532 PIVOINE 3','린카블레532 PIVOINE 125','001','002',NULL,'프랑스',33000,'린카블레',100,1,'I',NULL,NULL,0,NULL),('thread0021','린카블레532 PIVOINE 4','린카블레532 PIVOINE 125','001','002',NULL,'프랑스',33000,'린카블레',100,1,'I',NULL,NULL,0,NULL),('thread003','린카블레532 GAZON 5','린카블레532 GAZON 436','001','002',NULL,'프랑스',33000,'린카블레',100,1,'I',NULL,NULL,0,NULL),('thread0031','린카블레532 GAZON 6','린카블레532 GAZON 436','001','002',NULL,'프랑스',33000,'린카블레',100,1,'I',NULL,NULL,0,NULL),('thread004','린카블레532 JAUNE 7','린카블레532 JAUNE 508','001','002',NULL,'프랑스',33000,'린카블레',100,1,'I',NULL,NULL,0,NULL),('thread0041','린카블레532 JAUNE 8','린카블레532 JAUNE 508','001','002',NULL,'프랑스',33000,'린카블레',100,1,'I',NULL,NULL,0,NULL),('thread005','린카블레532 ORANGER9','린카블레532 ORANGER419','001','002',NULL,'프랑스',33000,'린카블레',100,1,'I',NULL,NULL,0,NULL),('thread0051','린카블레532 ORANGER10','린카블레532 ORANGER419','001','002',NULL,'프랑스',33000,'린카블레',100,1,'I',NULL,NULL,0,NULL),('thread006','린카블레532 ROY 11','린카블레532 ROY 665','001','002',NULL,'프랑스',33000,'린카블레',100,1,'I',NULL,NULL,0,NULL),('thread0061','린카블레532 ROY 12','린카블레532 ROY 665','001','002',NULL,'프랑스',33000,'린카블레',100,1,'I',NULL,NULL,0,NULL),('thread007','린카블레532 VERT13','린카블레532 VERT767','001','002',NULL,'프랑스',33000,'린카블레',100,1,'I',NULL,NULL,0,NULL),('thread0071','린카블레532 VERT14','린카블레532 VERT767','001','002',NULL,'프랑스',33000,'린카블레',100,1,'I',NULL,NULL,0,NULL),('thread1234','wwww','wwwww','001','001',NULL,'ww',33000,'ww',100,1,'I',NULL,NULL,0,NULL),('tool001','dddddd','dddddd','002','001',NULL,'d',10000,'d',100,1,'I',NULL,NULL,0,NULL);
+INSERT INTO `product` VALUES ('a2','2','','001','002',NULL,'s',10000,'s',100,1,'I',NULL,NULL,0,'/2019/09/05/c2d788af-d88e-4a7b-8e27-7db3bcf1f8eb_532 PIVOINE 125.jpg','2019-09-05 11:48:18','/2019/09/05/7deb5ee5-f582-4bc9-8322-068b5915ac8b_532 ROUGE 128.jpg'),('aaa1','1','','001','001',NULL,'s',10000,'s',100,1,'I',NULL,NULL,3,'/2019/09/05/c21ce215-dce6-4eea-a87e-ffd81af4106c_532 GAZON 436.jpg','2019-09-05 11:46:15','/2019/09/05/ce7cf6ad-b0eb-4540-b5e7-80db63761702_532 JAUNE 508.jpg'),('dd123','3','','002','001',NULL,'s',10000,'s',100,1,'I',NULL,NULL,0,'/2019/09/05/ddfef580-941d-4ca1-9162-9fa55238ef35_532 GAZON 436.jpg','2019-09-05 12:25:36','/2019/09/05/d4b7ee2e-f2e1-48ca-b9a7-c330499bca16_contentImg.png');
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -64,4 +66,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-09-04 17:17:46
+-- Dump completed on 2019-09-05 14:52:04
