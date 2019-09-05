@@ -74,7 +74,7 @@
 			      			<td class="info">
 					        	<div class="productImg div-center" >
 					        		<a href="<%=request.getContextPath()%>/product/display?product_code=${product.product_code}">
-					        			<img src="#">
+					        			<img src="<%=request.getContextPath() %>/resources/upload${product.file}">
 					        		</a>
 				        		</div>
 				        		<div class="productName div-center"  style="padding-top5px; margin-top: 15px; width: 260px; text-align: center;">
