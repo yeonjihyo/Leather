@@ -2,6 +2,8 @@ package kr.green.leather.service;
 
 import java.util.ArrayList;
 
+import javax.servlet.http.HttpServletRequest;
+
 import kr.green.leather.pagination.Criteria;
 import kr.green.leather.vo.ProductVO;
 
@@ -24,5 +26,9 @@ public interface ProductService {
 	int getTotalCount(Criteria cri, String product_state, String product_maincategory);
 
 	ProductVO increaseViews(ProductVO product);
+
+	void modifyProduct(ProductVO pVo);
+
+	boolean isWriter(String product_code, HttpServletRequest r);
 
 }

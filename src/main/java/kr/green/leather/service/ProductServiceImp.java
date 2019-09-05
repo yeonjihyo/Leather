@@ -2,11 +2,14 @@ package kr.green.leather.service;
 
 import java.util.ArrayList;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import kr.green.leather.dao.ProductDAO;
 import kr.green.leather.pagination.Criteria;
+import kr.green.leather.vo.MemberVO;
 import kr.green.leather.vo.ProductVO;
 
 @Service
@@ -71,6 +74,24 @@ public class ProductServiceImp implements ProductService{
 		product.setProduct_views(views+1);
 		productDao.updateProduct(product);
 		return product;
+	}
+
+	@Override
+	public void modifyProduct(ProductVO product) {
+		
+		
+		productDao.updateProduct(product);
+		
+	}
+
+	@Override
+	public boolean isWriter(String product_code, HttpServletRequest r) {
+		ProductVO product = productDao.selectProduct(product_code);
+		MemberVO user = (MemberVO)r.getSession().getAttribute("user");
+		if(product != null && product.getProduct_writer().equals(user.getMember_authority())) {
+			return true;
+		}
+		return false;
 	}
 
 }

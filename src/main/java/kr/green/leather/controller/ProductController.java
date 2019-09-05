@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.UUID;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -88,7 +89,7 @@ public class ProductController {
 				pVo.setContentsfile(contentsfile);
 			}
 			
-			
+			System.out.println(pVo);
 			productService.registerProduct(pVo);
 			 mv.setViewName("redirect:/product/list");
 		    return mv;
@@ -116,6 +117,31 @@ public class ProductController {
 		    mv.addObject("product",product);
 		    mv.addObject("cri",cri);
 		    return mv;
+		}
+		
+		//게시글 수정
+		@RequestMapping(value= "/product/modify",method=RequestMethod.GET)
+		public ModelAndView productModifyPost(ModelAndView mv,String product_code, Criteria cri,HttpServletRequest r){
+			boolean isWriter = productService.isWriter(product_code,r);
+			ProductVO product=null;
+			if(isWriter) {
+				product=productService.getProduct(product_code);
+				mv.setViewName("/product/modify");
+			}else {
+				mv.setViewName("redirect:/product/display");
+			}
+
+		    mv.addObject("product",product);
+		    mv.addObject("cri",cri);
+		    return mv;
+		}
+		@RequestMapping(value= "/product/modify",method=RequestMethod.POST)
+		public String productModifyPost(ProductVO pVo,HttpServletRequest r){
+			//System.out.println(bVo);
+			if(productService.isWriter(pVo.getProduct_code(),r)){
+				productService.modifyProduct(pVo);
+			}
+		    return "redirect:/product/display";
 		}
 		
 		

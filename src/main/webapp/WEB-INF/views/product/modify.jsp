@@ -109,12 +109,14 @@
 				<a href="<%=request.getContextPath()%>/product/list">
 					<button type="button" class="btn btn-navy">목록</button>
 				</a>
-				<button class="btn btn-navy">등록하기</button>
-				<a href="<%=request.getContextPath()%>/product/list">
+				<button class="btn btn-navy">수정하기</button>
+				<a href="<%=request.getContextPath()%>/product/display">
 					<button type="button" class="btn btn-navy">취소</button>
 				</a>
 			</div>
 		</div>
+		<input type="hidden" name="product_state" value="${product.product_state}">
+		<input type="hidden" name="product_views" value="${product.product_views}">
 	</form>
 </body>
 </html> 
