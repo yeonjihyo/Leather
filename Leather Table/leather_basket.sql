@@ -30,6 +30,7 @@ CREATE TABLE `basket` (
   `basket_member_id` varchar(16) DEFAULT NULL,
   `basket_deliverycost` varchar(10) DEFAULT NULL,
   `basket_total` int(11) DEFAULT NULL,
+  `cnt` int(11) NOT NULL DEFAULT '1',
   PRIMARY KEY (`basket_no`),
   KEY `basket_product_code_idx` (`basket_product_code`),
   KEY `basket_member_id_idx` (`basket_member_id`),
@@ -56,4 +57,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-09-05 17:17:08
+-- Dump completed on 2019-09-06 17:15:38

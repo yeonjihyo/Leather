@@ -34,6 +34,7 @@ CREATE TABLE `order` (
   `order_ismember` varchar(5) DEFAULT NULL,
   `order_deliverycost` varchar(10) DEFAULT NULL,
   `basket_total` int(11) NOT NULL,
+  `cnt` int(11) NOT NULL DEFAULT '1',
   PRIMARY KEY (`order_num`),
   KEY `order_member_id_idx` (`order_member_id`),
   KEY `order_product_code_idx` (`order_product_code`),
@@ -60,4 +61,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-09-05 17:17:08
+-- Dump completed on 2019-09-06 17:15:38
