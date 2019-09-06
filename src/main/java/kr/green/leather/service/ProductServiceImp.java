@@ -86,7 +86,7 @@ public class ProductServiceImp implements ProductService{
 
 	@Override
 	public boolean isWriter(String product_code, HttpServletRequest r) {
-		System.out.println(product_code);
+		//System.out.println(product_code);
 		ProductVO product = productDao.selectProduct(product_code);
 		MemberVO user = (MemberVO)r.getSession().getAttribute("user");
 		if(product != null && product.getProduct_writer().equals(user.getMember_id())) {

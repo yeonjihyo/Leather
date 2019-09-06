@@ -88,8 +88,6 @@ public class ProductController {
 				String contentsfile = UploadFileUtils.uploadFile(uploadPath, file3.getOriginalFilename(),file3.getBytes());
 				pVo.setContentsfile(contentsfile);
 			}
-			
-			System.out.println(pVo);
 			productService.registerProduct(pVo);
 			 mv.setViewName("redirect:/product/list");
 		    return mv;
@@ -132,14 +130,14 @@ public class ProductController {
 			}else {
 				mv.setViewName("redirect:/product/display");
 			}
-			System.out.println(product);
+			//System.out.println(product);
 		    mv.addObject("product",product);
 		    mv.addObject("cri",cri);
 		    return mv;
 		}
 		@RequestMapping(value= "/product/modify",method=RequestMethod.POST)
 		public String productModifyPost(ProductVO pVo,HttpServletRequest r){
-			//System.out.println(bVo);
+			//System.out.println(pVo);
 			if(productService.isWriter(pVo.getProduct_code(),r)){
 				productService.modifyProduct(pVo);
 			}
