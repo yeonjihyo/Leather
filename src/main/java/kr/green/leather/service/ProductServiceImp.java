@@ -80,6 +80,7 @@ public class ProductServiceImp implements ProductService{
 	public void modifyProduct(ProductVO product) {
 		
 		
+		
 		productDao.updateProduct(product);
 		
 	}

@@ -33,6 +33,7 @@
 		<div class="container-fluid">
 		<input type="hidden" name="product_maincategory" >
 		<input type="hidden" name="product_subcategory" >
+		<input type="hidden" min="1"  name="product_cnt">
 			<div class="form-group col-8 div-center">
 			  <label>작성자</label>
 			  <!-- 로그인인터셉터에 유저를 세션에 저장했기 때문에 다 가져다 쓸 수 있다   -->

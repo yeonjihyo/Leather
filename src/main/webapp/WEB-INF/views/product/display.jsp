@@ -73,7 +73,7 @@
 			 		<li>상품코드 : ${product.product_code}</li>
 			 		<li>제조사 : ${product.product_made}</li>
 			 		<li>원산지 : ${product.product_origin}</li>
-			 		<li>수량 :<input type="number" min="1" style="margin-left:20px; width: 100px;"></li>
+			 		<li>수량 :<input type="number" min="1" style="margin-left:20px; width: 100px;" name="product_cnt" value="${product.product_cnt}"></li>
 			 		<li>재고수량 : ${product.product_stock}</li>
 			 		<li>금액 : ${product.product_price}원</li>
 		 		</ul>

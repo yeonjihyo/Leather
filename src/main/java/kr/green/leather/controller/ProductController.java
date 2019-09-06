@@ -1,6 +1,7 @@
 package kr.green.leather.controller;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.UUID;
 
@@ -120,7 +121,7 @@ public class ProductController {
 		
 		//제품 수정
 		@RequestMapping(value= "/product/modify",method=RequestMethod.GET)
-		public ModelAndView productModifyPost(ModelAndView mv,String product_code, Criteria cri,HttpServletRequest r){
+		public ModelAndView productModifyGet(ModelAndView mv,String product_code, Criteria cri,HttpServletRequest r){
 			boolean isWriter = productService.isWriter(product_code,r);
 			System.out.println(isWriter);
 			ProductVO product=null;
@@ -128,7 +129,7 @@ public class ProductController {
 				product=productService.getProduct(product_code);
 				mv.setViewName("/product/modify");
 			}else {
-				mv.setViewName("redirect:/product/display");
+				mv.setViewName("/product/list");
 			}
 			//System.out.println(product);
 		    mv.addObject("product",product);
@@ -136,11 +137,19 @@ public class ProductController {
 		    return mv;
 		}
 		@RequestMapping(value= "/product/modify",method=RequestMethod.POST)
-		public String productModifyPost(ProductVO pVo,HttpServletRequest r){
-			//System.out.println(pVo);
-			if(productService.isWriter(pVo.getProduct_code(),r)){
-				productService.modifyProduct(pVo);
-			}
+		public String productModifyPost(ProductVO pVo,MultipartFile file2,MultipartFile file3) throws IOException, Exception{
+		System.out.println(pVo);
+		//대표이미지첨부파일
+		 if(file2.getOriginalFilename().length() !=0) { 
+			 String file =UploadFileUtils.uploadFile(uploadPath,file2.getOriginalFilename(),file2.getBytes()); pVo.setFile(file); 
+		 }
+		 //상품첨부파일
+		 if(file3.getOriginalFilename().length() !=0) { 
+			 String contentsfile = UploadFileUtils.uploadFile(uploadPath,file3.getOriginalFilename(),file3.getBytes()); pVo.setFile(contentsfile);
+		 }
+		 //수정된제품페이지
+		 productService.modifyProduct(pVo);
+		 
 		    return "redirect:/product/modify";
 		}
 		

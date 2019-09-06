@@ -96,46 +96,50 @@
 		  	product_code,
 		  	product_writer,
 		  	product_title,
-		  	product_contents,
 		  	product_maincategory,
 		  	product_subcategory,
 		  	product_origin,
-		  	product_price,
 		  	product_made,
+		  	product_price,
 		  	product_stock,
+		  	product_contents,
 		  	file,
-		  	contentsfile) 
+		  	contentsfile,
+		  	product_cnt) 
 	  	value(
 	  	#{product.product_code},
 	  	#{product.product_writer},
 	  	#{product.product_title},
-	  	#{product.product_contents},
 	  	#{product.product_maincategory},
 	  	#{product.product_subcategory},
 	  	#{product.product_origin},
-	  	#{product.product_price},
 	  	#{product.product_made},
+	  	#{product.product_price},
 	  	#{product.product_stock},
+	  	#{product.product_contents},
 	  	#{product.file},
-	  	#{product.contentsfile})
+	  	#{product.contentsfile},
+	  	#{product.product_cnt})
   	</insert>
 	
   <!-- 게시글 수정 -->
   <update id="updateProduct">
   	update product
   		set 
+  			
   			product_title =#{product.product_title},
-  			product_contents=#{product.product_contents},
   			product_maincategory=#{product.product_maincategory},
   			product_subcategory=#{product.product_subcategory},
   			product_origin=#{product.product_origin},
-  			product_price=#{product.product_price},
   			product_made=#{product.product_made},
+  			product_price=#{product.product_price},
   			product_stock=#{product.product_stock},
+  			product_contents=#{product.product_contents},
   			file=#{product.file},
   			contentsfile=#{product.contentsfile},
   			product_views=#{product.product_views},
   			product_state=#{product.product_state}
+  			
   		where
   			product_code=#{product.product_code}
   </update>
