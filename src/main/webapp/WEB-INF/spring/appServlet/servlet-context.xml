@@ -47,6 +47,9 @@
 	    </interceptor>
 	    <interceptor>
 	        <mapping path="/admin/**"/>
+	        <mapping path="/product/register"/>
+	        <mapping path="/product/modify"/>
+	        <mapping path="/product/delete"/>
 	        <beans:ref bean="adminInterceptor"/>
 	    </interceptor>
 	    

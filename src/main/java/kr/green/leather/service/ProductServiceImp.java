@@ -70,8 +70,8 @@ public class ProductServiceImp implements ProductService{
 
 	@Override
 	public ProductVO increaseViews(ProductVO product) {
-		int views = product.getProduct_views();
-		product.setProduct_views(views+1);
+		int product_views = product.getProduct_views();
+		product.setProduct_views(product_views+1);
 		productDao.updateProduct(product);
 		return product;
 	}
@@ -86,9 +86,10 @@ public class ProductServiceImp implements ProductService{
 
 	@Override
 	public boolean isWriter(String product_code, HttpServletRequest r) {
+		System.out.println(product_code);
 		ProductVO product = productDao.selectProduct(product_code);
 		MemberVO user = (MemberVO)r.getSession().getAttribute("user");
-		if(product != null && product.getProduct_writer().equals(user.getMember_authority())) {
+		if(product != null && product.getProduct_writer().equals(user.getMember_id())) {
 			return true;
 		}
 		return false;

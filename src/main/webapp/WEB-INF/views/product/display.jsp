@@ -45,6 +45,17 @@
 	
 </head>
 <body>
+	<!-- 수정버튼 -->
+	<div class="" style="width: 1080px; height:25px; padding-left: 20px; ">
+		<c:if test="${user.member_authority eq 'ADMIN'}">
+		    <a href="<%=request.getContextPath()%>/product/list">
+				<button type="button" class="btn btn-navy">목록</button>
+			</a>
+			<a href="<%=request.getContextPath()%>/product/modify?product_code=${product.product_code}">
+				<button type="button" class="btn btn-navy">수정</button>
+			</a>
+		</c:if>
+	</div>
 	<div class="detail clearfix border-bottom">
 		<!-- 제품이미지 -->
 		<div class="product-image float-left clearfix">

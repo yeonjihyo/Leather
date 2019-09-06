@@ -19,8 +19,8 @@ import kr.green.leather.pagination.Criteria;
 import kr.green.leather.pagination.PageMaker;
 import kr.green.leather.service.PageMakerService;
 import kr.green.leather.service.ProductService;
+import kr.green.leather.utils.UploadFileUtils;
 import kr.green.leather.vo.ProductVO;
-import utils.UploadFileUtils;
 
 
 @Controller
@@ -111,6 +111,7 @@ public class ProductController {
 		//제품 상세
 		@RequestMapping(value= "/product/display",method=RequestMethod.GET)
 		public ModelAndView productDisplayGet(ModelAndView mv,String product_code, Criteria cri){
+		
 			ProductVO product=productService.getProduct(product_code);
 			product =productService.increaseViews(product);
 		    mv.setViewName("/product/display");
@@ -119,10 +120,11 @@ public class ProductController {
 		    return mv;
 		}
 		
-		//게시글 수정
+		//제품 수정
 		@RequestMapping(value= "/product/modify",method=RequestMethod.GET)
 		public ModelAndView productModifyPost(ModelAndView mv,String product_code, Criteria cri,HttpServletRequest r){
 			boolean isWriter = productService.isWriter(product_code,r);
+			System.out.println(isWriter);
 			ProductVO product=null;
 			if(isWriter) {
 				product=productService.getProduct(product_code);
@@ -130,7 +132,7 @@ public class ProductController {
 			}else {
 				mv.setViewName("redirect:/product/display");
 			}
-
+			System.out.println(product);
 		    mv.addObject("product",product);
 		    mv.addObject("cri",cri);
 		    return mv;
@@ -141,7 +143,7 @@ public class ProductController {
 			if(productService.isWriter(pVo.getProduct_code(),r)){
 				productService.modifyProduct(pVo);
 			}
-		    return "redirect:/product/display";
+		    return "redirect:/product/modify";
 		}
 		
 		
