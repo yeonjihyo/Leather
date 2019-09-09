@@ -96,4 +96,10 @@ public class ProductServiceImp implements ProductService{
 		return false;
 	}
 
+	@Override
+	public void choiceProduct(ProductVO cPVo) {
+		// TODO Auto-generated method stub
+		productDao.basketInsert(cPVo);
+	}
+
 }

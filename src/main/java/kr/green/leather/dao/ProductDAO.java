@@ -30,6 +30,8 @@ public interface ProductDAO {
 
 	void updateProduct(@Param("product")ProductVO product);
 
+	void basketInsert(@Param("cPVo")ProductVO cPVo);
+
 
 
 }

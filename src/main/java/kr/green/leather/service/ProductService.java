@@ -31,4 +31,6 @@ public interface ProductService {
 
 	boolean isWriter(String product_code, HttpServletRequest r);
 
+	void choiceProduct(ProductVO cPVo);
+
 }

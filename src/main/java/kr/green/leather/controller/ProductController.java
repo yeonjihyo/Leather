@@ -118,12 +118,21 @@ public class ProductController {
 		    mv.addObject("cri",cri);
 		    return mv;
 		}
+		@RequestMapping(value="/product/display",method=RequestMethod.POST)
+		public String productDisplayPost(ProductVO abc){
+			//System.out.println(cPVo);
+			
+			System.out.println(abc);
+//			productService.choiceProduct(cPVo);
+//			System.out.println(cPVo);
+		    return "redirect:/";
+		}
 		
 		//제품 수정
 		@RequestMapping(value= "/product/modify",method=RequestMethod.GET)
 		public ModelAndView productModifyGet(ModelAndView mv,String product_code, Criteria cri,HttpServletRequest r){
 			boolean isWriter = productService.isWriter(product_code,r);
-			System.out.println(isWriter);
+			//System.out.println(isWriter);
 			ProductVO product=null;
 			if(isWriter) {
 				product=productService.getProduct(product_code);
@@ -155,5 +164,23 @@ public class ProductController {
 		    return "redirect:/product/modify";
 		}
 		
-		
+		//장바구니 
+		@RequestMapping(value= "/product/basket",method=RequestMethod.GET)
+		public ModelAndView productBasketGet(ModelAndView mv){
+			
+			
+			
+			mv.setViewName("/product/basket");
+		    
+		    return mv;
+		}
+		@RequestMapping(value= "/product/basket",method=RequestMethod.POST)
+		public ModelAndView productBasketPost(ModelAndView mv){
+			
+			
+			
+			mv.setViewName("redirect:/product/basket");
+		    
+		    return mv;
+		}
 }

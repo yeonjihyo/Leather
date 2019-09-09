@@ -82,31 +82,35 @@
 		<!-- 제품이미지 -->
 		<div class="product-image float-left clearfix">
 			<div class="img-box">
-				<img src="<%=request.getContextPath() %>/resources/upload${product.file}" alt="" style="width: 550px; height: 550px;">
+				<img src="<%=request.getContextPath()%>/resources/upload${product.file}" alt="" style="width: 550px; height: 550px;">
+				
 			</div>
 		</div>
 		<!-- 제품정보 -->
-		<form action="<%=request.getContextPath()%>">
+		<form action="<%=request.getContextPath()%>/product/display" method="post">
+			
 			<div class="product-info float-right clearfix">
 				<div class="product-name  div-center" style="margin-top: 20px; margin-left: 20px;">
 					<input type="text" name="product_title" value="${product.product_title}" style="font-size:30px; border:none;" readonly>
 				</div>
 			 	<div class="product-infimation">
 			 		<ul class="col-4">
-				 		<li>상품코드 : <input value="${product.product_code}" readonly></li>
-				 		<li>제조사 : <input value="${product.product_made}" readonly></li>
-				 		<li>원산지 : <input value="${product.product_origin}" readonly></li>
+				 		<li>상품코드 : <input name="product_code" value="${product.product_code}" readonly></li>
+				 		<li>제조사 : <input name="product_made" value="${product.product_made}" readonly></li>
+				 		<li>원산지 : <input name="product_origin" value="${product.product_origin}" readonly></li>
 				 		<li>수량 :<input class="border" type="number" min="1" style="margin-left:20px; width: 100px;" name="cnt" value="1"></li>
-				 		<li>재고수량 : <input value="${product.product_stock}" readonly></li>
-				 		<li>금액 : <input name="product_price" value="${product.product_price}원" readonly></li>
+				 		<li>재고수량 : <input type="number" name="product_stock"  value="${product.product_stock}" readonly></li>
+				 		<li>금액 : <input type="number" name="product_price" value="${product.product_price}" readonly></li>
+				 		<input type="number" value="${product.product_views}" name="product_views">
+				 		
 			 		</ul>
 			 	</div>
 			 	<div class="div-center" style="margin-top:10px; margin-bottom:20px; padding-right:20px; border-top:3px solid #dee2e6 !important; width: 500px; height: 50px;">
-			 		<span class="float-right" style="font-size:30px;">총금액 : <input class="border-none" name="product_total" value="${product.product_price}" style="padding-right:10px; width: 150px; text-align: right;" readonly>원</span> 
+			 		<span class="float-right" style="font-size:30px;">총금액 : <input class="border-none" type="number" name="product_total" value="${product.product_price}" style="padding-right:10px; width: 150px; text-align: right;" readonly>원</span> 
 			 	</div>
 			 	<div class="product-order float-left">
-					<a href="#" class="div-center"><button class="btn btn-navy2" style="width: 200px; height: 50px;">장바구니</button></a>
-					<a href="#" class="div-center"><button class="btn btn-navy2" style="width: 200px; height: 50px;">구매하기</button></a>
+					<button type="submit" class="btn btn-navy2" style="width: 200px; height: 50px;">장바구니</button>
+					<!-- <a href="#" class="div-center"><button class="btn btn-navy2" style="width: 200px; height: 50px;">구매하기</button></a> -->
 				</div>
 			</div>
 		</form>
@@ -133,7 +137,7 @@
 			<img class="div-center" src="<%=request.getContextPath() %>/resources/upload${product.contentsfile}" alt="" style="width: 1080px">
 		</div>
 		<!-- 리뷰 -->
-		<div class"review"></div>
+		<div class="review"></div>
 		<!-- Q&A -->
 		<div></div>
 		<!-- 반품/교환 -->
