@@ -9,15 +9,15 @@
 	<style>
 	.detail{
 	width:1080px;
-	height: 600px;
+	height: 650px;
 	margin: 130px 10px 50px 10px;
 	padding-top: 30px;
 	border-top : 3px solid #192d55 !important; 
 	}
 	.product-image{
 	/*border : 1px solid black;*/
-	width: 520px;
-	height: 520px;
+	width: 550px;
+	height: 550px;
 	/*padding: 20px;*/
 	}
 	.product-info{
@@ -32,7 +32,12 @@
 	padding:15px;
 	width: 500px;
 	color: black;
+	border: none;
 	}
+	.product-infimation li input{
+	border: none;
+	}
+	
 	.product-order{
 	width: 600px;
 	height: 100px;
@@ -42,6 +47,23 @@
 	margin-top: 20px;
 	}
 	</style>
+	
+	<script type="text/javascript">
+		$(document).ready(function(){
+			
+			$('input[name=cnt]').change(function(){
+				var cnt = parseInt($(this).val());
+				var price = parseInt($('input[name=product_price]').val());
+				var total = cnt*price;
+				
+				$('input[name=product_total]').val(total);
+				
+			});
+			
+		});
+		
+
+	</script>
 	
 </head>
 <body>
@@ -60,29 +82,34 @@
 		<!-- 제품이미지 -->
 		<div class="product-image float-left clearfix">
 			<div class="img-box">
-				<img src="<%=request.getContextPath() %>/resources/upload${product.file}" alt="" style="width: 520px; height: 520px;">
+				<img src="<%=request.getContextPath() %>/resources/upload${product.file}" alt="" style="width: 550px; height: 550px;">
 			</div>
 		</div>
 		<!-- 제품정보 -->
-		<div class="product-info float-right clearfix">
-			<div class="product-name  div-center" style="margin-top: 20px; margin-left: 20px;">
-				<input type="text" name="product_title" value="${product.product_title}" style="font-size:30px; border:none;" readonly>
+		<form action="<%=request.getContextPath()%>">
+			<div class="product-info float-right clearfix">
+				<div class="product-name  div-center" style="margin-top: 20px; margin-left: 20px;">
+					<input type="text" name="product_title" value="${product.product_title}" style="font-size:30px; border:none;" readonly>
+				</div>
+			 	<div class="product-infimation">
+			 		<ul class="col-4">
+				 		<li>상품코드 : <input value="${product.product_code}" readonly></li>
+				 		<li>제조사 : <input value="${product.product_made}" readonly></li>
+				 		<li>원산지 : <input value="${product.product_origin}" readonly></li>
+				 		<li>수량 :<input class="border" type="number" min="1" style="margin-left:20px; width: 100px;" name="cnt" value="1"></li>
+				 		<li>재고수량 : <input value="${product.product_stock}" readonly></li>
+				 		<li>금액 : <input name="product_price" value="${product.product_price}원" readonly></li>
+			 		</ul>
+			 	</div>
+			 	<div class="div-center" style="margin-top:10px; margin-bottom:20px; padding-right:20px; border-top:3px solid #dee2e6 !important; width: 500px; height: 50px;">
+			 		<span class="float-right" style="font-size:30px;">총금액 : <input class="border-none" name="product_total" value="${product.product_price}" style="padding-right:10px; width: 150px; text-align: right;" readonly>원</span> 
+			 	</div>
+			 	<div class="product-order float-left">
+					<a href="#" class="div-center"><button class="btn btn-navy2" style="width: 200px; height: 50px;">장바구니</button></a>
+					<a href="#" class="div-center"><button class="btn btn-navy2" style="width: 200px; height: 50px;">구매하기</button></a>
+				</div>
 			</div>
-		 	<div class="product-infimation">
-		 		<ul class="col-4">
-			 		<li>상품코드 : ${product.product_code}</li>
-			 		<li>제조사 : ${product.product_made}</li>
-			 		<li>원산지 : ${product.product_origin}</li>
-			 		<li>수량 :<input type="number" min="1" style="margin-left:20px; width: 100px;" name="" value="1"></li>
-			 		<li>재고수량 : ${product.product_stock}</li>
-			 		<li>금액 : ${product.product_price}원</li>
-		 		</ul>
-		 	</div>
-		 	<div class="product-order float-left">
-				<a href="#" class="div-center"><button class="btn btn-navy2" style="width: 200px; height: 50px;">장바구니</button></a>
-				<a href="#" class="div-center"><button class="btn btn-navy2" style="width: 200px; height: 50px;">구매하기</button></a>
-			</div>
-		</div>
+		</form>
 	</div>
 	<!-- 제품설명 -->
 	<div>

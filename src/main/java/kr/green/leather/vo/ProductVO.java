@@ -15,13 +15,13 @@ public class ProductVO {
 	private int product_price;
 	private String product_made;
 	private int product_stock;
-	
 	private String product_state;
 	private String product_writer;
 	private String file;
 	private int product_views;
 	private Date product_registered;
 	private String contentsfile;
+	private int product_total;
 	
 	public String getProduct_code() {
 		return product_code;
@@ -148,16 +148,24 @@ public class ProductVO {
 	public void setContentsfile(String contentsfile) {
 		this.contentsfile = contentsfile;
 	}
+	public int getProduct_total() {
+		return product_total;
+	}
+	public void setProduct_total(int product_total) {
+		this.product_total = product_total;
+	}
 	@Override
 	public String toString() {
 		return "ProductVO [product_code=" + product_code + ", product_title=" + product_title + ", product_contents="
 				+ product_contents + ", product_maincategory=" + product_maincategory + ", product_subcategory="
 				+ product_subcategory + ", product_subsubcategory=" + product_subsubcategory + ", product_origin="
 				+ product_origin + ", product_price=" + product_price + ", product_made=" + product_made
-				+ ", product_stock=" + product_stock + ", product_state="
-				+ product_state + ", product_writer=" + product_writer + ", file=" + file + ", product_views="
-				+ product_views + ", product_registered=" + product_registered + ", contentsfile=" + contentsfile + "]";
+				+ ", product_stock=" + product_stock + ", product_state=" + product_state + ", product_writer="
+				+ product_writer + ", file=" + file + ", product_views=" + product_views + ", product_registered="
+				+ product_registered + ", contentsfile=" + contentsfile + ", product_total=" + product_total + "]";
 	}
+	
+	
 	
 	
 	
