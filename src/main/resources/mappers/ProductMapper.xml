@@ -104,8 +104,7 @@
 		  	product_stock,
 		  	product_contents,
 		  	file,
-		  	contentsfile,
-		  	product_cnt) 
+		  	contentsfile) 
 	  	value(
 	  	#{product.product_code},
 	  	#{product.product_writer},
@@ -118,8 +117,7 @@
 	  	#{product.product_stock},
 	  	#{product.product_contents},
 	  	#{product.file},
-	  	#{product.contentsfile},
-	  	#{product.product_cnt})
+	  	#{product.contentsfile})
   	</insert>
 	
   <!-- 게시글 수정 -->

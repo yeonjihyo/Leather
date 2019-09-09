@@ -129,7 +129,7 @@ public class ProductController {
 				product=productService.getProduct(product_code);
 				mv.setViewName("/product/modify");
 			}else {
-				mv.setViewName("/product/list");
+				mv.setViewName("redirect:/product/list");
 			}
 			//System.out.println(product);
 		    mv.addObject("product",product);

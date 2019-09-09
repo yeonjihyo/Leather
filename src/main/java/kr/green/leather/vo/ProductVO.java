@@ -15,7 +15,7 @@ public class ProductVO {
 	private int product_price;
 	private String product_made;
 	private int product_stock;
-	private int product_cnt;
+	
 	private String product_state;
 	private String product_writer;
 	private String file;
@@ -83,12 +83,7 @@ public class ProductVO {
 	public void setProduct_stock(int product_stock) {
 		this.product_stock = product_stock;
 	}
-	public int getProduct_cnt() {
-		return product_cnt;
-	}
-	public void setProduct_cnt(int product_cnt) {
-		this.product_cnt = product_cnt;
-	}
+	
 	public String getProduct_state() {
 		return product_state;
 	}
@@ -159,7 +154,7 @@ public class ProductVO {
 				+ product_contents + ", product_maincategory=" + product_maincategory + ", product_subcategory="
 				+ product_subcategory + ", product_subsubcategory=" + product_subsubcategory + ", product_origin="
 				+ product_origin + ", product_price=" + product_price + ", product_made=" + product_made
-				+ ", product_stock=" + product_stock + ", product_cnt=" + product_cnt + ", product_state="
+				+ ", product_stock=" + product_stock + ", product_state="
 				+ product_state + ", product_writer=" + product_writer + ", file=" + file + ", product_views="
 				+ product_views + ", product_registered=" + product_registered + ", contentsfile=" + contentsfile + "]";
 	}
