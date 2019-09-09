@@ -33,6 +33,10 @@
 			$(this).siblings('a').html('');
 			$(this).siblings('input[name=file]').val('');
 		});
+		$('.close2').click(function(){
+			$(this).siblings('a #fileLink2').html('');
+			$(this).siblings('input[name=contentsfile]').val('');
+		});
 	});
 </script>
 </head>
@@ -127,9 +131,9 @@
 			<div class="form-group col-8 div-center">
 			  <label>상품첨부파일</label>
 			  <c:if test="${product.contentsfile ne '' }">
-			  	<a id="fileLink">${product.contentsfile}</a>
+			  	<a id="fileLink2">${product.contentsfile}</a>
 			  	<input type="hidden" class="col-8" name="contentsfile" value="${product.contentsfile}"> 
-			  	<i class="fas fa-times close"></i>
+			  	<i class="fas fa-times close2"></i>
 			  </c:if>
 			  <c:if test="${product.contentsfile eq '' }">
 		  		없음

@@ -141,11 +141,13 @@ public class ProductController {
 		System.out.println(pVo);
 		//대표이미지첨부파일
 		 if(file2.getOriginalFilename().length() !=0) { 
-			 String file =UploadFileUtils.uploadFile(uploadPath,file2.getOriginalFilename(),file2.getBytes()); pVo.setFile(file); 
+			 String file =UploadFileUtils.uploadFile(uploadPath,file2.getOriginalFilename(),file2.getBytes()); 
+			 pVo.setFile(file); 
 		 }
 		 //상품첨부파일
 		 if(file3.getOriginalFilename().length() !=0) { 
-			 String contentsfile = UploadFileUtils.uploadFile(uploadPath,file3.getOriginalFilename(),file3.getBytes()); pVo.setFile(contentsfile);
+			 String contentsfile = UploadFileUtils.uploadFile(uploadPath,file3.getOriginalFilename(),file3.getBytes()); 
+			 pVo.setContentsfile(contentsfile);
 		 }
 		 //수정된제품페이지
 		 productService.modifyProduct(pVo);
