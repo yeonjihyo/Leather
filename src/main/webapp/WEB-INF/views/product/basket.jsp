@@ -13,7 +13,7 @@
 	<table class="table table-hover">
 	  <thead>
 	    <tr>
-	      <th></th>
+	      <th>선택</th>
 	      <th>상품코드</th>
 	      <th>상품명</th>
 	      <th>금액</th>
@@ -24,15 +24,25 @@
 	    </tr>
 	  </thead>
 	  <tbody>
-	    <tr>
-	      <td><input type="checkbox"></td>
-	      <td></td>
-	      <td></td>
-	      <td></td>
-	      <td></td>
-	      <td></td>
-	      <td></td>
-	    </tr>
+	  	<c:if test="${list.size() ne 0}">
+    		<!--items: 컨트롤러에서 가져올애, var : 여기서사용할끄집어낼이름  --> 
+    		<c:forEach items="${list}" var="basket"> 
+			    <tr>
+			      <td><input type="checkbox"></td>
+			      <td><input type="" value="">${basket.basket_product_code}</td>
+			      <td>${basket.basket_product_title}</td>
+			      <td>${basket.product_price}</td>
+			      <td>${basket.cnt}</td>
+			      <td>${basket.deliverycost}</td>
+			      <td>${basket.product_total}</td>
+			    </tr>
+	   		</c:forEach>
+     	 </c:if>
+     	 <c:if test="${list.size() eq 0}">
+      		<tr>
+		        <td colspan="5" class="">장바구니가 존재하지 않습니다.</td>
+	      	</tr>
+    	 </c:if>
 	  </tbody>
     </table>
 </body>

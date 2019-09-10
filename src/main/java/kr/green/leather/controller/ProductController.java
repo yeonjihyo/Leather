@@ -21,6 +21,8 @@ import kr.green.leather.pagination.PageMaker;
 import kr.green.leather.service.PageMakerService;
 import kr.green.leather.service.ProductService;
 import kr.green.leather.utils.UploadFileUtils;
+import kr.green.leather.vo.BasketVO;
+import kr.green.leather.vo.MemberVO;
 import kr.green.leather.vo.ProductVO;
 
 
@@ -118,15 +120,18 @@ public class ProductController {
 		    mv.addObject("cri",cri);
 		    return mv;
 		}
-		@RequestMapping(value="/product/display",method=RequestMethod.POST)
-		public String productDisplayPost(ProductVO abc){
-			//System.out.println(cPVo);
-			
-			System.out.println(abc);
-//			productService.choiceProduct(cPVo);
+//		@RequestMapping(value="/product/display",method=RequestMethod.POST)
+//		public String productDisplayPost(ProductVO cPVo,Integer cnt, String member_id){
+//			
+//			
+//			
 //			System.out.println(cPVo);
-		    return "redirect:/";
-		}
+//			System.out.println(cnt);
+//			System.out.println(member_id);
+//			productService.choiceProduct(cPVo,cnt,member_id);
+//			//System.out.println(cPVo);
+//		    return "redirect:/product/display";
+//		}
 		
 		//제품 수정
 		@RequestMapping(value= "/product/modify",method=RequestMethod.GET)
@@ -166,18 +171,27 @@ public class ProductController {
 		
 		//장바구니 
 		@RequestMapping(value= "/product/basket",method=RequestMethod.GET)
-		public ModelAndView productBasketGet(ModelAndView mv){
-			
-			
-			
+		public ModelAndView productBasketGet(ModelAndView mv, HttpServletRequest r){
+//			MemberVO user = (MemberVO) r.getSession().getAttribute("user");
+//			ArrayList<BasketVO> list = null;
+//			if(user != null) {
+//				list = productService.getBasketList(user.getMember_id());
+//			}
+//		    mv.addObject("list",list);
 			mv.setViewName("/product/basket");
 		    
 		    return mv;
 		}
 		@RequestMapping(value= "/product/basket",method=RequestMethod.POST)
-		public ModelAndView productBasketPost(ModelAndView mv){
+		public ModelAndView productBasketPost(ModelAndView mv,ProductVO cPVo,Integer cnt, String member_id, BasketVO bVo,Integer product_total){
+			System.out.println(bVo);
 			
-			
+			productService.choiceProduct(cPVo,cnt,member_id,bVo,product_total);
+			System.out.println(cPVo);
+			System.out.println(cnt);
+			System.out.println(member_id);
+			System.out.println(bVo);
+			System.out.println(product_total);
 			
 			mv.setViewName("redirect:/product/basket");
 		    

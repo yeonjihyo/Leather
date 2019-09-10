@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import org.apache.ibatis.annotations.Param;
 
 import kr.green.leather.pagination.Criteria;
+import kr.green.leather.vo.BasketVO;
 import kr.green.leather.vo.ProductVO;
 
 public interface ProductDAO {
@@ -30,7 +31,9 @@ public interface ProductDAO {
 
 	void updateProduct(@Param("product")ProductVO product);
 
-	void basketInsert(@Param("cPVo")ProductVO cPVo);
+	void basketInsert(@Param("cPVo")ProductVO cPVo,@Param("cnt")Integer cnt,@Param("member_id")String member_id,@Param("bVo")BasketVO bVo,@Param("product_total")Integer product_total);
+
+	ArrayList<BasketVO> selectBasketList();
 
 
 

@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import javax.servlet.http.HttpServletRequest;
 
 import kr.green.leather.pagination.Criteria;
+import kr.green.leather.vo.BasketVO;
 import kr.green.leather.vo.ProductVO;
 
 public interface ProductService {
@@ -31,6 +32,8 @@ public interface ProductService {
 
 	boolean isWriter(String product_code, HttpServletRequest r);
 
-	void choiceProduct(ProductVO cPVo);
+	void choiceProduct(ProductVO cPVo,Integer cnt,String member_id,BasketVO bVo,Integer product_total);
+
+	ArrayList<BasketVO> getBasketList();
 
 }

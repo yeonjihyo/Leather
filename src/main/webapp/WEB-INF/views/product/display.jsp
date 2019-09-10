@@ -87,8 +87,8 @@
 			</div>
 		</div>
 		<!-- 제품정보 -->
-		<form action="<%=request.getContextPath()%>/product/display" method="post">
-			
+		<form action="<%=request.getContextPath()%>/product/basket" method="post">
+			<input type="hidden" name="member_id" value="${user.member_id}">
 			<div class="product-info float-right clearfix">
 				<div class="product-name  div-center" style="margin-top: 20px; margin-left: 20px;">
 					<input type="text" name="product_title" value="${product.product_title}" style="font-size:30px; border:none;" readonly>
@@ -101,7 +101,6 @@
 				 		<li>수량 :<input class="border" type="number" min="1" style="margin-left:20px; width: 100px;" name="cnt" value="1"></li>
 				 		<li>재고수량 : <input type="number" name="product_stock"  value="${product.product_stock}" readonly></li>
 				 		<li>금액 : <input type="number" name="product_price" value="${product.product_price}" readonly></li>
-				 		<input type="number" value="${product.product_views}" name="product_views">
 				 		
 			 		</ul>
 			 	</div>
@@ -110,7 +109,7 @@
 			 	</div>
 			 	<div class="product-order float-left">
 					<button type="submit" class="btn btn-navy2" style="width: 200px; height: 50px;">장바구니</button>
-					<!-- <a href="#" class="div-center"><button class="btn btn-navy2" style="width: 200px; height: 50px;">구매하기</button></a> -->
+					<a href="<%=request.getContextPath()%>/" class="div-center"><button type="button" class="btn btn-navy2" style="width: 200px; height: 50px;">구매하기</button></a>
 				</div>
 			</div>
 		</form>

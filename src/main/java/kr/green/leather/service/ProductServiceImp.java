@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import kr.green.leather.dao.ProductDAO;
 import kr.green.leather.pagination.Criteria;
+import kr.green.leather.vo.BasketVO;
 import kr.green.leather.vo.MemberVO;
 import kr.green.leather.vo.ProductVO;
 
@@ -97,9 +98,14 @@ public class ProductServiceImp implements ProductService{
 	}
 
 	@Override
-	public void choiceProduct(ProductVO cPVo) {
+	public void choiceProduct(ProductVO cPVo,Integer cnt,String member_id,BasketVO bVo,Integer product_total) {
+		productDao.basketInsert(cPVo,cnt,member_id,bVo,product_total);
+	}
+
+	@Override
+	public ArrayList<BasketVO> getBasketList() {
 		// TODO Auto-generated method stub
-		productDao.basketInsert(cPVo);
+		return productDao.selectBasketList();
 	}
 
 }

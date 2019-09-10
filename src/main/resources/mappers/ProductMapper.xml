@@ -105,7 +105,7 @@
 		  	product_contents,
 		  	file,
 		  	contentsfile) 
-	  	value(
+	  	values (
 	  	#{product.product_code},
 	  	#{product.product_writer},
 	  	#{product.product_title},
@@ -144,16 +144,27 @@
   
   <!-- 장바구니에추가  -->
   <insert id="basketInsert">
-  	insert into product(
-		  	product_code,
-		  	product_title,
-		  	product_price
+  	insert into basket(
+  			basket_no,
+		  	basket_product_code,
+		  	basket_member_id,
+		  	cnt,
+		  	basket_deliverycost,
+		  	basket_total,
+		  	basket_state
 		  	)
-	  	value(
-	  	#{product.product_code},
-	  	#{product.product_title},
-	  	#{product.product_price}
+	  	values(
+	  		#{bVo.basket_no},
+		  	#{cPVo.product_code},
+		  	#{member_id},
+		  	#{cnt},
+		  	#{bVo.basket_deliverycost},
+		  	#{product_total},
+		  	#{bVo.basket_state}
 	  	)
   </insert>
-  
+ <!-- 장바구니 리스트 -->
+  <select id="selectBasketList" resultType="kr.green.leather.vo.BasketVO">
+   SELECT * FROM basket where valid = 'I';
+  </select>
 </mapper> 

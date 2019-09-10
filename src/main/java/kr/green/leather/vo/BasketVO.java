@@ -2,11 +2,12 @@ package kr.green.leather.vo;
 
 public class BasketVO {
 	private int basket_no;
-	private int basket_product_code;
-	private int basket_member_id;
+	private String basket_product_code;
+	private String basket_member_id;
 	private int basket_deliverycost;
 	private int basket_total;
 	private int cnt;
+	private String basket_state;
 	
 	
 	public int getBasket_no() {
@@ -15,16 +16,16 @@ public class BasketVO {
 	public void setBasket_no(int basket_no) {
 		this.basket_no = basket_no;
 	}
-	public int getBasket_product_code() {
+	public String getBasket_product_code() {
 		return basket_product_code;
 	}
-	public void setBasket_product_code(int basket_product_code) {
+	public void setBasket_product_code(String basket_product_code) {
 		this.basket_product_code = basket_product_code;
 	}
-	public int getBasket_member_id() {
+	public String getBasket_member_id() {
 		return basket_member_id;
 	}
-	public void setBasket_member_id(int basket_member_id) {
+	public void setBasket_member_id(String basket_member_id) {
 		this.basket_member_id = basket_member_id;
 	}
 	public int getBasket_deliverycost() {
@@ -45,12 +46,20 @@ public class BasketVO {
 	public void setCnt(int cnt) {
 		this.cnt = cnt;
 	}
+	public String getBasket_state() {
+		return basket_state;
+	}
+	public void setBasket_state(String basket_state) {
+		this.basket_state = basket_state;
+	}
 	@Override
 	public String toString() {
 		return "BasketVO [basket_no=" + basket_no + ", basket_product_code=" + basket_product_code
 				+ ", basket_member_id=" + basket_member_id + ", basket_deliverycost=" + basket_deliverycost
-				+ ", basket_total=" + basket_total + ", cnt=" + cnt + "]";
+				+ ", basket_total=" + basket_total + ", cnt=" + cnt + ", basket_state=" + basket_state + "]";
 	}
+	
+	
 	
 	
 	
