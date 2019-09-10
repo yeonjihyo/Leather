@@ -29,12 +29,12 @@
     		<c:forEach items="${list}" var="basket"> 
 			    <tr>
 			      <td><input type="checkbox"></td>
-			      <td><input type="" value="">${basket.basket_product_code}</td>
-			      <td>${basket.basket_product_title}</td>
-			      <td>${basket.product_price}</td>
-			      <td>${basket.cnt}</td>
-			      <td>${basket.deliverycost}</td>
-			      <td>${basket.product_total}</td>
+			      <td><input  value="${basket.basket_product_code}"></td>
+			      <td><input  value="${basket.basket_product_title}"></td>
+			      <td><input  value="${basket.product_price}"></td>
+			      <td><input  value="${basket.cnt}"></td>
+			      <td><input  value="${basket.deliverycost}"></td>
+			      <td><input  value="${basket.product_total}"></td>
 			    </tr>
 	   		</c:forEach>
      	 </c:if>
