@@ -37,7 +37,7 @@ CREATE TABLE `basket` (
   KEY `basket_member_id_idx` (`basket_member_id`),
   CONSTRAINT `basket_member_id` FOREIGN KEY (`basket_member_id`) REFERENCES `member` (`member_id`),
   CONSTRAINT `basket_product_code` FOREIGN KEY (`basket_product_code`) REFERENCES `product` (`product_code`)
-) ENGINE=InnoDB AUTO_INCREMENT=65 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=66 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -46,7 +46,7 @@ CREATE TABLE `basket` (
 
 LOCK TABLES `basket` WRITE;
 /*!40000 ALTER TABLE `basket` DISABLE KEYS */;
-INSERT INTO `basket` VALUES (3,'a123','bbb123123',NULL,NULL,1,'I'),(4,'a123','bbb123123',NULL,NULL,1,'I'),(32,'thread001','aaa123123',3000,NULL,1,'I'),(33,'thread001','aaa123123',3000,NULL,1,'I'),(34,'thread001','aaa123123',3000,NULL,1,'I'),(35,'thread001','bbb123123',3000,NULL,2,'I'),(36,'thread001','bbb123123',3000,NULL,1,'I'),(37,'thread001','bbb123123',3000,NULL,1,'I'),(38,'thread001','bbb123123',3000,NULL,1,'I'),(39,'thread001','bbb123123',3000,NULL,1,'I'),(40,'thread001','bbb123123',3000,NULL,2,'I'),(41,'thread001','bbb123123',3000,NULL,1,'I'),(42,'thread001','bbb123123',3000,NULL,1,'I'),(45,'thread001','bbb123123',3000,NULL,1,'I'),(46,'thread001','bbb123123',3000,NULL,1,'I'),(47,'thread001','aaa123123',3000,NULL,2,'I'),(48,'thread001','aaa123123',3000,NULL,1,'I'),(49,'thread001','bbb123123',3000,NULL,1,'I'),(50,'thread001','aaa123123',3000,NULL,5,'I'),(51,'dw111','aaa123123',3000,NULL,3,'I'),(52,'a123','aaa123123',3000,NULL,2,'I'),(53,'dw111','aaa123123',3000,NULL,1,'I'),(54,'thread001','aaa123123',3000,NULL,10,'I'),(55,'thread001','ccc123123',3000,NULL,3,'I'),(56,'thread001','ccc123123',3000,NULL,5,'I'),(57,'ddd2211','aaa123123',3000,NULL,5,'I'),(58,'a123','ccc123123',3000,NULL,5,'I'),(59,'ddd2211','ccc123123',3000,NULL,3,'I'),(60,'thread001','ccc123123',3000,NULL,2,'I'),(61,'thread001','ccc123123',3000,NULL,3,'I'),(62,'dw111','ccc123123',3000,NULL,1,'I'),(63,'ddd2211','ccc123123',3000,NULL,10,'I'),(64,'thread001','ccc123123',3000,NULL,5,'I');
+INSERT INTO `basket` VALUES (3,'a123','bbb123123',NULL,NULL,1,'I'),(4,'a123','bbb123123',NULL,NULL,1,'I'),(32,'thread001','aaa123123',3000,NULL,1,'I'),(33,'thread001','aaa123123',3000,NULL,1,'I'),(34,'thread001','aaa123123',3000,NULL,1,'I'),(35,'thread001','bbb123123',3000,NULL,2,'I'),(36,'thread001','bbb123123',3000,NULL,1,'I'),(37,'thread001','bbb123123',3000,NULL,1,'I'),(38,'thread001','bbb123123',3000,NULL,1,'I'),(39,'thread001','bbb123123',3000,NULL,1,'I'),(40,'thread001','bbb123123',3000,NULL,2,'I'),(41,'thread001','bbb123123',3000,NULL,1,'I'),(42,'thread001','bbb123123',3000,NULL,1,'I'),(45,'thread001','bbb123123',3000,NULL,1,'I'),(46,'thread001','bbb123123',3000,NULL,1,'I'),(47,'thread001','aaa123123',3000,NULL,2,'I'),(48,'thread001','aaa123123',3000,NULL,1,'I'),(49,'thread001','bbb123123',3000,NULL,1,'I'),(50,'thread001','aaa123123',3000,NULL,5,'I'),(51,'dw111','aaa123123',3000,NULL,3,'I'),(52,'a123','aaa123123',3000,NULL,2,'I'),(53,'dw111','aaa123123',3000,NULL,1,'I'),(54,'thread001','aaa123123',3000,NULL,10,'I'),(55,'thread001','ccc123123',3000,NULL,3,'I'),(56,'thread001','ccc123123',3000,NULL,5,'I'),(57,'ddd2211','aaa123123',3000,NULL,5,'I'),(58,'a123','ccc123123',3000,NULL,5,'I'),(59,'ddd2211','ccc123123',3000,NULL,3,'I'),(60,'thread001','ccc123123',3000,NULL,2,'I'),(61,'thread001','ccc123123',3000,NULL,3,'I'),(62,'dw111','ccc123123',3000,NULL,1,'I'),(63,'ddd2211','ccc123123',3000,NULL,10,'I'),(64,'thread001','ccc123123',3000,NULL,5,'I'),(65,'ddd2211','ccc123123',3000,NULL,12,'I');
 /*!40000 ALTER TABLE `basket` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -59,4 +59,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-09-11 17:09:30
+-- Dump completed on 2019-09-11 17:20:05
