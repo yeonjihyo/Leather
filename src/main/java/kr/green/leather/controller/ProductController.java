@@ -183,15 +183,14 @@ public class ProductController {
 		    return mv;
 		}
 		@RequestMapping(value= "/product/basket",method=RequestMethod.POST)
-		public ModelAndView productBasketPost(ModelAndView mv,ProductVO cPVo,Integer cnt, String member_id, BasketVO bVo,Integer product_total){
-			System.out.println(bVo);
-			
-			productService.choiceProduct(cPVo,cnt,member_id,bVo,product_total);
+		public ModelAndView productBasketPost(ModelAndView mv,ProductVO cPVo,Integer cnt, String member_id, Integer product_total){
 			System.out.println(cPVo);
 			System.out.println(cnt);
 			System.out.println(member_id);
-			System.out.println(bVo);
 			System.out.println(product_total);
+			
+			productService.choiceProduct(cPVo.,cnt,member_id,product_total);
+			
 			
 			mv.setViewName("redirect:/product/basket");
 		    

@@ -10,6 +10,7 @@
 </head>
 <body>
 	<h3 class=" div-center border-bottom" style="margin-top: 50px; margin-bottom:50px; padding-bottom: 10px;">|장바구니</h3>
+	<form action="<%=request.getContextPath()%>/product/basket" method="post">
 	<table class="table table-hover">
 	  <thead>
 	    <tr>
@@ -29,12 +30,13 @@
     		<c:forEach items="${list}" var="basket"> 
 			    <tr>
 			      <td><input type="checkbox"></td>
-			      <td><input  value="${basket.basket_product_code}"></td>
-			      <td><input  value="${basket.basket_product_title}"></td>
-			      <td><input  value="${basket.product_price}"></td>
-			      <td><input  value="${basket.cnt}"></td>
-			      <td><input  value="${basket.deliverycost}"></td>
-			      <td><input  value="${basket.product_total}"></td>
+			      <td><input name="basket_product_code"  value="${basket.basket_product_code}"></td>
+			      <td><input name="product_title" value="${basket.product_title}"></td>
+			      <td><input name="product_price"  value="${basket.product_price}"></td>
+			      <td><input name="cnt"  value="${basket.cnt}"></td>
+			      <td><input name="basket_deliverycost"  value="${basket.basket_deliverycost}"></td>
+			      <td><input name="product_total"  value="${basket.product_total}"></td>
+			      <input type="hidden" name="basket_state">
 			    </tr>
 	   		</c:forEach>
      	 </c:if>
@@ -45,5 +47,6 @@
     	 </c:if>
 	  </tbody>
     </table>
+    </form>
 </body>
 </html>
