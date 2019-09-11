@@ -103,9 +103,9 @@ public class ProductServiceImp implements ProductService{
 	}
 
 	@Override
-	public ArrayList<BasketVO> getBasketList() {
+	public ArrayList<BasketVO> getBasketList(String member_id) {
 		// TODO Auto-generated method stub
-		return productDao.selectBasketList();
+		return productDao.selectBasketList(member_id);
 	}
 
 }

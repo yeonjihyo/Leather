@@ -1,6 +1,6 @@
 package kr.green.leather.vo;
 
-public class BasketVO {
+public class BasketVO extends ProductVO {
 	private int basket_no;
 	private String basket_product_code;
 	private String basket_member_id;

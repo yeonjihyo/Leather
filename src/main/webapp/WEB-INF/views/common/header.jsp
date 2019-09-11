@@ -17,7 +17,7 @@
 				<div class="header-top">
 					<div class= "header-menu float-right">
 						<a href="<%=request.getContextPath()%>/" >Home</a> | 
-						<a href="#">장바구니</a> |
+						<a href="<%=request.getContextPath()%>/product/basket">장바구니</a> |
 						<c:if test="${user eq null}">
 							<a href="<%=request.getContextPath()%>/signin">로그인</a> |
 							<a href="<%=request.getContextPath()%>/signup">회원가입</a>

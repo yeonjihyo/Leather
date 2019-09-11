@@ -123,13 +123,13 @@ public class ProductController {
 		@RequestMapping(value= "/product/display",method=RequestMethod.POST)
 		public ModelAndView productBasketPost(ModelAndView mv,ProductVO cPVo,Integer cnt, String member_id, Integer product_total){
 			
-			
-			productService.choiceProduct(cPVo,cnt,member_id,product_total);
-			
 			System.out.println(cPVo);
 			System.out.println(cnt);
 			System.out.println(member_id);
 			System.out.println(product_total);
+			productService.choiceProduct(cPVo,cnt,member_id,product_total);
+			
+			
 			
 			
 			mv.setViewName("redirect:/product/basket");
@@ -150,7 +150,7 @@ public class ProductController {
 			}else {
 				mv.setViewName("redirect:/product/list");
 			}
-			//System.out.println(product);
+			
 		    mv.addObject("product",product);
 		    mv.addObject("cri",cri);
 		    return mv;
@@ -174,15 +174,17 @@ public class ProductController {
 		    return "redirect:/product/modify";
 		}
 		
-		//장바구니 
+		//장바구니
 		@RequestMapping(value= "/product/basket",method=RequestMethod.GET)
 		public ModelAndView productBasketGet(ModelAndView mv, HttpServletRequest r){
 			
 			MemberVO user = (MemberVO) r.getSession().getAttribute("user");
 			ArrayList<BasketVO> list = null;
 			if(user != null) {
-				list = productService.getBasketList(user.getMember_id());
+				String member_id=user.getMember_id();
+				list = productService.getBasketList(member_id);
 			}
+			
 		    mv.addObject("list",list);
 			mv.setViewName("/product/basket");
 		    

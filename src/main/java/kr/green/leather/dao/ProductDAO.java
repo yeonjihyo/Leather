@@ -33,7 +33,7 @@ public interface ProductDAO {
 
 	void basketInsert(@Param("cPVo")ProductVO cPVo,@Param("cnt")Integer cnt,@Param("member_id")String member_id,@Param("product_total")Integer product_total);
 
-	ArrayList<BasketVO> selectBasketList();
+	ArrayList<BasketVO> selectBasketList(@Param("member_id")String member_id);
 
 
 

@@ -34,6 +34,6 @@ public interface ProductService {
 
 	void choiceProduct(ProductVO cPVo,Integer cnt,String member_id,Integer product_total);
 
-	ArrayList<BasketVO> getBasketList();
+	ArrayList<BasketVO> getBasketList(String member_id);
 
 }
