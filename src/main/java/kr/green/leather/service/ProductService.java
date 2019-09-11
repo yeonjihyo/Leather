@@ -32,7 +32,7 @@ public interface ProductService {
 
 	boolean isWriter(String product_code, HttpServletRequest r);
 
-	void choiceProduct(ProductVO cPVo,Integer cnt,String member_id,BasketVO bVo,Integer product_total);
+	void choiceProduct(ProductVO cPVo,Integer cnt,String member_id,Integer product_total);
 
 	ArrayList<BasketVO> getBasketList();
 

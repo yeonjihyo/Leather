@@ -98,8 +98,8 @@ public class ProductServiceImp implements ProductService{
 	}
 
 	@Override
-	public void choiceProduct(ProductVO cPVo,Integer cnt,String member_id,BasketVO bVo,Integer product_total) {
-		productDao.basketInsert(cPVo,cnt,member_id,bVo,product_total);
+	public void choiceProduct(ProductVO cPVo,Integer cnt,String member_id,Integer product_total) {
+		productDao.basketInsert(cPVo,cnt,member_id,product_total);
 	}
 
 	@Override

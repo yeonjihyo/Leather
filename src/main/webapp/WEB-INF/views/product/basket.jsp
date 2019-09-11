@@ -10,7 +10,7 @@
 </head>
 <body>
 	<h3 class=" div-center border-bottom" style="margin-top: 50px; margin-bottom:50px; padding-bottom: 10px;">|장바구니</h3>
-	<form action="<%=request.getContextPath()%>/product/basket" method="post">
+	<form action="<%=request.getContextPath()%>/product/basket">
 	<table class="table table-hover">
 	  <thead>
 	    <tr>
@@ -36,7 +36,7 @@
 			      <td><input name="cnt"  value="${basket.cnt}"></td>
 			      <td><input name="basket_deliverycost"  value="${basket.basket_deliverycost}"></td>
 			      <td><input name="product_total"  value="${basket.product_total}"></td>
-			      <input type="hidden" name="basket_state">
+			      <input type="hidden" name="basket_state" value="${basket.basket_state}">
 			    </tr>
 	   		</c:forEach>
      	 </c:if>
@@ -47,6 +47,6 @@
     	 </c:if>
 	  </tbody>
     </table>
-    </form>
+    </f orm>
 </body>
 </html>

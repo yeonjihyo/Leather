@@ -145,22 +145,14 @@
   <!-- 장바구니에추가  -->
   <insert id="basketInsert">
   	insert into basket(
-  			basket_no,
 		  	basket_product_code,
 		  	basket_member_id,
-		  	cnt,
-		  	basket_deliverycost,
-		  	basket_total,
-		  	basket_state
+		  	cnt
 		  	)
 	  	values(
-	  		#{bVo.basket_no},
 		  	#{cPVo.product_code},
 		  	#{member_id},
-		  	#{cnt},
-		  	#{bVo.basket_deliverycost},
-		  	#{product_total},
-		  	#{bVo.basket_state}
+		  	#{cnt}
 	  	)
   </insert>
  <!-- 장바구니 리스트 -->

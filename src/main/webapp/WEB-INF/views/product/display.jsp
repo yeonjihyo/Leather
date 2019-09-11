@@ -87,7 +87,7 @@
 			</div>
 		</div>
 		<!-- 제품정보 -->
-		<form action="<%=request.getContextPath()%>/product/basket" method="post">
+		<form action="<%=request.getContextPath()%>/product/display" method="post">
 			<input type="hidden" name="member_id" value="${user.member_id}">
 			<div class="product-info float-right clearfix">
 				<div class="product-name  div-center" style="margin-top: 20px; margin-left: 20px;">
