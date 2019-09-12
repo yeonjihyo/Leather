@@ -184,7 +184,7 @@ public class ProductController {
 				//System.out.println("productBasketGet member_id : " + member_id);
 				list = productService.getBasketList(member_id);
 			}
-			//System.out.println("productBasketGet list : " + list);
+			System.out.println("productBasketGet list : " + list);
 		    mv.addObject("list",list);
 			mv.setViewName("/product/basket");
 		    

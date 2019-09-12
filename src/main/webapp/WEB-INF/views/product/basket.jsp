@@ -16,11 +16,11 @@
 <body>
 	<h3 class=" div-center border-bottom" style="margin-top: 50px; margin-bottom:50px; padding-bottom: 10px;">|장바구니</h3>
 	<form action="<%=request.getContextPath()%>/product/basket" method="get">
-	<input type="hidden" name="basket_state" value="${basket.basket_state}">
-	<input type="hidden" name="basket_no" value="${basket.basket_no}">
+	
+	
 	아이디<input  name="basket_member_id" value="${user.member_id}">
 	<div>
-	<table class="table table-hover">
+	<table class="table table-hover" style="min-width: 1080px;">
 	    <tr>
 	      <th>선택</th>
 	      <th>상품코드</th>
@@ -36,9 +36,9 @@
 			      <td><input type="checkbox"></td>
 			      <td><input name="basket_product_code"  value="${basket.basket_product_code}"></td>
 			      <td><input name="product_title" value="${basket.product_title}"></td>
-			      <td><input name="product_price"  value="${basket.basket_total}"></td>
+			      <td><input name="product_price"  value="${basket.product_price}"></td>
 			      <td><input name="cnt"  value="${basket.cnt}"></td>
-			      <td><input name="product_total"  value="${basket.basket_total}"></td> 
+			      <td><input name="product_total"  value="${basket.basket_total}"></td>
 			    </tr>
 	   		</c:forEach>
      	 </c:if>
@@ -48,11 +48,20 @@
 	      	</tr>
     	 </c:if>
     </table>
-    </form>
     <div style="width: 1080px; height: 100px; border:1px solid black; ">
-    <span class="float-right" style="font-size:30px; padding: 20px;">합계 :<input class="border-none" type="number" name="basket_total" value="${basket.basket_total}"  style="padding-right:10px; width: 150px; text-align: right;" readonly> 원</span>
+	    <span class="float-right" style="font-size:15px; padding: 20px;" style="padding-right:10px; width: 150px; text-align: right;" readonly>
+	    	제품구매금액 <input type="number" name="basket_total" value="${basket_total}">
+	    	+
+	    	배송비<input type="number" name="basket_deliverycost" value="${basket_deliverycost}" style="padding-right:10px; width: 150px; text-align: right;" readonly>
+	    	=
+	    	합계 :
+	    	<input class="border-none" type="number" name="basket_total" value="${basket.basket_total}"  style="padding-right:10px; width: 150px; text-align: right;" readonly> 
+	    	원
+	   	</span>
     </div>
-    <div class="div-center" style="width: 1080px; margin: 50px 0; ">
+    </form>
+    
+    <div class="div-center" style="min-width: 1080px; margin: 50px 0; padding-left: 330px; ">
     	<button type="button" class="btn btn-navy2 div-center" style="width: 200px; height: 50px;">전체상품구매</button>
     	<button type="button" class="btn btn-navy2 div-center" style="width: 200px; height: 50px;">선택상품구매</button>
     </div>
