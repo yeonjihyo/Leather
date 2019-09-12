@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 	<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/common.css">
-	<title>장바구니</title>
+	<title>주문</title>
 	<style type="text/css">
 	tr td{
 	border: none;
@@ -14,7 +14,7 @@
 	</style>
 </head>
 <body>
-	<h3 class=" div-center border-bottom" style="margin-top: 50px; margin-bottom:50px; padding-bottom: 10px;">|장바구니</h3>
+	<h3 class=" div-center border-bottom" style="margin-top: 50px; margin-bottom:50px; padding-bottom: 10px;">|주문</h3>
 	<form action="<%=request.getContextPath()%>/product/basket" method="get">
 	
 	
@@ -61,9 +61,8 @@
     </div>
     </form>
     
-    <div class="div-center" style="min-width: 1080px; margin: 50px 0; padding-left: 330px; ">
-    	<button type="button" class="btn btn-navy2 div-center" style="width: 200px; height: 50px;">전체상품구매</button>
-    	<button type="button" class="btn btn-navy2 div-center" style="width: 200px; height: 50px;">선택상품구매</button>
+    <div class="div-center" style="min-width: 1080px; margin: 50px 0; padding-left: 450px; ">
+    	<button type="button" class="btn btn-navy2 div-center" style="width: 200px; height: 50px;">결제하기</button>
     </div>
 </body>
 </html>
