@@ -126,11 +126,11 @@ public class ProductController {
 			
 			productService.choiceProduct(cPVo,cnt,member_id,product_total);
 			
-			System.out.println(cPVo);
-			System.out.println(cnt);
-			System.out.println(member_id);
-			System.out.println(product_total);
-			
+//			System.out.println(cPVo);
+//			System.out.println(cnt);
+//			System.out.println(member_id);
+//			System.out.println(product_total);
+//			
 			
 			mv.setViewName("redirect:/product/basket");
 		    
@@ -157,7 +157,7 @@ public class ProductController {
 		}
 		@RequestMapping(value= "/product/modify",method=RequestMethod.POST)
 		public String productModifyPost(ProductVO pVo,MultipartFile file2,MultipartFile file3) throws IOException, Exception{
-		System.out.println(pVo);
+		//System.out.println(pVo);
 		//대표이미지첨부파일
 		 if(file2.getOriginalFilename().length() !=0) { 
 			 String file =UploadFileUtils.uploadFile(uploadPath,file2.getOriginalFilename(),file2.getBytes()); 
@@ -177,14 +177,14 @@ public class ProductController {
 		//장바구니
 		@RequestMapping(value= "/product/basket",method=RequestMethod.GET)
 		public ModelAndView productBasketGet(ModelAndView mv, HttpServletRequest r){
-			
 			MemberVO user = (MemberVO) r.getSession().getAttribute("user");
 			ArrayList<BasketVO> list = null;
 			if(user != null) {
 				String member_id=user.getMember_id();
+				//System.out.println("productBasketGet member_id : " + member_id);
 				list = productService.getBasketList(member_id);
 			}
-			
+			//System.out.println("productBasketGet list : " + list);
 		    mv.addObject("list",list);
 			mv.setViewName("/product/basket");
 		    

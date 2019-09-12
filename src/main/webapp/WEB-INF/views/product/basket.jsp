@@ -27,7 +27,6 @@
 	      <th>상품명</th>
 	      <th>금액</th>
 	      <th>수량</th>
-	      <th>배송비</th>
 	      <th>합계</th>
 	    </tr>
 	  	<c:if test="${list.size() ne 0}">
@@ -35,12 +34,11 @@
     		<c:forEach items="${list}" var="basket"> 
 			    <tr>
 			      <td><input type="checkbox"></td>
-			      <td><input name="basket_product_code"  value="${basket.product_code}"></td>
+			      <td><input name="basket_product_code"  value="${basket.basket_product_code}"></td>
 			      <td><input name="product_title" value="${basket.product_title}"></td>
-			      <td><input name="product_price"  value="${basket.product_price}"></td>
+			      <td><input name="product_price"  value="${basket.basket_total}"></td>
 			      <td><input name="cnt"  value="${basket.cnt}"></td>
-			      <td><input name="basket_deliverycost"  value="${basket.basket_deliverycost}"></td>
-			      <td><input name="product_total"  value="${basket.product_price}"></td> 
+			      <td><input name="product_total"  value="${basket.basket_total}"></td> 
 			    </tr>
 	   		</c:forEach>
      	 </c:if>

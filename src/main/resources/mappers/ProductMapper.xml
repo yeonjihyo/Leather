@@ -147,24 +147,28 @@
   	insert into basket(
 		  	basket_product_code,
 		  	basket_member_id,
-		  	cnt
+		  	cnt,
+		  	basket_total
 		  	)
 	  	values(
 		  	#{cPVo.product_code},
 		  	#{member_id},
-		  	#{cnt}
+		  	#{cnt},
+		  	#{product_total}
 	  	)
   </insert>
  <!-- 장바구니 리스트 -->
   <select id="selectBasketList" resultType="kr.green.leather.vo.BasketVO">
    SELECT 
-	   product.product_code,
+   	   basket_no,
+	   basket.basket_product_code,
 	   product.product_title, 
 	   product.product_price, 
 	   basket.cnt,
 	   basket.basket_deliverycost, 
 	   basket.basket_total ,
-	   member.member_id
+	   basket_member_id,
+	   basket.basket_state
 	FROM basket
 	join product
 	on
