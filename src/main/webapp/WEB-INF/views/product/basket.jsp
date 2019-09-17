@@ -14,11 +14,16 @@
 	</style>
 	<script type="text/javascript">
 		$(document).ready(function(){
-			//전체선택시 금액계산
-			$('#checkall').change(function() {
-				getTotal();
+			//전체선택/해제
+			$('#checkall').click(function(){
+				if($(this).prop("checked")){
+					$('.basket_check ').prop("checked",true);
+				}else{
+					$('.basket_check ').prop("checked",false);
+				}
 			});
-			$('.basket_check').change(function(){
+			
+			$('input[type=checkbox]').change(function(){
 				getTotal();
 			})
 			getTotal();
@@ -29,8 +34,7 @@
 			$('.basket_check').each(function(){
 				
 				if($(this).prop('checked')){
-					total += parseInt($(this).parents('tr').find('input[name=product_total]').val());
-					
+					total += parseInt($(this).parents('tr').find('input[name=product_total]').val());	
 				}
 			})
 			$('input[name=total').val(total);
