@@ -235,7 +235,7 @@
 				</div>
 				<div class="row">
 					<label class="col-4" >주소</label>
-					<input type="text"class="form-control postNum col-4" placeholder="우편번호"><a href="#"><button type="submit" class="btn btn-navy">우편번호</button></a>
+					<input type="text"class="form-control postNum col-4" name="member_post" placeholder="우편번호"><a href="#"><button type="button" class="btn btn-navy">우편번호</button></a>
 					<input type="text"class="form-control col-8 address" name="member_address1" placeholder="기본주소">
 					<input type="text"class="form-control col-8 " name="member_address2" placeholder="상세주소">
 				</div>
