@@ -22,7 +22,6 @@
 	
 	<table class="table table-hover" style="min-width: 1080px;">
 	    <tr>
-	      <th>선택</th>
 	      <th>상품코드</th>
 	      <th>상품명</th>
 	      <th>금액</th>
@@ -33,7 +32,6 @@
     		<!--items: 컨트롤러에서 가져올애, var : 여기서사용할끄집어낼이름  --> 
     		<c:forEach items="${list}" var="basket"> 
 			    <tr>
-			      <td><input type="checkbox"></td>
 			      <td><input name="basket_product_code"  value="${basket.basket_product_code}"></td>
 			      <td><input name="product_title" value="${basket.product_title}"></td>
 			      <td><input name="product_price"  value="${basket.product_price}"></td>
@@ -58,6 +56,29 @@
 	    	<input class="border-none" type="number" name="basket_total" value="${basket.basket_total}"  style="padding-right:10px; width: 150px; text-align: right;" readonly> 
 	    	원
 	   	</span>
+    </div>
+    <!-- 주문자 정보 -->
+    <div class="orderInfo" style="border: 1px solid red;">
+    	<h5 style="div-center margin-top: 50px solid green;">주문자 정보</h5>
+    	<table class="table table-hover" style="min-width: 1080px;">
+    	<tr>
+		<th>성함</th>
+		<td><input name="member_id" value="${user.member_id }"></td>
+		</tr>
+    	<th>주소</th>
+		<td><input name="member_id" value="${user.member_address }"></td>
+		</tr>
+		<th>전화번호</th>
+		<td><input name="member_id" value="${user.member_phone }"></td>
+		</tr>
+		<th>이메일</th>
+		<td><input name="member_id" value="${user.member_email }"></td>
+		</tr>
+    	</table>
+    </div>
+     <!-- 배송지 정보 -->
+    <div class="deliveryInfo">
+    
     </div>
     </form>
     
