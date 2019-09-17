@@ -165,7 +165,7 @@
 	   product.product_title, 
 	   product.product_price, 
 	   basket.cnt,
-	   basket.basket_deliverycost, 
+	   basket.deliverycost, 
 	   basket.basket_total ,
 	   basket_member_id,
 	   basket.basket_state
