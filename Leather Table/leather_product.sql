@@ -1,6 +1,6 @@
 CREATE DATABASE  IF NOT EXISTS `leather` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `leather`;
--- MySQL dump 10.13  Distrib 8.0.15, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.17, for Win64 (x86_64)
 --
 -- Host: localhost    Database: leather
 -- ------------------------------------------------------
@@ -9,7 +9,7 @@ USE `leather`;
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
- SET NAMES utf8 ;
+/*!50503 SET NAMES utf8 */;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
@@ -23,7 +23,7 @@ USE `leather`;
 
 DROP TABLE IF EXISTS `product`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `product` (
   `product_code` varchar(45) NOT NULL,
   `product_title` varchar(255) NOT NULL,
@@ -53,7 +53,7 @@ CREATE TABLE `product` (
 
 LOCK TABLES `product` WRITE;
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
-INSERT INTO `product` VALUES ('a123','희엽이','','001','001',NULL,'s',10000,'s',100,'I','aaa123123',NULL,91,'/2019/09/06/aff6929d-0b19-4a17-b2a8-3eaf6cabaeff_532 ORANGER419.jpg','2019-09-06 13:56:48','/2019/09/06/ad108877-e59c-426a-b6cb-d7b74acf07fa_contentImg.png',NULL),('ddd2211','123456','','002','001',NULL,'s',10000,'s',100,'I','aaa123123',NULL,138,'/2019/09/06/39f0886b-1e75-4c04-8d66-b5630cad777f_532 ROUGE 128.jpg','2019-09-06 16:58:14','/2019/09/06/39eda5c6-2fb7-4a77-a944-6512c9d24f4d_contentImg.png',NULL),('dw111','992ss','','001','001',NULL,'s',10000,'s',100,'I','aaa123123',NULL,206,'/2019/09/09/69e64426-a5ed-48bd-bcf3-6c9344327589_532 GAZON 436.jpg','2019-09-09 10:09:23','/2019/09/09/fcca7ed7-b330-484a-bd4f-b79ff4fb4ee0_contentImg.png',NULL),('thread001','제품1','','001','001',NULL,'프랑스',10000,'프랑스',100,'I','aaa123123',NULL,39,'/2019/09/10/d80d019a-62b4-4f89-a6a1-b6fc9dde1eda_532 ROY 665.jpg','2019-09-10 16:38:44','/2019/09/10/b8086fbf-9fbf-442d-92e2-2c18534a4484_contentImg.png',NULL);
+INSERT INTO `product` VALUES ('a123','희엽이','','001','001',NULL,'s',10000,'s',100,'I','aaa123123',NULL,97,'/2019/09/06/aff6929d-0b19-4a17-b2a8-3eaf6cabaeff_532 ORANGER419.jpg','2019-09-06 13:56:48','/2019/09/06/ad108877-e59c-426a-b6cb-d7b74acf07fa_contentImg.png',NULL),('ddd2211','123456','','002','001',NULL,'s',10000,'s',100,'I','aaa123123',NULL,139,'/2019/09/06/39f0886b-1e75-4c04-8d66-b5630cad777f_532 ROUGE 128.jpg','2019-09-06 16:58:14','/2019/09/06/39eda5c6-2fb7-4a77-a944-6512c9d24f4d_contentImg.png',NULL),('dw111','992ss','','001','001',NULL,'s',10000,'s',100,'I','aaa123123',NULL,211,'/2019/09/09/69e64426-a5ed-48bd-bcf3-6c9344327589_532 GAZON 436.jpg','2019-09-09 10:09:23','/2019/09/09/fcca7ed7-b330-484a-bd4f-b79ff4fb4ee0_contentImg.png',NULL),('thread001','제품1','','001','001',NULL,'프랑스',10000,'프랑스',100,'I','aaa123123',NULL,44,'/2019/09/10/d80d019a-62b4-4f89-a6a1-b6fc9dde1eda_532 ROY 665.jpg','2019-09-10 16:38:44','/2019/09/10/b8086fbf-9fbf-442d-92e2-2c18534a4484_contentImg.png',NULL);
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -66,4 +66,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-09-11 17:20:04
+-- Dump completed on 2019-09-17  9:07:20
