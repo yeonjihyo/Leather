@@ -1,6 +1,6 @@
 CREATE DATABASE  IF NOT EXISTS `leather` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `leather`;
--- MySQL dump 10.13  Distrib 8.0.17, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.15, for Win64 (x86_64)
 --
 -- Host: localhost    Database: leather
 -- ------------------------------------------------------
@@ -9,7 +9,7 @@ USE `leather`;
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!50503 SET NAMES utf8 */;
+ SET NAMES utf8 ;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
@@ -23,14 +23,15 @@ USE `leather`;
 
 DROP TABLE IF EXISTS `deliver`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `deliver` (
   `deliver_no` int(11) NOT NULL AUTO_INCREMENT,
   `deliver_order_num` varchar(45) NOT NULL,
-  `deliver_address` varchar(45) NOT NULL,
   `deliver_recipient` varchar(45) NOT NULL,
+  `deliver_address1` varchar(45) NOT NULL,
+  `deliver_address2` varchar(45) DEFAULT NULL,
+  `deliver_post` int(11) DEFAULT NULL,
   `deliver_phone` varchar(20) NOT NULL,
-  `deliver_waybillnum` varchar(45) NOT NULL,
   PRIMARY KEY (`deliver_no`),
   KEY `deliver_order_num_idx` (`deliver_order_num`),
   CONSTRAINT `deliver_order_num` FOREIGN KEY (`deliver_order_num`) REFERENCES `order` (`order_num`)
@@ -55,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-09-17  9:07:19
+-- Dump completed on 2019-09-17 17:13:52
