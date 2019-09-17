@@ -58,12 +58,12 @@
 	   	</span>
     </div>
     <!-- 주문자 정보 -->
-    <div class="orderInfo" style="border: 1px solid red;">
-    	<h5 style="div-center margin-top: 50px solid green;">주문자 정보</h5>
+    <div class="orderInfo" style="border: 1px solid red; margin-top: 100px; min-width: 1080px;">
+    	<h5 style="padding-left: 420px; height: 40px; line-height: 35px; ">주문자 정보</h5>
     	<table class="table table-hover" style="min-width: 1080px;">
     	<tr>
-		<th>성함</th>
-		<td><input name="member_id" value="${user.member_id }"></td>
+		<th>성명</th>
+		<td><input name="member_id" value="${user.member_name }"></td>
 		</tr>
     	<th>주소</th>
 		<td><input name="member_id" value="${user.member_address }"></td>
@@ -77,8 +77,23 @@
     	</table>
     </div>
      <!-- 배송지 정보 -->
-    <div class="deliveryInfo">
-    
+    <div class="deliveryInfo"style="border: 1px solid red; margin-top: 50px;">
+    	<h5 style="div-center margin-top: 50px solid green;">배송지 정보</h5>
+    	<table class="table table-hover" style="min-width: 1080px;">
+    	<tr>
+		<th>수령인</th>
+		<td><input name="member_id" value="${user.member_name }"></td>
+		</tr>
+    	<th>수령지</th>
+		<td><input name="member_id" value="${user.member_address }"></td>
+		</tr>
+		<th>수령인 전화번호</th>
+		<td><input name="member_id" value="${user.member_phone }"></td>
+		</tr>
+		<th>배송메세지</th>
+		<td><input name="member_id" value="${user.member_email }"></td>
+		</tr>
+    	</table>
     </div>
     </form>
     
