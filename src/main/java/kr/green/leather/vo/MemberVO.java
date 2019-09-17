@@ -5,7 +5,9 @@ public class MemberVO {
 	private String member_pw;
 	private String member_name;
 	private String member_phone;
-	private String member_address;
+	private Integer member_post;
+	private String member_address1;
+	private String member_address2;
 	private String member_email;
 	private String member_grade;
 	private String member_authority;
@@ -34,11 +36,23 @@ public class MemberVO {
 	public void setMember_phone(String member_phone) {
 		this.member_phone = member_phone;
 	}
-	public String getMember_address() {
-		return member_address;
+	public Integer getMember_post() {
+		return member_post;
 	}
-	public void setMember_address(String member_address) {
-		this.member_address = member_address;
+	public void setMember_post(Integer member_post) {
+		this.member_post = member_post;
+	}
+	public String getMember_address1() {
+		return member_address1;
+	}
+	public void setMember_address1(String member_address1) {
+		this.member_address1 = member_address1;
+	}
+	public String getMember_address2() {
+		return member_address2;
+	}
+	public void setMember_address2(String member_address2) {
+		this.member_address2 = member_address2;
 	}
 	public String getMember_email() {
 		return member_email;
@@ -58,12 +72,17 @@ public class MemberVO {
 	public void setMember_authority(String member_authority) {
 		this.member_authority = member_authority;
 	}
+	
 	@Override
 	public String toString() {
 		return "MemberVO [member_id=" + member_id + ", member_pw=" + member_pw + ", member_name=" + member_name
-				+ ", member_phone=" + member_phone + ", member_address=" + member_address + ", member_email="
-				+ member_email + ", member_grade=" + member_grade + ", member_authority=" + member_authority + "]";
+				+ ", member_phone=" + member_phone + ", member_post=" + member_post + ", member_address1="
+				+ member_address1 + ", member_address2=" + member_address2 + ", member_email=" + member_email
+				+ ", member_grade=" + member_grade + ", member_authority=" + member_authority + "]";
 	}
+	
+	
+	
 	
 	
 	
