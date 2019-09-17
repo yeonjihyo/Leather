@@ -125,11 +125,6 @@ public class ProductController {
 			
 			
 			productService.choiceProduct(cPVo,cnt,member_id,product_total);
-			
-//			System.out.println(cPVo);
-//			System.out.println(cnt);
-//			System.out.println(member_id);
-//			System.out.println(product_total);
 //			
 			
 			mv.setViewName("redirect:/product/basket");
@@ -184,17 +179,25 @@ public class ProductController {
 				//System.out.println("productBasketGet member_id : " + member_id);
 				list = productService.getBasketList(member_id);
 			}
-			System.out.println("productBasketGet list : " + list);
+			//System.out.println("productBasketGet list : " + list);
 		    mv.addObject("list",list);
 			mv.setViewName("/product/basket");
 		    
 		    return mv;
 		}
-//		@RequestMapping(value= "/product/basket",method=RequestMethod.POST)
-//		public ModelAndView productBasketPost(ModelAndView mv){
-//			
-//			
-//			
-//		    return mv;
-//		}
+		@RequestMapping(value= "/product/basket",method=RequestMethod.POST)
+		public ModelAndView productBasketPost(ModelAndView mv){
+			
+			
+			
+		    return mv;
+		}
+		
+		//주문
+		@RequestMapping(value= "/product/order",method=RequestMethod.GET)
+		public ModelAndView productOrderGet(ModelAndView mv){
+			
+			mv.setViewName("/product/order");
+			return mv;
+		}
 }
