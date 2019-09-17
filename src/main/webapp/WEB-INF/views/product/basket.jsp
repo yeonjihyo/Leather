@@ -87,13 +87,13 @@
     	 </c:if>
     </table>
     <div style="min-width: 1080px; height: 100px; border:1px solid black; ">
-	    <span class="float-right" style="font-size:15px; padding: 20px;" style="padding-right:10px; width: 150px; text-align: right;" readonly>
-	    	제품구매금액 <input type="number" name="total" value="" readonly>
+	    <span class="float-right" style="font-size:15px; padding: 20px;" readonly>
+	    	제품구매금액 <input  class="border-none" type="number" name="total" value=""  style="padding-right:10px; width: 150px; text-align: right; font-size: 20px;" readonly>
 	    	+
-	    	배송비<input type="number" name="deliverycost" value="" style="padding-right:10px; width: 150px; text-align: right;" readonly>
+	    	배송비<input  class="border-none" type="number" name="deliverycost" value="" style="padding-right:10px; width: 150px; text-align: right;font-size: 20px;" readonly>
 	    	=
 	    	합계 :
-	    	<input class="border-none" type="number" name="order_total" value=""  style="padding-right:10px; width: 150px; text-align: right;" readonly> 
+	    	<input class="border-none" type="number" name="order_total" value=""  style="padding-right:10px; width: 150px; text-align: right; font-size: 20px;" readonly> 
 	    	원
 	   	</span>
     </div>
