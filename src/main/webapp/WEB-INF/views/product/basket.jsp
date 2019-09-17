@@ -100,8 +100,7 @@
     </form>
     
     <div class="div-center" style="min-width: 1080px; margin: 50px 0; padding-left: 330px; ">
-    	<button type="button" class="btn btn-navy2 div-center" style="width: 200px; height: 50px;">전체상품구매</button>
-    	<button type="button" class="btn btn-navy2 div-center" style="width: 200px; height: 50px;">선택상품구매</button>
+    	<button type="button" class="btn btn-navy2 div-center" style="width: 200px; height: 50px;">구매하기</button>
     </div>
 </body>
 </html>
