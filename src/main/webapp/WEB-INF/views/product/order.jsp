@@ -50,7 +50,7 @@
 	    <span class="float-right" style="font-size:15px; padding: 20px;" style="padding-right:10px; width: 150px; text-align: right;" readonly>
 	    	제품구매금액 <input type="number" name="basket_total" value="${basket_total}" readonly>
 	    	+
-	    	배송비<input type="number" name="basket_deliverycost" value="${basket_deliverycost}" style="padding-right:10px; width: 150px; text-align: right;" readonly>
+	    	배송비<input type="number" name="basket_deliverycost" value="${deliverycost}" style="padding-right:10px; width: 150px; text-align: right;" readonly>
 	    	=
 	    	합계 :
 	    	<input class="border-none" type="number" name="basket_total" value="${basket.basket_total}"  style="padding-right:10px; width: 150px; text-align: right;" readonly> 
@@ -58,8 +58,8 @@
 	   	</span>
     </div>
     <!-- 주문자 정보 -->
-    <div class="orderInfo" style="border: 1px solid #dee2e6; margin-top: 100px; min-width: 1080px;">
-    	<h5 style="height: 40px; line-height: 35px; ">주문자 정보</h5>
+    <div class="orderInfo" style=" margin-top: 100px; min-width: 1080px;">
+    	<h5 style="height: 40px; line-height: 35px; background: #f7f7f7; text-align: center;">주문자 정보</h5>
     	<table class="table table-hover" style="min-width: 1080px;">
     	<tr>
 		<th>성명</th>
@@ -86,18 +86,18 @@
     	</table>
     </div>
      <!-- 배송지 정보 -->
-    <div class="deliveryInfo"style="border: 1px solid #dee2e6; margin-top: 50px;">
+    <div class="deliveryInfo"style="margin-top: 50px;">
     	
-    	<h5 style="div-center margin-top: 50px solid green;">배송지 정보</h5>
+    	<h5 style="height: 40px; margin-top: 50px; background: #f7f7f7; text-align: center;">배송지 정보</h5>
     	<div class="float-right div-center" style="min-width: 1080px;">
-	    	<div class="form-check-inline float-left">
+	    	<div class="form-check-inline float-right">
 		      <label class="form-check-label" for="radio2">
-		        <input type="radio" class="form-check-input" id="" name="" value="" checked="checked">주문자 정보와 동일
+		        <input type="radio" class="form-check-input" id="sameInfo" name="delivery" value="" checked="checked">주문자 정보와 동일
 		      </label>
 		    </div>
-		    <div class="form-check-inline float-left">
+		    <div class="form-check-inline float-right">
 		      <label class="form-check-label" for="radio2">
-		        <input type="radio" class="form-check-input" id="" name="" value="">새로운 배송지
+		        <input type="radio" class="form-check-input" id="newInfo" name="delivery" value="">새로운 배송지
 		      </label>
 		    </div>
 	    </div>
