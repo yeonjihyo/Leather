@@ -118,7 +118,7 @@ public class ProductServiceImp implements ProductService{
 	public void checkBasket(Integer tmp) {
 		// TODO Auto-generated method stub
 		System.out.println(tmp);
-		BasketVO bVo = productDao.selectBasketList(tmp);
+		BasketVO bVo = productDao.getBasket(tmp);
 		if(bVo != null) {
 			productDao.orderInsert(bVo);
 			

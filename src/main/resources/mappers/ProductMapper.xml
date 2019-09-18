@@ -185,6 +185,10 @@
   		where
   			basket_no=#{basket_no}
   </update>
+  <!--  -->
+  <select id="getBasket" resultType="kr.green.leather.vo.BasketVO">
+  	select * from basket where basket_no=#{tmp};
+  </select>
   <!-- 주문리스트 추가  -->
   <insert id="orderInsert">
   	insert into order(
