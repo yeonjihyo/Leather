@@ -38,4 +38,8 @@ public interface ProductService {
 
 	void deleteBasket(String basket_no);
 
+	void checkBasket(Integer tmp);
+
+	
+
 }
