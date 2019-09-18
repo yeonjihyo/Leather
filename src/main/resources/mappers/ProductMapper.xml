@@ -178,4 +178,11 @@
 		basket.basket_member_id=member.member_id
    	where basket_state = 'I' and member_id=#{member_id};
   </select>
+  <!-- 장바구니 삭제  -->
+  <update id="deleteBasket">
+  	update basket
+  		set basket_state='D'	
+  		where
+  			basket_no=#{basket_no}
+  </update>
 </mapper> 

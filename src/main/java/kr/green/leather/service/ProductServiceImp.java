@@ -108,4 +108,10 @@ public class ProductServiceImp implements ProductService{
 		return productDao.selectBasketList(member_id);
 	}
 
+	@Override
+	public void deleteBasket(String basket_no) {
+		productDao.deleteBasket(basket_no);
+		
+	}
+
 }

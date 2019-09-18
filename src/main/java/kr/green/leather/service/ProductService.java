@@ -36,4 +36,6 @@ public interface ProductService {
 
 	ArrayList<BasketVO> getBasketList(String member_id);
 
+	void deleteBasket(String basket_no);
+
 }

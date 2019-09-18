@@ -35,6 +35,8 @@ public interface ProductDAO {
 
 	ArrayList<BasketVO> selectBasketList(@Param("member_id")String member_id);
 
+	void deleteBasket(@Param("basket_no")String basket_no);
+
 
 
 }
