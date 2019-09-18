@@ -14,6 +14,14 @@
 	</style>
 	<script type="text/javascript">
 		$(document).ready(function(){
+			//수량수정시 금액적용 
+			$('input[name=cnt]').change(function(){
+				var cnt = parseInt($(this).val());
+				var price = parseInt($('input[name=product_price]').val());
+				var total = cnt*price;
+				$(this).parents('tr').find('input[name=product_total]').val(total);
+				getTotal();
+			});
 			//전체선택/해제
 			$('#checkall').click(function(){
 				if($(this).prop("checked")){
@@ -23,10 +31,12 @@
 				}
 			});
 			
+			//체크된항목의 금액
 			$('input[type=checkbox]').change(function(){
 				getTotal();
 			})
 			getTotal();
+			
 		});
 		function getTotal(){
 			//총금액
@@ -54,29 +64,27 @@
 <body>
 	<h3 class=" div-center border-bottom" style="margin-top: 50px; margin-bottom:50px; padding-bottom: 10px;">|장바구니</h3>
 	<form action="<%=request.getContextPath()%>/product/basket" method="post">
-	
-	
-	아이디<input  name="basket_member_id" value="${user.member_id}">
-	
+	아이디<input  name="basket_member_id" value="${user.member_id}"><br>
+	<a href="#"></a>
 	<table class="table table-hover" style="min-width: 1080px;">
 	    <tr>
 	      <th><input type="checkbox" id="checkall" checked="checked"></th>
-	      <th>상품코드</th>
-	      <th>상품명</th>
-	      <th>금액</th>
-	      <th>수량</th>
-	      <th>합계</th>
+	      <th style="text-align: center;">상품코드</th>
+	      <th style="text-align: center;">상품명</th>
+	      <th style="text-align: center;">금액</th>
+	      <th style="text-align: center;">수량</th>
+	      <th style="text-align: center;">합계</th>
 	    </tr>
 	  	<c:if test="${list.size() ne 0}">
     		<!--items: 컨트롤러에서 가져올애, var : 여기서사용할끄집어낼이름  --> 
     		<c:forEach items="${list}" var="basket"> 
 			    <tr class="basketList">
-			      <td><input type="checkbox" checked="checked" class="basket_check"></td>
-			      <td><input name="basket_product_code"  value="${basket.basket_product_code}"></td>
-			      <td><input name="product_title" value="${basket.product_title}"></td>
-			      <td><input name="product_price"  value="${basket.product_price}"></td>
-			      <td><input name="cnt"  value="${basket.cnt}"></td>
-			      <td><input name="product_total"  value="${basket.basket_total}"></td>
+			      <td><input type="checkbox" checked="checked" class="basket_check" name="basket_check" value="${basket.basket_no}" style="text-align: center;" readonly></td>
+			      <td><input name="basket_product_code"  value="${basket.basket_product_code}" style="text-align: center;" readonly></td>
+			      <td><input name="product_title" value="${basket.product_title}" style="text-align: center;" readonly></td>
+			      <td><input name="product_price"  value="${basket.product_price}" style="text-align: center;" readonly></td>
+			      <td><input type="number" name="cnt" style="width: 50px; text-align: center;"  value="${basket.cnt}"></td>
+			      <td><input name="product_total" style="text-align: center;" value="${basket.basket_total}" readonly></td>
 			    </tr>
 	   		</c:forEach>
      	 </c:if>
@@ -86,6 +94,7 @@
 	      	</tr>
     	 </c:if>
     </table>
+    <!-- 총금액계산 -->
     <div style="min-width: 1080px; height: 100px; border:1px solid black; ">
 	    <span class="float-right" style="font-size:15px; padding: 20px;" readonly>
 	    	제품구매금액 <input  class="border-none" type="number" name="total" value=""  style="padding-right:10px; width: 150px; text-align: right; font-size: 20px;" readonly>
@@ -97,10 +106,12 @@
 	    	원
 	   	</span>
     </div>
+    <!-- 구매버튼 -->
+    <div class="div-center" style="min-width: 1080px; margin: 50px 0; padding-left: 420px; ">
+    	<button type="submit" class="btn btn-navy2 div-center" style="width: 200px; height: 50px;">구매하기</button>
+    </div>
     </form>
     
-    <div class="div-center" style="min-width: 1080px; margin: 50px 0; padding-left: 420px; ">
-    	<a href="<%=request.getContextPath()%>/"><button type="button" class="btn btn-navy2 div-center" style="width: 200px; height: 50px;">구매하기</button></a>
-    </div>
+    
 </body>
 </html>
