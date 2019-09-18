@@ -17,7 +17,7 @@
 			//수량수정시 금액적용 
 			$('input[name=cnt]').change(function(){
 				var cnt = parseInt($(this).val());
-				var price = parseInt($('input[name=product_price]').val());
+				var price = parseInt($(this).parents('tr').find('input[name=product_price]').val());
 				var total = cnt*price;
 				$(this).parents('tr').find('input[name=product_total]').val(total);
 				getTotal();
