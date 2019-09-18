@@ -117,9 +117,11 @@ public class ProductServiceImp implements ProductService{
 	@Override
 	public void checkBasket(Integer tmp) {
 		// TODO Auto-generated method stub
+		System.out.println(tmp);
 		BasketVO bVo = productDao.selectBasketList(tmp);
 		if(bVo != null) {
 			productDao.orderInsert(bVo);
+			
 		}
 	}
 

@@ -188,16 +188,16 @@
   <!-- 주문리스트 추가  -->
   <insert id="orderInsert">
   	insert into order(
-		  	basket_product_code,
-		  	basket_member_id,
+		  	order_product_code,
+		  	order_member_id,
 		  	cnt,
-		  	basket_total
+		  	order_total
 		  	)
 	  	values(
-		  	#{cPVo.product_code},
-		  	#{member_id},
-		  	#{cnt},
-		  	#{product_total}
+		  	#{bVo.basket_product_code},
+		  	#{bVo.basket_member_id},
+		  	#{bVo.cnt},
+		  	#{bVo.basket_total}
 	  	)
   </insert>
 </mapper> 
