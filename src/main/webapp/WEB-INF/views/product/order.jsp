@@ -15,7 +15,7 @@
 </head>
 <body>
 	<h3 class=" div-center border-bottom" style="margin-top: 50px; margin-bottom:50px; padding-bottom: 10px;">|주문</h3>
-	<form action="<%=request.getContextPath()%>/product/basket" method="get">
+	<form action="<%=request.getContextPath()%>/product/order" method="get">
 	
 	
 	아이디<input  name="basket_member_id" value="${user.member_id}">
