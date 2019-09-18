@@ -53,7 +53,7 @@
 </head>
 <body>
 	<h3 class=" div-center border-bottom" style="margin-top: 50px; margin-bottom:50px; padding-bottom: 10px;">|장바구니</h3>
-	<form action="<%=request.getContextPath()%>/product/basket" method="get">
+	<form action="<%=request.getContextPath()%>/product/basket" method="post">
 	
 	
 	아이디<input  name="basket_member_id" value="${user.member_id}">
@@ -99,8 +99,8 @@
     </div>
     </form>
     
-    <div class="div-center" style="min-width: 1080px; margin: 50px 0; padding-left: 330px; ">
-    	<button type="button" class="btn btn-navy2 div-center" style="width: 200px; height: 50px;">구매하기</button>
+    <div class="div-center" style="min-width: 1080px; margin: 50px 0; padding-left: 420px; ">
+    	<a href="<%=request.getContextPath()%>/"><button type="button" class="btn btn-navy2 div-center" style="width: 200px; height: 50px;">구매하기</button></a>
     </div>
 </body>
 </html>
