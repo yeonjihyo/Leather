@@ -86,16 +86,16 @@
     	</table>
     </div>
      <!-- 배송지 정보 -->
-    <div class="deliveryInfo"style="margin-top: 50px;">
+    <div class="deliveryInfo" style="margin-top: 50px;">
     	
     	<h5 style="height: 40px; margin-top: 50px; background: #f7f7f7; text-align: center;">배송지 정보</h5>
     	<div class="float-right div-center" style="min-width: 1080px;">
-	    	<div class="form-check-inline float-right">
+	    	<div class="form-check-inline float-left">
 		      <label class="form-check-label" for="radio2">
 		        <input type="radio" class="form-check-input" id="sameInfo" name="delivery" value="" checked="checked">주문자 정보와 동일
 		      </label>
 		    </div>
-		    <div class="form-check-inline float-right">
+		    <div class="form-check-inline float-left">
 		      <label class="form-check-label" for="radio2">
 		        <input type="radio" class="form-check-input" id="newInfo" name="delivery" value="">새로운 배송지
 		      </label>
@@ -120,6 +120,34 @@
 		<td><input name="deliver_phone" value=""></td>
 		</tr>
     	</table>
+    </div>
+    <div classl="payInfo" style="margin-top: 50px;">
+    	<h5 style="height: 40px; line-height: 35px; background: #f7f7f7; text-align: center;">결제 정보</h5>
+    	<div class="form-check-inline ">
+	      <label class="form-check-label" for="radio2">
+	        <input type="radio" class="form-check-input" id="" name="pay" value="">카드결제
+	      </label>
+	    </div>
+	    <div class="form-check-inline ">
+	      <label class="form-check-label" for="radio2">
+	        <input type="radio" class="form-check-input" id="" name="pay" value="">핸드폰결제
+	      </label>
+	    </div>
+	    <div class="form-check-inline ">
+	      <label class="form-check-label" for="radio2">
+	        <input type="radio" class="form-check-input" id="" name="pay" value="">실시간계좌이체
+	      </label>
+	    </div>
+	    <div class="form-check-inline ">
+	      <label class="form-check-label" for="radio2">
+	        <input type="radio" class="form-check-input" id="" name="pay" value="">무통장입금
+	      </label>
+	    </div>
+	    <div class="form-check-inline ">
+	      <label class="form-check-label" for="radio2">
+	        <input type="radio" class="form-check-input" id="" name="pay" value="">카카오페이
+	      </label>
+	    </div>
     </div>
     </form>
     
