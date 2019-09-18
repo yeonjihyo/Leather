@@ -25,14 +25,12 @@ DROP TABLE IF EXISTS `order`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `order` (
-  `order_num` varchar(45) NOT NULL,
+  `order_num` int(11) NOT NULL AUTO_INCREMENT,
   `order_member_id` varchar(16) DEFAULT NULL,
   `order_product_code` varchar(45) NOT NULL,
   `order_progress` varchar(10) DEFAULT '주문완료',
   `order_date` datetime DEFAULT CURRENT_TIMESTAMP,
-  `order_pw` int(11) DEFAULT NULL,
-  `order_ismember` varchar(5) DEFAULT NULL,
-  `order_deliverycost` varchar(10) DEFAULT NULL,
+  `deliverycost` int(11) DEFAULT NULL,
   `order_total` int(11) NOT NULL,
   `cnt` int(11) NOT NULL DEFAULT '1',
   PRIMARY KEY (`order_num`),
@@ -61,4 +59,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-09-17 17:13:53
+-- Dump completed on 2019-09-18 17:32:02

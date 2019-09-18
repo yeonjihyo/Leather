@@ -26,7 +26,7 @@ DROP TABLE IF EXISTS `deliver`;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `deliver` (
   `deliver_no` int(11) NOT NULL AUTO_INCREMENT,
-  `deliver_order_num` varchar(45) NOT NULL,
+  `deliver_order_num` int(11) NOT NULL,
   `deliver_recipient` varchar(45) NOT NULL,
   `deliver_address1` varchar(45) NOT NULL,
   `deliver_address2` varchar(45) DEFAULT NULL,
@@ -56,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-09-17 17:13:52
+-- Dump completed on 2019-09-18 17:32:01
