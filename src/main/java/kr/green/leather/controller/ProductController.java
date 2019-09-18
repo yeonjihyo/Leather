@@ -205,7 +205,7 @@ public class ProductController {
 		public Map<Object, Object> deleteBasket(@RequestBody String basket_no){
 		   
 		    Map<Object, Object> map = new HashMap<Object, Object>();
-		    System.out.println(basket_no);
+		   // System.out.println(basket_no);
 		    productService.deleteBasket(basket_no);
 		    map.put(basket_no, basket_no);
 		   
@@ -220,11 +220,11 @@ public class ProductController {
 			mv.setViewName("/product/order");
 			return mv;
 		}
-//		//주문완료
-//		@RequestMapping(value= "/product/finish",method=RequestMethod.GET)
-//		public ModelAndView productFinishGet(ModelAndView mv){
-//			 
-//			mv.setViewName("/product/order");
-//			return mv;
-//		}
+		//주문완료
+		@RequestMapping(value= "/product/finish",method=RequestMethod.GET)
+		public ModelAndView productFinishGet(ModelAndView mv){
+			 
+			mv.setViewName("/product/finish");
+			return mv;
+		}
 }
