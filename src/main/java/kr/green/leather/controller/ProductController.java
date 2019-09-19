@@ -207,12 +207,17 @@ public class ProductController {
 		
 		//주문
 		@RequestMapping(value= "/product/order",method=RequestMethod.GET)
-		public ModelAndView productOrderGet(ModelAndView mv, Integer[] basket_check){
+		public ModelAndView productOrderGet(ModelAndView mv, Integer[] basket_check,int total,int deliverycost,int orderTotal){
 			
+			System.out.println(total);
+			System.out.println(deliverycost);
+			System.out.println(orderTotal);
 			
 			ArrayList<BasketVO> list = productService.getBasketList(basket_check);
 			mv.addObject("list",list);
-			
+			mv.addObject("total",total);
+			mv.addObject("deliverycost",deliverycost);
+			mv.addObject("orderTotal",orderTotal);
 			
 			mv.setViewName("/product/order");
 			return mv;

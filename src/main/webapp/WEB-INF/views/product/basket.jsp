@@ -92,7 +92,7 @@
 			else{
 				$('input[name=deliverycost]').val(0);
 			}
-		$('input[name=order_total]').val(total);
+		$('input[name=orderTotal]').val(total);
 		}
 	</script>
 </head>
@@ -138,7 +138,7 @@
 	    	배송비<input  class="border-none" type="number" name="deliverycost" value="" style="padding-right:10px; width: 150px; text-align: right;font-size: 20px;" readonly>
 	    	=
 	    	합계 :
-	    	<input class="border-none" type="number" name="order_total" value=""  style="padding-right:10px; width: 150px; text-align: right; font-size: 20px;" readonly> 
+	    	<input class="border-none" type="number" name="orderTotal" value=""  style="padding-right:10px; width: 150px; text-align: right; font-size: 20px;" readonly> 
 	    	원
 	   	</span>
     </div>
