@@ -12,15 +12,15 @@
 	</style>
 	<script type="text/javascript">
 		$(document).ready(function () {
-			//주문자 정보와 동일 선택시
-			$('#sameInfo').click(function () {
-				$('.deliverInfo td input').val();
-			});
+			
 			//새로운 배송지 선택시 
 			$('#newInfo').click(function () {
 				$('.deliverInfo td input').val('');
 			});
-			
+			//주문자 정보와 동일 선택시
+			$('#sameInfo').click(function () {
+				$('.deliverInfo td input').val();
+			});
 		});
 	</script>
 </head>
@@ -68,9 +68,9 @@
 		   	</span>
 	    </div>
 	    <!-- 주문자 정보 -->
-	    <div class="orderInfo" style=" margin-top: 100px; min-width: 1080px;">
+	    <div style=" margin-top: 100px; min-width: 1080px;">
 	    	<h5 style="height: 40px; line-height: 35px; background: #f7f7f7; text-align: center;">주문자 정보</h5>
-	    	<table class="table table-hover" style="min-width: 1080px;">
+	    	<table class="orderInfo table table-hover" style="min-width: 1080px;">
 		    	<tr>
 					<th>성명</th>
 					<td><input name="member_name" value="${user.member_name}"></td>
