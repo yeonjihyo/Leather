@@ -213,5 +213,7 @@
 		  	#{bVo.basket_total}
 	  	)
   </insert> 
-  
+  <select id="getBasketNo" resultType="kr.green.leather.vo.BasketVO">
+	select * from basket where basket_no=#{basket_no}
+	</select>
 </mapper> 

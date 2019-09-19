@@ -38,9 +38,11 @@ public interface ProductDAO {
 
 	void deleteBasket(@Param("basket_no")String basket_no);
 
-	BasketVO getBasket(Integer tmp);
+	BasketVO getBasket(@Param("tmp")Integer tmp);
 	
 	void orderInsert(@Param("bVo")BasketVO bVo);
+
+	BasketVO getBasketNo(@Param("basket_no")int basket_no);
 
 
 

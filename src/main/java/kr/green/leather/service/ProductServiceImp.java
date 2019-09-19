@@ -136,5 +136,11 @@ public class ProductServiceImp implements ProductService{
 		return list;
 	}
 
+	@Override
+	public BasketVO getBasket(int basket_no) {
+		// TODO Auto-generated method stub
+		return productDao.getBasketNo(basket_no);
+	}
+
 	
 }

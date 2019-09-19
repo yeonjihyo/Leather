@@ -190,7 +190,19 @@ public class ProductController {
 		    
 		    return mv;
 		}
-
+		//장바구니 수정
+		@RequestMapping("/basketModify/dup")
+		@ResponseBody
+		public Map<Object, Object> basketModify(@RequestBody BasketVO bvo){
+		   
+		    Map<Object, Object> map = new HashMap<Object, Object>();
+    		BasketVO basket_no=productService.getBasket(bvo.getBasket_no());
+		    //productService.updateBasket(basket_no);
+		    System.out.println(bvo);
+		    
+		    return map;
+		}
+		
 		//장바구니 삭제
 		@RequestMapping("/product/dup")
 		@ResponseBody

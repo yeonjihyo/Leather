@@ -43,6 +43,8 @@ public interface ProductService {
 
 	ArrayList<BasketVO> getBasketList(Integer[] basket_check);
 
+	BasketVO getBasket(int basket_no);
+
 
 
 	

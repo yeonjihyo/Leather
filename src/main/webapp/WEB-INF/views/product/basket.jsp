@@ -14,13 +14,27 @@
 	</style>
 	<script type="text/javascript">
 		$(document).ready(function(){
-			//수량수정시 금액적용 
+			
 			$('input[name=cnt]').change(function(){
+				//수량수정시 금액적용 
 				var cnt = parseInt($(this).val());
 				var price = parseInt($(this).parents('tr').find('input[name=product_price]').val());
 				var total = cnt*price;
 				$(this).parents('tr').find('input[name=product_total]').val(total);
 				getTotal();
+				//ajax를 이용해여 수량수정시 수정된 내용 db에 저장
+				var basket_no = $('.basket_check').val();
+				$.ajax({
+					async:true,
+					type:'POST',
+					data:basket_no,
+					url:"/leather/basketModify/dup",
+					dataType:"json",
+					contentType:"application/json; charset=UTF-8",
+					success : function(data){
+						
+					}
+				});
 			});
 			//선택된 항목 삭제
 			$('.deleteBasket').click(function () {
