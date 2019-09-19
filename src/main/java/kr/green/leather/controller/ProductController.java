@@ -191,13 +191,12 @@ public class ProductController {
 		}
 		@RequestMapping(value= "/product/basket",method=RequestMethod.POST)
 		public ModelAndView productBasketPost(ModelAndView mv, Integer []basket_check){
-			
 			for(Integer tmp : basket_check) {//체크된 값을 하나씩 끄집어내서  tmp에 저장 
-				//System.out.println(tmp);
-				productService.checkBasket(tmp);	
+				System.out.println(tmp);
+				productService.checkBasket(tmp);
 			}
 			
-			
+			mv.addObject("list", basket_check);
 			mv.setViewName("redirect:/product/order");
 		    return mv;
 		}

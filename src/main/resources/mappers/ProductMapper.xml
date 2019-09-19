@@ -191,7 +191,7 @@
   </select>
   <!-- 주문리스트 추가  -->
   <insert id="orderInsert">
-  	insert into order(
+  	insert into leather.order(
 		  	order_product_code,
 		  	order_member_id,
 		  	cnt,
