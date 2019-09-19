@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Param;
 
 import kr.green.leather.pagination.Criteria;
 import kr.green.leather.vo.BasketVO;
+import kr.green.leather.vo.OrderVO;
 import kr.green.leather.vo.ProductVO;
 
 public interface ProductDAO {
@@ -40,6 +41,8 @@ public interface ProductDAO {
 	BasketVO getBasket(Integer tmp);
 	
 	void orderInsert(@Param("bVo")BasketVO bVo);
+
+	ArrayList<OrderVO> selectOrderList(@Param("member_id")String member_id);
 
 	
 

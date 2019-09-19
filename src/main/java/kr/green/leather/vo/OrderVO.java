@@ -11,6 +11,8 @@ public class OrderVO extends BasketVO {
 	private int deliverycost;
 	private int order_total;
 	private int cnt;
+	private String order_state;
+	
 	public int getOrder_num() {
 		return order_num;
 	}
@@ -59,12 +61,20 @@ public class OrderVO extends BasketVO {
 	public void setCnt(int cnt) {
 		this.cnt = cnt;
 	}
+	public String getOrder_state() {
+		return order_state;
+	}
+	public void setOrder_state(String order_state) {
+		this.order_state = order_state;
+	}
 	@Override
 	public String toString() {
 		return "OrderVO [order_num=" + order_num + ", order_member_id=" + order_member_id + ", order_product_code="
 				+ order_product_code + ", order_progress=" + order_progress + ", order_date=" + order_date
-				+ ", deliverycost=" + deliverycost + ", order_total=" + order_total + ", cnt=" + cnt + "]";
+				+ ", deliverycost=" + deliverycost + ", order_total=" + order_total + ", cnt=" + cnt + ", order_state="
+				+ order_state + "]";
 	}
+	
 	
 	
 	

@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import kr.green.leather.pagination.Criteria;
 import kr.green.leather.vo.BasketVO;
+import kr.green.leather.vo.OrderVO;
 import kr.green.leather.vo.ProductVO;
 
 public interface ProductService {
@@ -39,6 +40,8 @@ public interface ProductService {
 	void deleteBasket(String basket_no);
 
 	void checkBasket(Integer tmp);
+
+	ArrayList<OrderVO> getOrderList(String member_id);
 
 	
 

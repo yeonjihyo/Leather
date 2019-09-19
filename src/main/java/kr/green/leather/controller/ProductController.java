@@ -27,6 +27,7 @@ import kr.green.leather.service.ProductService;
 import kr.green.leather.utils.UploadFileUtils;
 import kr.green.leather.vo.BasketVO;
 import kr.green.leather.vo.MemberVO;
+import kr.green.leather.vo.OrderVO;
 import kr.green.leather.vo.ProductVO;
 
 
@@ -196,7 +197,6 @@ public class ProductController {
 				productService.checkBasket(tmp);
 			}
 			
-			mv.addObject("list", basket_check);
 			mv.setViewName("redirect:/product/order");
 		    return mv;
 		}
@@ -216,8 +216,21 @@ public class ProductController {
 		
 		//주문
 		@RequestMapping(value= "/product/order",method=RequestMethod.GET)
-		public ModelAndView productOrderGet(ModelAndView mv){
-			 
+		public ModelAndView productOrderGet(ModelAndView mv, HttpServletRequest r){
+			
+			MemberVO user = (MemberVO) r.getSession().getAttribute("user");
+			ArrayList<OrderVO> list = null;
+			if(user != null) {
+				String member_id=user.getMember_id();
+				System.out.println("주문아이디 : " + member_id);
+				list = productService.getOrderList(member_id);
+			}
+			System.out.println("주문리스트 : " + list);
+		    mv.addObject("list",list);
+			
+			
+			
+			
 			mv.setViewName("/product/order");
 			return mv;
 		}

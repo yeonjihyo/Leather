@@ -11,6 +11,7 @@ import kr.green.leather.dao.ProductDAO;
 import kr.green.leather.pagination.Criteria;
 import kr.green.leather.vo.BasketVO;
 import kr.green.leather.vo.MemberVO;
+import kr.green.leather.vo.OrderVO;
 import kr.green.leather.vo.ProductVO;
 
 @Service
@@ -117,12 +118,18 @@ public class ProductServiceImp implements ProductService{
 	@Override
 	public void checkBasket(Integer tmp) {
 		// TODO Auto-generated method stub
-		System.out.println("1"+tmp);
+		
 		BasketVO bVo = productDao.getBasket(tmp);
 		if(bVo != null) {
 			productDao.orderInsert(bVo);
 			
 		}
+	}
+
+	@Override
+	public ArrayList<OrderVO> getOrderList(String member_id) {
+		// TODO Auto-generated method stub
+		return productDao.selectOrderList(member_id);
 	}
 
 	

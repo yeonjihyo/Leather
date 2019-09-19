@@ -204,4 +204,25 @@
 		  	#{bVo.basket_total}
 	  	)
   </insert>
+  <!-- 주문리스트 -->
+  <select id="selectOrderList" resultType="kr.green.leather.vo.OrderVO">
+   SELECT 
+   	   leather.order.order_num,
+	   leather.order.order_product_code,
+	   product.product_title, 
+	   product.product_price, 
+	   leather.order.cnt,
+	   leather.order.deliverycost, 
+	   leather.order.order_total ,
+	   leather.order.order_member_id,
+	   leather.order.order_state
+	FROM leather.order
+	join product
+	on
+		leather.order.order_product_code=product.product_code
+	join member
+	on 
+		leather.order.order_member_id=member.member_id
+   	where order_state = 'I' and member_id=#{member_id};
+  </select>
 </mapper> 

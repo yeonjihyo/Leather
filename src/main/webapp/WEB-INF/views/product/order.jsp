@@ -29,11 +29,11 @@
 	    		<!--items: 컨트롤러에서 가져올애, var : 여기서사용할끄집어낼이름  --> 
 	    		<c:forEach items="${list}" var="order"> 
 				    <tr>
-				      <td><input name="basket_product_code"  value="${order.basket_product_code}"></td>
+				      <td><input name="order_product_code"  value="${order.order_product_code}"></td>
 				      <td><input name="product_title" value="${order.product_title}"></td>
 				      <td><input name="product_price"  value="${order.product_price}"></td>
 				      <td><input name="cnt"  value="${order.cnt}"></td>
-				      <td><input name="product_total"  value="${order.basket_total}"></td>
+				      <td><input name="order_total"  value="${order.order_total}"></td>
 				    </tr>
 		   		</c:forEach>
 	     	 </c:if>
