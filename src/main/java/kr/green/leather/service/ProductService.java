@@ -41,7 +41,9 @@ public interface ProductService {
 
 	void checkBasket(Integer tmp);
 
-	ArrayList<OrderVO> getOrderList(String member_id);
+	ArrayList<BasketVO> getBasketList(Integer[] basket_check);
+
+
 
 	
 

@@ -117,19 +117,23 @@ public class ProductServiceImp implements ProductService{
 
 	@Override
 	public void checkBasket(Integer tmp) {
-		// TODO Auto-generated method stub
-		
 		BasketVO bVo = productDao.getBasket(tmp);
 		if(bVo != null) {
 			productDao.orderInsert(bVo);
+			System.out.println(bVo);
 			
 		}
 	}
 
+	
+
 	@Override
-	public ArrayList<OrderVO> getOrderList(String member_id) {
-		// TODO Auto-generated method stub
-		return productDao.selectOrderList(member_id);
+	public ArrayList<BasketVO> getBasketList(Integer[] basket_check) {
+		ArrayList<BasketVO> list = new ArrayList<BasketVO>();
+		for(Integer tmp : basket_check) {
+			list.add(productDao.getBasket(tmp));
+		}
+		return list;
 	}
 
 	

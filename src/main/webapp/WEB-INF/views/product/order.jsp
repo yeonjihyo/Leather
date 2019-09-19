@@ -8,10 +8,21 @@
 	<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/common.css">
 	<title>주문</title>
 	<style type="text/css">
-	tr td{
-	border: none;
-	}
+	
 	</style>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			//주문자 정보와 동일 선택시
+			$('#sameInfo').click(function () {
+				$('.deliverInfo td input').val();
+			});
+			//새로운 배송지 선택시 
+			$('#newInfo').click(function () {
+				$('.deliverInfo td input').val('');
+			});
+			
+		});
+	</script>
 </head>
 <body>
 	<h3 class=" div-center border-bottom" style="margin-top: 50px; margin-bottom:50px; padding-bottom: 10px;">|주문</h3>
@@ -27,13 +38,15 @@
 		    </tr>
 		  	<c:if test="${list.size() ne 0}">
 	    		<!--items: 컨트롤러에서 가져올애, var : 여기서사용할끄집어낼이름  --> 
-	    		<c:forEach items="${list}" var="order"> 
+	    		<c:forEach items="${list}" var="basket"> 
 				    <tr>
-				      <td><input name="order_product_code"  value="${order.order_product_code}"></td>
-				      <td><input name="product_title" value="${order.product_title}"></td>
-				      <td><input name="product_price"  value="${order.product_price}"></td>
-				      <td><input name="cnt"  value="${order.cnt}"></td>
-				      <td><input name="order_total"  value="${order.order_total}"></td>
+				      <input type="text"class="basket_check" name="basket_check" value="${basket.basket_no}" style="text-align: center;" readonly>
+				      <td><input name="basket_product_code"  value="${basket.basket_product_code}" style="text-align: center;" readonly></td>
+				      <td><input name="product_title" value="${basket.product_title}" style="text-align: center;" readonly></td>
+				      <td><input name="product_price"  value="${basket.product_price}" style="text-align: center;" readonly></td>
+				      <td><input type="number" name="cnt" style="width: 50px; text-align: center;"  value="${basket.cnt}" readonly></td>
+				      <td><input name="product_total" style="text-align: center;" value="${basket.basket_total}" readonly></td>
+				      <input type="hidden" id="basket_state" name="basket_state" value="${basket.basket_state}">
 				    </tr>
 		   		</c:forEach>
 	     	 </c:if>
@@ -45,12 +58,12 @@
 	    </table>
 	    <div style="width: 1080px; height: 100px; border:1px solid black; ">
 		    <span class="float-right" style="font-size:15px; padding: 20px;" style="padding-right:10px; width: 150px; text-align: right;" readonly>
-		    	제품구매금액 <input type="number" name="basket_total" value="${basket_total}" readonly>
+		    	제품구매금액 <input type="number" name="total" value="" readonly>
 		    	+
-		    	배송비<input type="number" name="basket_deliverycost" value="${deliverycost}" style="padding-right:10px; width: 150px; text-align: right;" readonly>
+		    	배송비<input type="number" name="deliverycost" value="" style="padding-right:10px; width: 150px; text-align: right;" readonly>
 		    	=
 		    	합계 :
-		    	<input class="border-none" type="number" name="basket_total" value="${basket.basket_total}"  style="padding-right:10px; width: 150px; text-align: right;" readonly> 
+		    	<input class="border-none" type="number" name="order_total" value=""  style="padding-right:10px; width: 150px; text-align: right;" readonly> 
 		    	원
 		   	</span>
 	    </div>
@@ -58,32 +71,32 @@
 	    <div class="orderInfo" style=" margin-top: 100px; min-width: 1080px;">
 	    	<h5 style="height: 40px; line-height: 35px; background: #f7f7f7; text-align: center;">주문자 정보</h5>
 	    	<table class="table table-hover" style="min-width: 1080px;">
-	    	<tr>
-			<th>성명</th>
-			<td><input name="member_name" value="${user.member_name }"></td>
-			</tr>
-			<tr>
-	    	<th>주소</th>
-	    	<td>
-	    		<input name="member_post" value="${user.member_post}">
-	    		<a href="#"><button type="button" class="btn btn-navy">우편번호</button></a><br>
-	 
-	    		<input name="member_address1" value="${user.member_address1}">
-	    		<input name="member_address2" value="${user.member_address2}">
-	    	</td>
-			</tr>
-			<tr>
-			<th>전화번호</th>
-			<td><input name="member_phone" value="${user.member_phone }"></td>
-			</tr>
-			<tr>
-			<th>이메일</th>
-			<td><input name="member_email" value="${user.member_email }"></td>
-			</tr>
+		    	<tr>
+					<th>성명</th>
+					<td><input name="member_name" value="${user.member_name}"></td>
+				</tr>
+				<tr>
+			    	<th>주소</th>
+			    	<td>
+			    		<input name="member_post" value="${user.member_post}">
+			    		<a href="#"><button type="button" class="btn btn-navy">우편번호</button></a><br>
+			 
+			    		<input name="member_address1" value="${user.member_address1}">
+			    		<input name="member_address2" value="${user.member_address2}">
+			    	</td>
+				</tr>
+				<tr>
+					<th>전화번호</th>
+					<td><input name="member_phone" value="${user.member_phone }"></td>
+				</tr>
+				<tr>
+					<th>이메일</th>
+					<td><input name="member_email" value="${user.member_email }"></td>
+				</tr>
 	    	</table>
 	    </div>
 	     <!-- 배송지 정보 -->
-	    <div class="deliveryInfo" style="margin-top: 50px;">
+	    <div style="margin-top: 50px;">
 	    	
 	    	<h5 style="height: 40px; margin-top: 50px; background: #f7f7f7; text-align: center;">배송지 정보</h5>
 	    	<div class="float-right div-center" style="min-width: 1080px;">
@@ -98,24 +111,24 @@
 			      </label>
 			    </div>
 		    </div>
-	    	<table class="table table-hover" style="min-width: 1080px;">
-	    	<tr>
-			<th>수령인</th>
-			<td><input name="deliver_recipient" value=""></td>
-			</tr>
-			<tr>
-	    	<th>수령지</th>
-			<td>
-				<input name="deliver_post" value="" placeholder="우편번호">
-				<a href="#"><button type="button" class="btn btn-navy">우편번호</button></a><br>
-				<input name="deliver_address1" value="" placeholder="기본주소">
-				<input name="deliver_address2" value="" placeholder="상세주소">
-			</td>
-			</tr>
-			<tr>
-			<th>수령인 전화번호</th>
-			<td><input name="deliver_phone" value=""></td>
-			</tr>
+	    	<table class="deliverInfo table table-hover" style="min-width: 1080px;">
+		    	<tr>
+					<th>수령인</th>
+					<td><input name="deliver_recipient" value="${user.member_name}"></td>
+				</tr>
+				<tr>
+			    	<th>수령지</th>
+					<td>
+						<input name="deliver_post" value="${user.member_post}" placeholder="우편번호">
+						<a href="#"><button type="button" class="btn btn-navy">우편번호</button></a><br>
+						<input name="deliver_address1" value="${user.member_address1}" placeholder="기본주소">
+						<input name="deliver_address2" value="${user.member_address2}" placeholder="상세주소">
+					</td>
+				</tr>
+				<tr>
+					<th>수령인 전화번호</th>
+					<td><input name="deliver_phone" value="${user.member_phone}"></td>
+				</tr>
 	    	</table>
 	    </div>
 	    <div classl="payInfo" style="margin-top: 50px;">

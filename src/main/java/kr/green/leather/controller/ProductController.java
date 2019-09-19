@@ -190,16 +190,7 @@ public class ProductController {
 		    
 		    return mv;
 		}
-		@RequestMapping(value= "/product/basket",method=RequestMethod.POST)
-		public ModelAndView productBasketPost(ModelAndView mv, Integer []basket_check){
-			for(Integer tmp : basket_check) {//체크된 값을 하나씩 끄집어내서  tmp에 저장 
-				System.out.println(tmp);
-				productService.checkBasket(tmp);
-			}
-			
-			mv.setViewName("redirect:/product/order");
-		    return mv;
-		}
+
 		//장바구니 삭제
 		@RequestMapping("/product/dup")
 		@ResponseBody
@@ -216,19 +207,11 @@ public class ProductController {
 		
 		//주문
 		@RequestMapping(value= "/product/order",method=RequestMethod.GET)
-		public ModelAndView productOrderGet(ModelAndView mv, HttpServletRequest r){
-			
-			MemberVO user = (MemberVO) r.getSession().getAttribute("user");
-			ArrayList<OrderVO> list = null;
-			if(user != null) {
-				String member_id=user.getMember_id();
-				System.out.println("주문아이디 : " + member_id);
-				list = productService.getOrderList(member_id);
-			}
-			System.out.println("주문리스트 : " + list);
-		    mv.addObject("list",list);
+		public ModelAndView productOrderGet(ModelAndView mv, Integer[] basket_check){
 			
 			
+			ArrayList<BasketVO> list = productService.getBasketList(basket_check);
+			mv.addObject("list",list);
 			
 			
 			mv.setViewName("/product/order");
@@ -236,8 +219,11 @@ public class ProductController {
 		}
 		//주문완료
 		@RequestMapping(value= "/product/finish",method=RequestMethod.GET)
-		public ModelAndView productFinishGet(ModelAndView mv){
-			 
+		public ModelAndView productFinishGet(ModelAndView mv, Integer []basket_check){
+			for(Integer tmp : basket_check) {//체크된 값을 하나씩 끄집어내서  tmp에 저장 
+				
+				productService.checkBasket(tmp);
+			} 
 			mv.setViewName("/product/finish");
 			return mv;
 		}

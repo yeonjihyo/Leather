@@ -42,7 +42,7 @@ public interface ProductDAO {
 	
 	void orderInsert(@Param("bVo")BasketVO bVo);
 
-	ArrayList<OrderVO> selectOrderList(@Param("member_id")String member_id);
+
 
 	
 

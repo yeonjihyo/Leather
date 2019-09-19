@@ -98,7 +98,7 @@
 </head>
 <body>
 	<h3 class=" div-center border-bottom" style="margin-top: 50px; margin-bottom:50px; padding-bottom: 10px;">|장바구니</h3>
-	<form action="<%=request.getContextPath()%>/product/basket" method="post">
+	<form action="<%=request.getContextPath()%>/product/order" method="get">
 	<input name="basket_member_id" value="${user.member_id}"><br>
 	<a href="#" style="color: black; text-decoration: none;" class="deleteBasket">선택상품삭제</a>
 	<table class="table table-hover" style="min-width: 1080px;">
@@ -118,7 +118,7 @@
 			      <td><input name="basket_product_code"  value="${basket.basket_product_code}" style="text-align: center;" readonly></td>
 			      <td><input name="product_title" value="${basket.product_title}" style="text-align: center;" readonly></td>
 			      <td><input name="product_price"  value="${basket.product_price}" style="text-align: center;" readonly></td>
-			      <td><input type="number" name="cnt" style="width: 50px; text-align: center;"  value="${basket.cnt}"></td>
+			      <td><input type="number" min="1" name="cnt" style="width: 50px; text-align: center;"  value="${basket.cnt}"></td>
 			      <td><input name="product_total" style="text-align: center;" value="${basket.basket_total}" readonly></td>
 			      <input type="hidden" id="basket_state" name="basket_state" value="${basket.basket_state}">
 			    </tr>
