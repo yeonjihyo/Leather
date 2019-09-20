@@ -26,6 +26,7 @@ import kr.green.leather.service.PageMakerService;
 import kr.green.leather.service.ProductService;
 import kr.green.leather.utils.UploadFileUtils;
 import kr.green.leather.vo.BasketVO;
+import kr.green.leather.vo.DeliverVO;
 import kr.green.leather.vo.MemberVO;
 import kr.green.leather.vo.OrderVO;
 import kr.green.leather.vo.ProductVO;
@@ -211,16 +212,16 @@ public class ProductController {
 		public ModelAndView productOrderGet(Integer[] cnt,Integer[] product_total,ModelAndView mv, Integer[] basket_check,int total,int deliverycost,int orderTotal){
 			//수량이랑 수량적용된금액 잘 넘어오는지 확인
 			for(Integer tmp: cnt) {
-				System.out.println(tmp);
+				//System.out.println(tmp);
 			}
 			for(Integer tmp: product_total) {
-				System.out.println(tmp);
+				//System.out.println(tmp);
 			}
 			
 			
 			ArrayList<BasketVO> list = productService.getBasketList(basket_check,cnt,product_total);
 			
-			System.out.println(list);
+			//System.out.println(list);
 			mv.addObject("list",list);
 			mv.addObject("total",total);
 			mv.addObject("deliverycost",deliverycost);
@@ -230,11 +231,12 @@ public class ProductController {
 		}
 		//주문완료
 		@RequestMapping(value= "/product/finish",method=RequestMethod.GET)
-		public ModelAndView productFinishGet(ModelAndView mv, Integer []basket_check){
+		public ModelAndView productFinishGet(ModelAndView mv, Integer []basket_check,DeliverVO dVo){
 			for(Integer tmp : basket_check) {//체크된 값을 하나씩 끄집어내서  tmp에 저장 
 				
 				productService.checkBasket(tmp);
 			} 
+			System.out.println(dVo);
 			mv.setViewName("/product/finish");
 			return mv;
 		}

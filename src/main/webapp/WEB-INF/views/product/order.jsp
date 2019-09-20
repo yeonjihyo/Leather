@@ -118,24 +118,24 @@
 		    	<tr>
 					<th>수령인</th>
 					<td><input type="text" id="deliver_recipient" name="deliver_recipient" value="${user.member_name}"></td>
-					<input type="hidden" id="deliver_recipient2" name="deliver_recipient" value="${user.member_name}">
+					<input type="hidden" id="deliver_recipient2" name="deliver_recipient2" value="${user.member_name}">
 				</tr>
 				<tr>
 			    	<th>수령지</th>
 					<td>
 						<input type="text" id="deliver_post" name="deliver_post" value="${user.member_post}" placeholder="우편번호">
-						<input type="hidden" id="deliver_post2" name="deliver_post" value="${user.member_post}" placeholder="우편번호">
+						<input type="hidden" id="deliver_post2" name="deliver_post2" value="${user.member_post}" placeholder="우편번호">
 						<a href="#"><button type="button" class="btn btn-navy">우편번호</button></a><br>
 						<input type="text" id="deliver_address1" name="deliver_address1" value="${user.member_address1}" placeholder="기본주소">
-						<input type="hidden" id="deliver_address3" name="deliver_address1" value="${user.member_address1}" placeholder="기본주소">
+						<input type="hidden" id="deliver_address3" name="deliver_address3" value="${user.member_address1}" placeholder="기본주소">
 						<input type="text" id="deliver_address2" name="deliver_address2" value="${user.member_address2}" placeholder="상세주소">
-						<input type="hidden" id="deliver_address4" name="deliver_address2" value="${user.member_address2}" placeholder="상세주소">
+						<input type="hidden" id="deliver_address4" name="deliver_address4" value="${user.member_address2}" placeholder="상세주소">
 					</td>
 				</tr>
 				<tr>
 					<th>수령인 전화번호</th>
 					<td><input type="text" id="deliver_phone" name="deliver_phone" value="${user.member_phone}"></td>
-					<input type="hidden" id="deliver_phone2" name="deliver_phone" value="${user.member_phone}">
+					<input type="hidden" id="deliver_phone2" name="deliver_phone2" value="${user.member_phone}">
 				</tr>
 	    	</table>
 	    </div>
