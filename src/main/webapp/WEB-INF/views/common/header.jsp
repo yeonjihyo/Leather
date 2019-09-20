@@ -24,10 +24,10 @@
 						</c:if>
 						<c:if test="${user.member_authority eq 'ADMIN'}">
 							<a href="<%=request.getContextPath()%>/admin/user/list">회원관리</a> |
-							<a href="#">제품관리</a> |
 						</c:if>
 						<c:if test="${user ne null}">
 							<a href="#">회원정보수정</a> |
+							<a href="#">주문배송조회</a> |
 							<a href="<%=request.getContextPath()%>/signout">로그아웃</a>
 						</c:if>	
 						
