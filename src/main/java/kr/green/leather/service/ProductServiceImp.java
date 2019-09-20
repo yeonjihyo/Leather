@@ -137,6 +137,7 @@ public class ProductServiceImp implements ProductService{
 			bvo.setCnt(cnt[i]);
 			bvo.setBasket_total(product_total[i]);
 			list.add(bvo);
+			System.out.println(basket_check);
 		}
 		return list;
 	}
