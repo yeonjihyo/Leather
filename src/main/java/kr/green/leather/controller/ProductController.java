@@ -217,9 +217,6 @@ public class ProductController {
 				System.out.println(tmp);
 			}
 			
-//			System.out.println(total);
-//			System.out.println(deliverycost);
-//			System.out.println(orderTotal);
 			
 			ArrayList<BasketVO> list = productService.getBasketList(basket_check,cnt,product_total);
 			

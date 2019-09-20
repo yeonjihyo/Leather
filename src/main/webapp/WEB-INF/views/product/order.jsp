@@ -15,11 +15,15 @@
 			
 			//새로운 배송지 선택시 
 			$('#newInfo').click(function () {
-				$('.deliverInfo td input').val('');
+				$('.deliverInfo input[type="text"]').val('');
 			});
 			//주문자 정보와 동일 선택시
 			$('#sameInfo').click(function () {
-				$('.deliverInfo td input').val();
+				$('#deliver_recipient').val($('#deliver_recipient2').val());
+				$('#deliver_post').val($('#deliver_post2').val());
+				$('#deliver_address1').val($('#deliver_address3').val());
+				$('#deliver_address2').val($('#deliver_address4').val());
+				$('#deliver_phone').val($('#deliver_phone2').val());
 			});
 		});
 	</script>
@@ -97,7 +101,6 @@
 	    </div>
 	     <!-- 배송지 정보 -->
 	    <div style="margin-top: 50px;">
-	    	
 	    	<h5 style="height: 40px; margin-top: 50px; background: #f7f7f7; text-align: center;">배송지 정보</h5>
 	    	<div class="float-right div-center" style="min-width: 1080px;">
 		    	<div class="form-check-inline float-left">
@@ -114,23 +117,29 @@
 	    	<table class="deliverInfo table table-hover" style="min-width: 1080px;">
 		    	<tr>
 					<th>수령인</th>
-					<td><input name="deliver_recipient" value="${user.member_name}"></td>
+					<td><input type="text" id="deliver_recipient" name="deliver_recipient" value="${user.member_name}"></td>
+					<input type="hidden" id="deliver_recipient2" name="deliver_recipient" value="${user.member_name}">
 				</tr>
 				<tr>
 			    	<th>수령지</th>
 					<td>
-						<input name="deliver_post" value="${user.member_post}" placeholder="우편번호">
+						<input type="text" id="deliver_post" name="deliver_post" value="${user.member_post}" placeholder="우편번호">
+						<input type="hidden" id="deliver_post2" name="deliver_post" value="${user.member_post}" placeholder="우편번호">
 						<a href="#"><button type="button" class="btn btn-navy">우편번호</button></a><br>
-						<input name="deliver_address1" value="${user.member_address1}" placeholder="기본주소">
-						<input name="deliver_address2" value="${user.member_address2}" placeholder="상세주소">
+						<input type="text" id="deliver_address1" name="deliver_address1" value="${user.member_address1}" placeholder="기본주소">
+						<input type="hidden" id="deliver_address3" name="deliver_address1" value="${user.member_address1}" placeholder="기본주소">
+						<input type="text" id="deliver_address2" name="deliver_address2" value="${user.member_address2}" placeholder="상세주소">
+						<input type="hidden" id="deliver_address4" name="deliver_address2" value="${user.member_address2}" placeholder="상세주소">
 					</td>
 				</tr>
 				<tr>
 					<th>수령인 전화번호</th>
-					<td><input name="deliver_phone" value="${user.member_phone}"></td>
+					<td><input type="text" id="deliver_phone" name="deliver_phone" value="${user.member_phone}"></td>
+					<input type="hidden" id="deliver_phone2" name="deliver_phone" value="${user.member_phone}">
 				</tr>
 	    	</table>
 	    </div>
+	    <!-- 결제 -->
 	    <div classl="payInfo" style="margin-top: 50px;">
 	    	<h5 style="height: 40px; line-height: 35px; background: #f7f7f7; text-align: center;">결제 정보</h5>
 	    	<div class="form-check-inline ">
