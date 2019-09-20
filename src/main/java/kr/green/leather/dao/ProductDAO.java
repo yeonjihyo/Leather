@@ -42,7 +42,6 @@ public interface ProductDAO {
 	
 	void orderInsert(@Param("bVo")BasketVO bVo);
 
-	BasketVO getBasketNo(@Param("basket_no")int basket_no);
 
 
 

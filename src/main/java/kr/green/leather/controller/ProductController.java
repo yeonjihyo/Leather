@@ -190,18 +190,7 @@ public class ProductController {
 		    
 		    return mv;
 		}
-		//장바구니 수정
-		@RequestMapping("/basketModify/dup")
-		@ResponseBody
-		public Map<Object, Object> basketModify(@RequestBody BasketVO bvo){
-		   
-		    Map<Object, Object> map = new HashMap<Object, Object>();
-    		BasketVO basket_no=productService.getBasket(bvo.getBasket_no());
-		    //productService.updateBasket(basket_no);
-		    System.out.println(bvo);
-		    
-		    return map;
-		}
+
 		
 		//장바구니 삭제
 		@RequestMapping("/product/dup")
@@ -219,13 +208,14 @@ public class ProductController {
 		
 		//주문
 		@RequestMapping(value= "/product/order",method=RequestMethod.GET)
-		public ModelAndView productOrderGet(ModelAndView mv, Integer[] basket_check,int total,int deliverycost,int orderTotal){
+		public ModelAndView productOrderGet(BasketVO bvo,ModelAndView mv, Integer[] basket_check,int total,int deliverycost,int orderTotal){
 			
 			System.out.println(total);
 			System.out.println(deliverycost);
 			System.out.println(orderTotal);
 			
 			ArrayList<BasketVO> list = productService.getBasketList(basket_check);
+			System.out.println(bvo);
 			mv.addObject("list",list);
 			mv.addObject("total",total);
 			mv.addObject("deliverycost",deliverycost);
