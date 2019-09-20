@@ -1,6 +1,6 @@
 package kr.green.leather.vo;
 
-public class DeliverVO {
+public class DeliverVO extends OrderVO {
 	private int deliver_no;
 	private int deliver_order_num;
 	private String deliver_recipient;

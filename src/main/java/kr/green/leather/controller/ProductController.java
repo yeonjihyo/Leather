@@ -232,12 +232,19 @@ public class ProductController {
 		//주문완료
 		@RequestMapping(value= "/product/finish",method=RequestMethod.GET)
 		public ModelAndView productFinishGet(ModelAndView mv, Integer []basket_check,DeliverVO dVo){
+			
+			mv.setViewName("/product/finish");
+			return mv;
+		}
+		@RequestMapping(value= "/product/finish",method=RequestMethod.POST)
+		public ModelAndView productFinishPost(ModelAndView mv, Integer []basket_check,DeliverVO dVo){
 			for(Integer tmp : basket_check) {//체크된 값을 하나씩 끄집어내서  tmp에 저장 
 				
 				productService.checkBasket(tmp);
 			} 
-			System.out.println(dVo);
-			mv.setViewName("/product/finish");
+			
+			productService.deliverInfo( dVo);
+			mv.setViewName("redirect:/product/finish");
 			return mv;
 		}
 }

@@ -213,5 +213,21 @@
 		  	#{bVo.basket_total}
 	  	)
   </insert> 
-  
+  <!-- 배송지추가  -->
+  <insert id="deliverInsert">
+  	insert into deliver(
+		  	deliver_recipient,
+		  	deliver_address1,
+		  	deliver_address2,
+		  	deliver_post,
+		  	deliver_phone
+		  	)
+	  	values(
+		  	#{dVo.deliver_recipient},
+		  	#{dVo.deliver_address1},
+		  	#{dVo.deliver_address2},
+		  	#{dVo.deliver_post},
+		  	#{dVo.deliver_phone}
+	  	)
+  </insert> 
 </mapper> 

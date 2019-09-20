@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import kr.green.leather.dao.ProductDAO;
 import kr.green.leather.pagination.Criteria;
 import kr.green.leather.vo.BasketVO;
+import kr.green.leather.vo.DeliverVO;
 import kr.green.leather.vo.MemberVO;
 import kr.green.leather.vo.OrderVO;
 import kr.green.leather.vo.ProductVO;
@@ -138,6 +139,12 @@ public class ProductServiceImp implements ProductService{
 			list.add(bvo);
 		}
 		return list;
+	}
+
+	@Override
+	public void deliverInfo(DeliverVO dVo) {
+		productDao.deliverInsert(dVo);
+		
 	}
 
 	

@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Param;
 
 import kr.green.leather.pagination.Criteria;
 import kr.green.leather.vo.BasketVO;
+import kr.green.leather.vo.DeliverVO;
 import kr.green.leather.vo.OrderVO;
 import kr.green.leather.vo.ProductVO;
 
@@ -41,6 +42,8 @@ public interface ProductDAO {
 	BasketVO getBasket(@Param("tmp")Integer tmp);
 	
 	void orderInsert(@Param("bVo")BasketVO bVo);
+
+	void deliverInsert(@Param("dVo")DeliverVO dVo);
 
 
 
