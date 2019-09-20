@@ -208,19 +208,26 @@ public class ProductController {
 		
 		//주문
 		@RequestMapping(value= "/product/order",method=RequestMethod.GET)
-		public ModelAndView productOrderGet(BasketVO bvo,ModelAndView mv, Integer[] basket_check,int total,int deliverycost,int orderTotal){
+		public ModelAndView productOrderGet(Integer[] cnt,Integer[] product_total,ModelAndView mv, Integer[] basket_check,int total,int deliverycost,int orderTotal){
+			//수량이랑 수량적용된금액 잘 넘어오는지 확인
+			for(Integer tmp: cnt) {
+				System.out.println(tmp);
+			}
+			for(Integer tmp: product_total) {
+				System.out.println(tmp);
+			}
 			
-			System.out.println(total);
-			System.out.println(deliverycost);
-			System.out.println(orderTotal);
+//			System.out.println(total);
+//			System.out.println(deliverycost);
+//			System.out.println(orderTotal);
 			
-			ArrayList<BasketVO> list = productService.getBasketList(basket_check);
-			System.out.println(bvo);
+			ArrayList<BasketVO> list = productService.getBasketList(basket_check,cnt,product_total);
+			
+			System.out.println(list);
 			mv.addObject("list",list);
 			mv.addObject("total",total);
 			mv.addObject("deliverycost",deliverycost);
 			mv.addObject("orderTotal",orderTotal);
-			
 			mv.setViewName("/product/order");
 			return mv;
 		}

@@ -128,10 +128,14 @@ public class ProductServiceImp implements ProductService{
 	
 
 	@Override
-	public ArrayList<BasketVO> getBasketList(Integer[] basket_check) {
+	public ArrayList<BasketVO> getBasketList(Integer[] basket_check,Integer[]cnt,Integer []product_total) {
 		ArrayList<BasketVO> list = new ArrayList<BasketVO>();
-		for(Integer tmp : basket_check) {
-			list.add(productDao.getBasket(tmp));
+		for(int i = 0; i<basket_check.length; i++) {
+			Integer tmp = basket_check[i];
+			BasketVO bvo = productDao.getBasket(tmp);
+			bvo.setCnt(cnt[i]);
+			bvo.setBasket_total(product_total[i]);
+			list.add(bvo);
 		}
 		return list;
 	}

@@ -41,9 +41,7 @@ public interface ProductService {
 
 	void checkBasket(Integer tmp);
 
-	ArrayList<BasketVO> getBasketList(Integer[] basket_check);
-
-	
+	ArrayList<BasketVO> getBasketList(Integer[] basket_check,Integer[]cnt,Integer []product_total);
 
 
 
