@@ -42,15 +42,16 @@
 		    </tr>
 		  	<c:if test="${list.size() ne 0}">
 	    		<!--items: 컨트롤러에서 가져올애, var : 여기서사용할끄집어낼이름  --> 
-	    		<c:forEach items="${list}" var="basket"> 
+	    		<c:forEach items="${list}" var="order"> 
 				    <tr>
-				      <input type="text"class="basket_check" name="basket_check" value="${basket.basket_no}" style="text-align: center;" readonly>
-				      <td><input name="basket_product_code"  value="${basket.basket_product_code}" style="text-align: center;" readonly></td>
-				      <td><input name="product_title" value="${basket.product_title}" style="text-align: center;" readonly></td>
-				      <td><input name="product_price"  value="${basket.product_price}" style="text-align: center;" readonly></td>
-				      <td><input type="number" name="cnt" style="width: 50px; text-align: center;"  value="${basket.cnt}" readonly></td>
-				      <td><input name="product_total" style="text-align: center;" value="${basket.basket_total}" readonly></td>
-				      <input type="hidden" id="basket_state" name="basket_state" value="${basket.basket_state}">
+				    
+				      <input type="text"class="basket_check" name="basket_check" value="${order.basket_no}" style="text-align: center;" readonly>
+				      <td><input name="basket_product_code"  value="${order.basket_product_code}" style="text-align: center;" readonly></td>
+				      <td><input name="product_title" value="${order.product_title}" style="text-align: center;" readonly></td>
+				      <td><input name="product_price"  value="${order.product_price}" style="text-align: center;" readonly></td>
+				      <td><input type="number" name="cnt" style="width: 50px; text-align: center;"  value="${order.cnt}" readonly></td>
+				      <td><input name="product_total" style="text-align: center;" value="${order.basket_total}" readonly></td>
+				      <input type="hidden" id="basket_state" name="basket_state" value="${order.basket_state}">
 				    </tr>
 		   		</c:forEach>
 	     	 </c:if>
