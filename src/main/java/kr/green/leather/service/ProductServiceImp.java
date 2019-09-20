@@ -121,7 +121,7 @@ public class ProductServiceImp implements ProductService{
 		BasketVO bVo = productDao.getBasket(tmp);
 		if(bVo != null) {
 			productDao.orderInsert(bVo);
-			System.out.println(bVo);
+			//System.out.println(bVo);
 			
 		}
 	}
