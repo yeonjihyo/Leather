@@ -21,11 +21,11 @@
 </style>
 </head>
 <body>
-	
+	<form action="<%=request.getContextPath()%>/product/finish" method="get">
 		<div class="orderFinish ">
 			<h2>주문이 완료 되었습니다.</h2>
 		</div>
-	
+	</form>
 	
 </body>
 </html>

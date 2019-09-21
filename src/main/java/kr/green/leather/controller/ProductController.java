@@ -124,6 +124,8 @@ public class ProductController {
 		    mv.setViewName("/product/display");
 		    mv.addObject("product",product);
 		    mv.addObject("cri",cri);
+		    
+		   // System.out.println("상세화면");
 		    return mv;
 		}
 		@RequestMapping(value= "/product/display",method=RequestMethod.POST)
@@ -135,6 +137,7 @@ public class ProductController {
 			
 			mv.setViewName("redirect:/product/basket");
 		    
+			//System.out.println("상세정보");
 		    return mv;
 		}
 		
@@ -234,42 +237,41 @@ public class ProductController {
 		@RequestMapping(value= "/product/finish",method=RequestMethod.GET)
 		public ModelAndView productFinishGet(ModelAndView mv, Integer []basket_check,DeliverVO dVo){
 			
+			//System.out.println("주문완료 화면 ");
 			mv.setViewName("/product/finish");
 			return mv;
 		}
 		@RequestMapping(value= "/product/finish",method=RequestMethod.POST)
-		public ModelAndView productFinishPost(ModelAndView mv, Integer []basket_check,DeliverVO dVo,OrderVO oVo,String basket_member_id){
+		public ModelAndView productFinishPost(ModelAndView mv, Integer []basket_check,DeliverVO dVo,String basket_member_id){
+			//v체크한항목을 넘겨받아 주문리스트 db 저장
 			for(Integer tmp : basket_check) {//체크된 값을 하나씩 끄집어내서  tmp에 저장 
 				
 				productService.checkBasket(tmp);
 			} 
-			
-			
-			
+			//list에 주문리스트 넣어서 보여줌
 			ArrayList<OrderVO> list = null;
-			
 			list = productService.getOrder(basket_member_id);
+			System.out.println(list);
+			//주문정보에 있는 order_num을 조회해서 배송테이블에 넣기 
+			//dVo.setDeliver_order_num(list.get(0).getOrder_num());
 			
 			
-			//System.out.println(list);
-			//System.out.println(list.get(0).getOrder_num());
-			
-			dVo.setDeliver_order_num(list.get(0).getOrder_num());
-			//System.out.println(dVo.getDeliver_order_num());
-			//System.out.println(dVo.getDeliver_no());
-			
-			//String dd = list.set(0, '')
-			
+			//배송지정보추가 
 			productService.deliverInfo(dVo);
+			
+			
 			mv.addObject("list",list);
-			mv.setViewName("redirect:/product/orderList");
+			
+			//System.out.println("주문완료 화면 :정보 ?");
+			mv.setViewName("redirect:/product/finish");
 			return mv;
 		}
 		//주문조회
 		@RequestMapping(value= "/product/orderList",method=RequestMethod.GET)
-		public ModelAndView productFinishGet(ModelAndView mv){
+		public ModelAndView productOrderListGet(ModelAndView mv ){
 			
 			mv.setViewName("/product/orderList");
+			//System.out.println("주문조회 ");
 			return mv;
 		}
 }

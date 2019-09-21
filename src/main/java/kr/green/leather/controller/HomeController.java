@@ -1,5 +1,7 @@
 package kr.green.leather.controller;
 
+import java.util.ArrayList;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
@@ -15,6 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import kr.green.leather.service.MemberService;
 import kr.green.leather.vo.MemberVO;
+import kr.green.leather.vo.ProductVO;
 
 
 @Controller
@@ -31,6 +34,8 @@ public class HomeController {
 	
 //		MemberVO mVo =memberService.getMember("z1234567");
 //		System.out.println(mVo);
+		
+		
 		
 		mv.setViewName("/main/home");
 	   

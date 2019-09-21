@@ -224,7 +224,7 @@
 		  	deliver_phone
 		  	)
 	  	values(
-	  		#{dVo.deliver_order_num},
+	  		#{order_num},
 		  	#{dVo.deliver_recipient},
 		  	#{dVo.deliver_address1},
 		  	#{dVo.deliver_address2},
@@ -232,7 +232,7 @@
 		  	#{dVo.deliver_phone}
 	  	)
   </insert> 
-  <!-- 주문리스트 -->
+  <!-- 주문리스트  -->
   <select id="selectOrder" resultType="kr.green.leather.vo.OrderVO">
   		select
   			*
@@ -241,4 +241,5 @@
 		where
 			order_member_id=#{basket_member_id};		
   </select>
+  
 </mapper> 
