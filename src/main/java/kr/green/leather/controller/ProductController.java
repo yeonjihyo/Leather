@@ -185,6 +185,7 @@ public class ProductController {
 				//System.out.println("productBasketGet member_id : " + member_id);
 				list = productService.getBasketList(member_id);
 			}
+			//System.out.println(list);
 			//System.out.println("productBasketGet list : " + list);
 		    mv.addObject("list",list);
 			mv.setViewName("/product/basket");
@@ -212,7 +213,7 @@ public class ProductController {
 		public ModelAndView productOrderGet(Integer[] cnt,Integer[] product_total,ModelAndView mv, Integer[] basket_check,int total,int deliverycost,int orderTotal){
 			//수량이랑 수량적용된금액 잘 넘어오는지 확인
 			for(Integer tmp: cnt) {
-				//System.out.println(tmp);
+				//System.out.System.out.println(tmp);
 			}
 			for(Integer tmp: product_total) {
 				//System.out.println(tmp);
@@ -237,14 +238,38 @@ public class ProductController {
 			return mv;
 		}
 		@RequestMapping(value= "/product/finish",method=RequestMethod.POST)
-		public ModelAndView productFinishPost(ModelAndView mv, Integer []basket_check,DeliverVO dVo){
+		public ModelAndView productFinishPost(ModelAndView mv, Integer []basket_check,DeliverVO dVo,OrderVO oVo,String basket_member_id){
 			for(Integer tmp : basket_check) {//체크된 값을 하나씩 끄집어내서  tmp에 저장 
 				
 				productService.checkBasket(tmp);
 			} 
 			
-			productService.deliverInfo( dVo);
-			mv.setViewName("redirect:/product/finish");
+			
+			
+			ArrayList<OrderVO> list = null;
+			
+			list = productService.getOrder(basket_member_id);
+			
+			
+			//System.out.println(list);
+			//System.out.println(list.get(0).getOrder_num());
+			
+			dVo.setDeliver_order_num(list.get(0).getOrder_num());
+			//System.out.println(dVo.getDeliver_order_num());
+			//System.out.println(dVo.getDeliver_no());
+			
+			//String dd = list.set(0, '')
+			
+			productService.deliverInfo(dVo);
+			mv.addObject("list",list);
+			mv.setViewName("redirect:/product/orderList");
+			return mv;
+		}
+		//주문조회
+		@RequestMapping(value= "/product/orderList",method=RequestMethod.GET)
+		public ModelAndView productFinishGet(ModelAndView mv){
+			
+			mv.setViewName("/product/orderList");
 			return mv;
 		}
 }

@@ -46,6 +46,8 @@ public interface ProductService {
 
 	void deliverInfo(DeliverVO dVo);
 
+	ArrayList<OrderVO> getOrder(String basket_member_id);
+
 
 
 	

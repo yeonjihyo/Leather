@@ -21,8 +21,11 @@
 </style>
 </head>
 <body>
-	<div class="orderFinish ">
-		<h2>주문이 완료 되었습니다.</h2>
-	</div>
+	
+		<div class="orderFinish ">
+			<h2>주문이 완료 되었습니다.</h2>
+		</div>
+	
+	
 </body>
 </html>

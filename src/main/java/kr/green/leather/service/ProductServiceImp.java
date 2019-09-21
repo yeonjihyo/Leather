@@ -121,7 +121,6 @@ public class ProductServiceImp implements ProductService{
 		BasketVO bVo = productDao.getBasket(tmp);
 		if(bVo != null) {
 			productDao.orderInsert(bVo);
-			//System.out.println(bVo);
 			
 		}
 	}
@@ -137,7 +136,7 @@ public class ProductServiceImp implements ProductService{
 			bvo.setCnt(cnt[i]);
 			bvo.setBasket_total(product_total[i]);
 			list.add(bvo);
-			System.out.println(basket_check);
+			
 		}
 		return list;
 	}
@@ -146,6 +145,12 @@ public class ProductServiceImp implements ProductService{
 	public void deliverInfo(DeliverVO dVo) {
 		productDao.deliverInsert(dVo);
 		
+	}
+
+	@Override
+	public ArrayList<OrderVO> getOrder(String basket_member_id) {
+		// TODO Auto-generated method stub
+		return productDao.selectOrder(basket_member_id);
 	}
 
 	
