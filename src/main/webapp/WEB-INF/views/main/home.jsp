@@ -8,7 +8,6 @@
 </head>
 <title>JH Leather</title>
 <!--middle-->
-	<form action="<%=request.getContextPath()%>/">
 	<div class=" div-center middle">
 		<div class="imgSlide">
 			<ul>
@@ -25,21 +24,17 @@
 					<div class="more-icon float-right">more</div>
 				</div>
 				<div class="product-box">
-					<div class="new">
+					<div class="new" style="width: 460px; height: 600px;">
 						<c:forEach items="${list}" var="product"> 
-				      		<tr class="productInfo">
-				      			<td class="info">
-						        	<div class="productImg div-center" >
-						        		<a href="<%=request.getContextPath()%>/product/display?product_code=${product.product_code}">
-						        			<img src="<%=request.getContextPath() %>/resources/upload${product.file}" style="width: 200px; height: 200px;">
-						        		</a>
-					        		</div>
-					        		<div class="productName div-center"  style="border-top: 2px solid #192d55; padding-top:5px; margin-top: 15px; width: 220px; text-align: center;">
-						        		<b><a style=" margin-top: 20px;" href="<%=request.getContextPath()%>/product/display?product_code=${product.product_code}">${product.product_title}</a></b><br>
-						        		<b>${product.product_price}원</b>
-					        		</div>
-								</td>
-					      	</tr>
+					      		<tr class="productInfo">
+					      			<td class="info">
+							        	<div class="productImg div-center" style="width: 230px; height: 200px;">
+							        		<a href="<%=request.getContextPath()%>/product/display?product_code=${product.product_code}">
+							        			<img src="<%=request.getContextPath() %>/resources/upload${product.file}" style="width: 230px; height: 200px;">
+							        		</a>
+						        		</div>
+									</td>
+						      	</tr>
 				      	</c:forEach>
 					</div>
 					<div class="new"></div>
@@ -55,7 +50,20 @@
 					<div class="more-icon float-right">more</div>
 				</div>
 				<div class="product-box">
-					<div class="best"></div>
+					<div class="best">
+						<c:forEach items="${list2}" var="product"> 
+				      		<tr class="productInfo">
+				      			<td class="info">
+						        	<div class="productImg div-center" style="width: 230px; height: 200px;">
+						        		<a href="<%=request.getContextPath()%>/product/display?product_code=${product.product_code}">
+						        			<img src="<%=request.getContextPath() %>/resources/upload${product.file}" style="width: 230px; height: 200px;">
+						        		</a>
+					        		</div>
+								</td>
+					      	</tr>
+					     
+				      	</c:forEach>
+					</div>
 					<div class="best"></div>
 					<div class="best"></div>
 					<div class="best"></div>
@@ -64,7 +72,6 @@
 				</div>
 			</div>
 		</div>
-		</form>
 		<!-- 메인하단.정보 -->
 		<div class="main-info">
 			<div class="info-box map-info">지도</div>

@@ -48,7 +48,9 @@ public interface ProductService {
 
 	ArrayList<OrderVO> getOrder(String basket_member_id);
 
+	ArrayList<ProductVO> getMainProductList(String product_state);
 
+	ArrayList<ProductVO> getMainProductList2(String product_state);
 
 	
 

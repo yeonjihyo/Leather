@@ -15,7 +15,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import kr.green.leather.pagination.Criteria;
+import kr.green.leather.pagination.PageMaker;
 import kr.green.leather.service.MemberService;
+import kr.green.leather.service.ProductService;
 import kr.green.leather.vo.MemberVO;
 import kr.green.leather.vo.ProductVO;
 
@@ -25,6 +28,8 @@ public class HomeController {
 	
 	@Autowired
 	MemberService memberService;
+	@Autowired
+	ProductService productService;
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
@@ -32,15 +37,22 @@ public class HomeController {
 	@RequestMapping(value= "/")
 	public ModelAndView openTilesView(ModelAndView mv){
 	
-//		MemberVO mVo =memberService.getMember("z1234567");
-//		System.out.println(mVo);
 		
+		ArrayList<ProductVO> list;	//최신순
+		ArrayList<ProductVO> list2;	//인기순
 		
+		list = productService.getMainProductList("I");
+		list2 = productService.getMainProductList2("I");
 		
+		System.out.println("list");
+		mv.addObject("list",list);
+		mv.addObject("list2",list2);
 		mv.setViewName("/main/home");
 	   
 	    return mv;
 	}
+	
+		
 	//회원가입
 	@RequestMapping(value= "/signup", method=RequestMethod.GET)
 	public ModelAndView signupGet(ModelAndView mv){

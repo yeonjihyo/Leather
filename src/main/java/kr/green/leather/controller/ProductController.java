@@ -57,13 +57,16 @@ public class ProductController {
 		if((product_maincategory == null || product_maincategory.length() ==0) && (product_subcategory == null || product_subcategory.length() ==0)) {
 			list = productService.getProductList(cri,product_state);
 			totalCount = productService.getTotalCount(cri,product_state);
+			
 		}
 		else if(product_subcategory != null && product_subcategory.length() !=0) {
 			list = productService.getProductList(cri,product_state,product_maincategory,product_subcategory);
 			totalCount = productService.getTotalCount(cri,product_state,product_maincategory,product_subcategory);
+			
 		}else{
 			list = productService.getProductList(cri,product_state,product_maincategory);
 			totalCount = productService.getTotalCount(cri,product_state,product_maincategory);
+		
 		}
 	
 		

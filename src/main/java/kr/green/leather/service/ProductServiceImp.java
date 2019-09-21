@@ -154,6 +154,18 @@ public class ProductServiceImp implements ProductService{
 	}
 
 	
+	
+	@Override
+	public ArrayList<ProductVO> getMainProductList( String product_state) {
+		// TODO Auto-generated method stub
+		return productDao.getMainProductListAll(product_state);
+	}
+
+	@Override
+	public ArrayList<ProductVO> getMainProductList2(String product_state) {
+		// TODO Auto-generated method stub
+		return productDao.getMainProductListAll2(product_state);
+	}
 
 	
 }
