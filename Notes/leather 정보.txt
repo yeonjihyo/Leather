@@ -4,3 +4,7 @@
 #dee2e6 !important
 
 <%=request.getContextPath()%>/resources/img/main/이미지슬라이드1.jsp
+
+
+메인하단 글씨체
+Haan Baekje B
