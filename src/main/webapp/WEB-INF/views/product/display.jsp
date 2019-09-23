@@ -59,7 +59,16 @@
 				$('input[name=product_total]').val(total);
 				
 			});
-			
+			$('.form-productInfo').submit(function () {
+				var member_id=$('input[name=member_id]').val();
+				if(member_id ==null || member_id == ''){
+					alert('로그인을 하세요');
+					location.href = "<%=request.getContextPath()%>/signin";
+					return false;
+				}else{
+					alert('장바구니에 추가되었습니다');
+				}
+			})
 		});
 		
 
@@ -87,7 +96,7 @@
 			</div>
 		</div>
 		<!-- 제품정보 -->
-		<form action="<%=request.getContextPath()%>/product/display" method="post">
+		<form class="form-productInfo" action="<%=request.getContextPath()%>/product/display" method="post">
 			<input type="hidden" name="member_id" value="${user.member_id}">
 			<div class="product-info float-right clearfix">
 				<div class="product-name  div-center" style="margin-top: 20px; margin-left: 20px;">

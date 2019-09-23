@@ -134,9 +134,6 @@ public class ProductController {
 		@RequestMapping(value= "/product/display",method=RequestMethod.POST)
 		public ModelAndView productBasketPost(ModelAndView mv,ProductVO cPVo,Integer cnt, String member_id, Integer product_total){
 			
-//			if(member_id == null || member_id == "" ) {
-//				mv.setViewName("redirect:/signin");
-//			}
 			productService.choiceProduct(cPVo,cnt,member_id,product_total);
 //			
 			
