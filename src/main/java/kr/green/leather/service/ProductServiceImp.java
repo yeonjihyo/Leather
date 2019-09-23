@@ -117,12 +117,14 @@ public class ProductServiceImp implements ProductService{
 	}
 
 	@Override
-	public void checkBasket(Integer tmp) {
+	public ArrayList<Integer> checkBasket(Integer tmp) {
 		BasketVO bVo = productDao.getBasket(tmp);
+		ArrayList<Integer> list = new ArrayList<Integer>();
 		if(bVo != null) {
 			productDao.orderInsert(bVo);
-			
+			list.add(productDao.getOrderLastNum());
 		}
+		return list;
 	}
 
 	
@@ -142,18 +144,14 @@ public class ProductServiceImp implements ProductService{
 	}
 
 	@Override
-	public void deliverInfo(DeliverVO dVo) {
-		productDao.deliverInsert(dVo);
-		
-	}
-
-	@Override
-	public ArrayList<OrderVO> getOrder(String basket_member_id) {
-		// TODO Auto-generated method stub
-		return productDao.selectOrder(basket_member_id);
-	}
-
+	public void deliverInfo(DeliverVO dVo, ArrayList<Integer> orderNumList) {
+		for(Integer tmp : orderNumList) {
+			dVo.setOrder_num(tmp);
+			productDao.deliverInsert(dVo);
+		}
 	
+	}
+
 	
 	@Override
 	public ArrayList<ProductVO> getMainProductList( String product_state) {
@@ -166,6 +164,14 @@ public class ProductServiceImp implements ProductService{
 		// TODO Auto-generated method stub
 		return productDao.getMainProductListAll2(product_state);
 	}
+
+	@Override
+	public ArrayList<OrderVO> getOrder(Integer[] basket_check,String basket_member_id) {
+		// TODO Auto-generated method stub
+		return productDao.selectOrder(basket_check,basket_member_id);
+	}
+
+	
 
 	
 }

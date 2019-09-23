@@ -246,24 +246,18 @@ public class ProductController {
 		}
 		@RequestMapping(value= "/product/finish",method=RequestMethod.POST)
 		public ModelAndView productFinishPost(ModelAndView mv, Integer []basket_check,DeliverVO dVo,String basket_member_id){
-			//v체크한항목을 넘겨받아 주문리스트 db 저장
+			ArrayList<Integer> orderNumList = null;
+			//체크한항목을 넘겨받아 주문리스트 db 저장
 			for(Integer tmp : basket_check) {//체크된 값을 하나씩 끄집어내서  tmp에 저장 
 				
-				productService.checkBasket(tmp);
+				orderNumList = productService.checkBasket(tmp);
+				
 			} 
-			//list에 주문리스트 넣어서 보여줌
-			ArrayList<OrderVO> list = null;
-			list = productService.getOrder(basket_member_id);
-			System.out.println(list);
-			//주문정보에 있는 order_num을 조회해서 배송테이블에 넣기 
-			//dVo.setDeliver_order_num(list.get(0).getOrder_num());
 			
 			
 			//배송지정보추가 
-			productService.deliverInfo(dVo);
-			
-			
-			mv.addObject("list",list);
+			int delNum = productService.deliverInfo(dVo, orderNumList);
+			System.out.println(dVo);
 			
 			
 			mv.setViewName("redirect:/product/finish");
@@ -271,10 +265,13 @@ public class ProductController {
 		}
 		//주문조회
 		@RequestMapping(value= "/product/orderList",method=RequestMethod.GET)
-		public ModelAndView productOrderListGet(ModelAndView mv ){
+		public ModelAndView productOrderListGet(ModelAndView mv){
+			
+			
+		
+			
 			
 			mv.setViewName("/product/orderList");
-			
 			return mv;
 		}
 }

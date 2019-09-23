@@ -9,6 +9,7 @@
 <body>
 	
 	<form action="<%=request.getContextPath()%>/product/orderList" method="get">
+		아이디<input  name="basket_member_id" value="${user.member_id}">
 		<table class="table table-hover" style="min-width: 1080px;">
 		    <tr>
 		      <th style="text-align: center;">주문일자</th>

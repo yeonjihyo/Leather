@@ -44,7 +44,7 @@ public class HomeController {
 		list = productService.getMainProductList("I");
 		list2 = productService.getMainProductList2("I");
 		
-		System.out.println("list");
+		
 		mv.addObject("list",list);
 		mv.addObject("list2",list2);
 		mv.setViewName("/main/home");

@@ -45,12 +45,15 @@ public interface ProductDAO {
 
 	void deliverInsert(@Param("dVo")DeliverVO dVo);
 
-	ArrayList<OrderVO> selectOrder(@Param("basket_member_id")String basket_member_id);
-
-
 	ArrayList<ProductVO> getMainProductListAll(@Param("product_state")String product_state);
 
 	ArrayList<ProductVO> getMainProductListAll2(@Param("product_state")String product_state);
+
+	ArrayList<OrderVO> selectOrder(@Param("basket_check")Integer[] basket_check,@Param("basket_member_id")String basket_member_id);
+
+	Integer getOrderLastNum();
+
+
 
 	
 

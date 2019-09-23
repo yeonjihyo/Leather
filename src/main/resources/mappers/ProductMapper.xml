@@ -216,7 +216,6 @@
   <!-- 배송지추가  -->
   <insert id="deliverInsert">
   	insert into deliver(
-  			deliver_order_num,
 		  	deliver_recipient,
 		  	deliver_address1,
 		  	deliver_address2,
@@ -224,7 +223,6 @@
 		  	deliver_phone
 		  	)
 	  	values(
-	  		#{order_num},
 		  	#{dVo.deliver_recipient},
 		  	#{dVo.deliver_address1},
 		  	#{dVo.deliver_address2},
@@ -232,15 +230,7 @@
 		  	#{dVo.deliver_phone}
 	  	)
   </insert> 
-  <!-- 주문리스트  -->
-  <select id="selectOrder" resultType="kr.green.leather.vo.OrderVO">
-  		select
-  			*
-  		from 
-			leather.order
-		where
-			order_member_id=#{basket_member_id};		
-  </select>
+  
   <!-- main 전체제품리스트 최신순-->
 	<select id="getMainProductListAll" resultType="kr.green.leather.vo.ProductVO">
 	    select * from product order by product_registered desc limit 6;
@@ -250,4 +240,16 @@
 	<select id="getMainProductListAll2" resultType="kr.green.leather.vo.ProductVO">
 	    select * from product order by product_views desc limit 6;   
  	 </select>
+ 	 <!-- 주문리스트  -->
+  <select id="selectOrder" resultType="kr.green.leather.vo.OrderVO">
+  		select
+  			*
+  		from 
+			leather.order
+		where
+			order_member_id=#{basket_member_id};		
+  </select>
+	<select id="getOrderLastNum" resultType="int">
+		select max(order_num)	from leather.order;
+	</select> 	 
 </mapper> 

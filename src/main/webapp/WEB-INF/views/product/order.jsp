@@ -32,7 +32,6 @@
 	<h3 class=" div-center border-bottom" style="margin-top: 50px; margin-bottom:50px; padding-bottom: 10px;">|주문</h3>
 	<form action="<%=request.getContextPath()%>/product/finish" method="post">
 		아이디<input  name="basket_member_id" value="${user.member_id}">
-		아이디<input  name="order_num" value="${user.member_id}">
 		<table class="table table-hover" style="min-width: 1080px;">
 		    <tr>
 		      <th>상품코드</th>
@@ -117,6 +116,7 @@
 			    </div>
 		    </div>
 	    	<table class="deliverInfo table table-hover" style="min-width: 1080px;">
+	    		
 	    		
 		    	<tr>
 					<th>수령인</th>

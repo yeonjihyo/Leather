@@ -40,17 +40,18 @@ public interface ProductService {
 
 	void deleteBasket(String basket_no);
 
-	void checkBasket(Integer tmp);
+	ArrayList<Integer> checkBasket(Integer tmp);
 
 	ArrayList<BasketVO> getBasketList(Integer[] basket_check,Integer[]cnt,Integer []product_total);
 
-	void deliverInfo(DeliverVO dVo);
-
-	ArrayList<OrderVO> getOrder(String basket_member_id);
+	void deliverInfo(DeliverVO dVo, ArrayList<Integer> orderNumList);
 
 	ArrayList<ProductVO> getMainProductList(String product_state);
 
 	ArrayList<ProductVO> getMainProductList2(String product_state);
+
+	ArrayList<OrderVO> getOrder(Integer[] basket_check,String basket_member_id);
+
 
 	
 
