@@ -134,7 +134,9 @@ public class ProductController {
 		@RequestMapping(value= "/product/display",method=RequestMethod.POST)
 		public ModelAndView productBasketPost(ModelAndView mv,ProductVO cPVo,Integer cnt, String member_id, Integer product_total){
 			
-			
+//			if(member_id == null || member_id == "" ) {
+//				mv.setViewName("redirect:/signin");
+//			}
 			productService.choiceProduct(cPVo,cnt,member_id,product_total);
 //			
 			
@@ -190,12 +192,11 @@ public class ProductController {
 				String member_id=user.getMember_id();
 				//System.out.println("productBasketGet member_id : " + member_id);
 				list = productService.getBasketList(member_id);
+				mv.setViewName("/product/basket");
 			}
 			//System.out.println(list);
 			//System.out.println("productBasketGet list : " + list);
 		    mv.addObject("list",list);
-			mv.setViewName("/product/basket");
-		    
 		    return mv;
 		}
 
