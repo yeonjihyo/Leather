@@ -128,7 +128,7 @@ public class ProductController {
 		    mv.addObject("product",product);
 		    mv.addObject("cri",cri);
 		    
-		   // System.out.println("상세화면");
+		   
 		    return mv;
 		}
 		@RequestMapping(value= "/product/display",method=RequestMethod.POST)
@@ -140,7 +140,7 @@ public class ProductController {
 			
 			mv.setViewName("redirect:/product/basket");
 		    
-			//System.out.println("상세정보");
+			
 		    return mv;
 		}
 		
@@ -240,7 +240,7 @@ public class ProductController {
 		@RequestMapping(value= "/product/finish",method=RequestMethod.GET)
 		public ModelAndView productFinishGet(ModelAndView mv, Integer []basket_check,DeliverVO dVo){
 			
-			//System.out.println("주문완료 화면 ");
+			
 			mv.setViewName("/product/finish");
 			return mv;
 		}
@@ -265,7 +265,7 @@ public class ProductController {
 			
 			mv.addObject("list",list);
 			
-			//System.out.println("주문완료 화면 :정보 ?");
+			
 			mv.setViewName("redirect:/product/finish");
 			return mv;
 		}
@@ -274,7 +274,7 @@ public class ProductController {
 		public ModelAndView productOrderListGet(ModelAndView mv ){
 			
 			mv.setViewName("/product/orderList");
-			//System.out.println("주문조회 ");
+			
 			return mv;
 		}
 }
