@@ -251,8 +251,8 @@ public class ProductController {
 				orderNumList.add(productService.checkBasket(tmp));
 				
 			} 
-			System.out.println("리스트");
-			System.out.println(orderNumList);
+//			System.out.println("리스트");
+//			System.out.println(orderNumList);
 			
 			//배송지정보추가 
 			productService.deliverInfo(dVo, orderNumList);
