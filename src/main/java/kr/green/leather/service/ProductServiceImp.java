@@ -117,14 +117,14 @@ public class ProductServiceImp implements ProductService{
 	}
 
 	@Override
-	public ArrayList<Integer> checkBasket(Integer tmp) {
+	public Integer checkBasket(Integer tmp) {
 		BasketVO bVo = productDao.getBasket(tmp);
-		ArrayList<Integer> list = new ArrayList<Integer>();
+		
 		if(bVo != null) {
 			productDao.orderInsert(bVo);
-			list.add(productDao.getOrderLastNum());
+			return productDao.getOrderLastNum();
 		}
-		return list;
+		return null;
 	}
 
 	
@@ -146,7 +146,7 @@ public class ProductServiceImp implements ProductService{
 	@Override
 	public void deliverInfo(DeliverVO dVo, ArrayList<Integer> orderNumList) {
 		for(Integer tmp : orderNumList) {
-			dVo.setOrder_num(tmp);
+			dVo.setDeliver_order_num(tmp);
 			productDao.deliverInsert(dVo);
 		}
 	

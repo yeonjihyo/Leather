@@ -40,7 +40,7 @@ public interface ProductService {
 
 	void deleteBasket(String basket_no);
 
-	ArrayList<Integer> checkBasket(Integer tmp);
+	Integer checkBasket(Integer tmp);
 
 	ArrayList<BasketVO> getBasketList(Integer[] basket_check,Integer[]cnt,Integer []product_total);
 

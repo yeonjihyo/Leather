@@ -216,6 +216,7 @@
   <!-- 배송지추가  -->
   <insert id="deliverInsert">
   	insert into deliver(
+  			deliver_order_num,
 		  	deliver_recipient,
 		  	deliver_address1,
 		  	deliver_address2,
@@ -223,6 +224,7 @@
 		  	deliver_phone
 		  	)
 	  	values(
+	  		#{dVo.deliver_order_num},
 		  	#{dVo.deliver_recipient},
 		  	#{dVo.deliver_address1},
 		  	#{dVo.deliver_address2},

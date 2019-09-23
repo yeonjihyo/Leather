@@ -246,18 +246,18 @@ public class ProductController {
 		}
 		@RequestMapping(value= "/product/finish",method=RequestMethod.POST)
 		public ModelAndView productFinishPost(ModelAndView mv, Integer []basket_check,DeliverVO dVo,String basket_member_id){
-			ArrayList<Integer> orderNumList = null;
+			ArrayList<Integer> orderNumList = new ArrayList<Integer>();
 			//체크한항목을 넘겨받아 주문리스트 db 저장
 			for(Integer tmp : basket_check) {//체크된 값을 하나씩 끄집어내서  tmp에 저장 
 				
-				orderNumList = productService.checkBasket(tmp);
+				orderNumList.add(productService.checkBasket(tmp));
 				
 			} 
-			
+			System.out.println("리스트");
+			System.out.println(orderNumList);
 			
 			//배송지정보추가 
-			int delNum = productService.deliverInfo(dVo, orderNumList);
-			System.out.println(dVo);
+			productService.deliverInfo(dVo, orderNumList);
 			
 			
 			mv.setViewName("redirect:/product/finish");
