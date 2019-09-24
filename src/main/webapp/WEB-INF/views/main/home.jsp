@@ -24,11 +24,11 @@
 					<div class="more-icon float-right">more</div>
 				</div>
 				<div class="product-box">
-					<div class="new" style="width: 460px; height: 600px;">
+					<div class="new" >
 						<c:forEach items="${list}" var="product"> 
 					      		<tr class="productInfo">
 					      			<td class="info">
-							        	<div class="productImg div-center" style="width: 230px; height: 200px;">
+							        	<div class="productImg float-left" style="width: 230px; height: 200px;">
 							        		<a href="<%=request.getContextPath()%>/product/display?product_code=${product.product_code}">
 							        			<img src="<%=request.getContextPath() %>/resources/upload${product.file}" style="width: 230px; height: 200px;">
 							        		</a>
@@ -37,11 +37,6 @@
 						      	</tr>
 				      	</c:forEach>
 					</div>
-					<div class="new"></div>
-					<div class="new"></div>
-					<div class="new"></div>
-					<div class="new"></div>
-					<div class="new"></div>
 				</div>
 			</div>
 			<div class="main-best">
@@ -54,7 +49,7 @@
 						<c:forEach items="${list2}" var="product"> 
 				      		<tr class="productInfo">
 				      			<td class="info">
-						        	<div class="productImg div-center" style="width: 230px; height: 200px;">
+						        	<div class="productImg2 float-left" style="width: 230px; height: 200px;">
 						        		<a href="<%=request.getContextPath()%>/product/display?product_code=${product.product_code}">
 						        			<img src="<%=request.getContextPath() %>/resources/upload${product.file}" style="width: 230px; height: 200px;">
 						        		</a>
@@ -64,11 +59,6 @@
 					     
 				      	</c:forEach>
 					</div>
-					<div class="best"></div>
-					<div class="best"></div>
-					<div class="best"></div>
-					<div class="best"></div>
-					<div class="best"></div>
 				</div>
 			</div>
 		</div>
