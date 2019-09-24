@@ -35,7 +35,7 @@ CREATE TABLE `deliver` (
   PRIMARY KEY (`deliver_no`),
   KEY `deliver_order_num_idx` (`deliver_order_num`),
   CONSTRAINT `deliver_order_num` FOREIGN KEY (`deliver_order_num`) REFERENCES `order` (`order_num`)
-) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -56,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-09-23 17:19:36
+-- Dump completed on 2019-09-24 17:16:16

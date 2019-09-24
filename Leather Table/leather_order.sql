@@ -39,7 +39,7 @@ CREATE TABLE `order` (
   KEY `order_product_code_idx` (`order_product_code`),
   CONSTRAINT `order_member_id` FOREIGN KEY (`order_member_id`) REFERENCES `member` (`member_id`),
   CONSTRAINT `order_product_code` FOREIGN KEY (`order_product_code`) REFERENCES `product` (`product_code`)
-) ENGINE=InnoDB AUTO_INCREMENT=125 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=148 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -60,4 +60,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-09-23 17:19:37
+-- Dump completed on 2019-09-24 17:16:18
