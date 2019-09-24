@@ -21,7 +21,7 @@
 			<div class="main-new">
 				<div class="product-icon">
 					<div class="new-icon float-left">new</div>
-					<div class="more-icon float-right">more</div>
+					<a href="<%=request.getContextPath()%>/product/list"><div class="more-icon float-right">more</div></a>
 				</div>
 				<div class="product-box">
 					<div class="new" >
@@ -42,7 +42,7 @@
 			<div class="main-best">
 				<div class="product-icon">
 					<div class="best-icon float-left">best</div>
-					<div class="more-icon float-right">more</div>
+					<a href="<%=request.getContextPath()%>/product/list"><div class="more-icon float-right">more</div></a>
 				</div>
 				<div class="product-box">
 					<div class="best">
