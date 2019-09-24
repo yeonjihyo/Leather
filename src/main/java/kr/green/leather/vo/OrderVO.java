@@ -4,7 +4,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class OrderVO extends BasketVO {
+public class OrderVO extends ProductVO {
 	private int order_num;
 	private String order_member_id;
 	private String order_product_code;

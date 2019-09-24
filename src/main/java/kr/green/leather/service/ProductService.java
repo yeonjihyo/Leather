@@ -52,6 +52,8 @@ public interface ProductService {
 
 	ArrayList<BasketVO> getOrder(String member_id);
 
+	void orProduct(ProductVO cPVo, Integer cnt, String member_id, Integer product_total);
+
 	
 
 

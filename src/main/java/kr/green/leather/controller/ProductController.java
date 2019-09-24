@@ -234,6 +234,28 @@ public class ProductController {
 			mv.setViewName("/product/order");
 			return mv;
 		}
+		//주문2
+		@RequestMapping(value= "/product/order2",method=RequestMethod.GET)
+		public ModelAndView productOrder2Get(ModelAndView mv,String member_id){
+				
+			
+			
+			mv.setViewName("/product/order2");
+			return mv;
+		}
+		@RequestMapping(value= "/product/order2",method=RequestMethod.POST)
+		public ModelAndView productOrder2Post(ModelAndView mv,ProductVO cPVo,Integer cnt, String member_id, Integer product_total){
+			
+			System.out.println(cPVo);
+			System.out.println(cnt);
+			System.out.println(member_id);
+			System.out.println(product_total);
+			
+			productService.orProduct(cPVo,cnt,member_id,product_total);
+			//
+			mv.setViewName("redirect:/product/order2");
+			return mv;
+		}
 		//주문완료
 		@RequestMapping(value= "/product/finish",method=RequestMethod.GET)
 		public ModelAndView productFinishGet(ModelAndView mv, Integer []basket_check,DeliverVO dVo){
@@ -261,6 +283,8 @@ public class ProductController {
 			mv.setViewName("redirect:/product/finish");
 			return mv;
 		}
+		
+		
 		//주문조회
 		@RequestMapping(value= "/product/orderList",method=RequestMethod.GET)
 		public ModelAndView productOrderListGet(ModelAndView mv,HttpServletRequest r){

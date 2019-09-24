@@ -255,4 +255,30 @@
 		where
 			order_member_id=#{member_id};
 	</select>
+	
+	
+	<!--오더2 추가 -->
+	<insert id="orderInsert2">
+  	insert into leather.order(
+		  	order_product_code,
+		  	order_member_id,
+		  	cnt,
+		  	order_total
+		  	)
+	  	values(
+		  	#{cPVo.product_code},
+		  	#{member_id},
+		  	#{cnt},
+		  	#{cPVo.product_total}
+	  	)
+  </insert>
+  <!-- 주문페이지에 order2리스트 -->
+  <select id="getOrder2" resultType="kr.green.leather.vo.OrderVO">
+  	SELECT 
+	* 
+	FROM 
+		product
+		
+	    
+  </select> 
 </mapper> 

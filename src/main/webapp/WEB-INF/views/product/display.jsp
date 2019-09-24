@@ -60,7 +60,7 @@
 				
 			});
 			$('#buybtn').click(function(){
-				$('.form-productInfo').attr('action','<%=request.getContextPath()%>/product/display2');
+				$('.form-productInfo').attr('action','<%=request.getContextPath()%>/product/order2').attr('method','post');
 			})
 			$('.form-productInfo').submit(function () {
 				
