@@ -267,18 +267,17 @@ public class ProductController {
 			return mv;
 		}
 		@RequestMapping(value= "/product/finish",method=RequestMethod.POST)
-		public ModelAndView productFinishPost(ModelAndView mv, Integer []basket_check,DeliverVO dVo,String basket_member_id,ProductVO pVo,Integer cnt, String member_id, Integer product_total){
+		public ModelAndView productFinishPost(ModelAndView mv, Integer []basket_check,DeliverVO dVo,String basket_member_id,ProductVO pVo,Integer cnt, String member_id, Integer orderTotal){
 			ArrayList<Integer> orderNumList = new ArrayList<Integer>();
 			//체크한항목을 넘겨받아 주문리스트 db 저장
 			for(Integer tmp : basket_check) {//체크된 값을 하나씩 끄집어내서  tmp에 저장 
 				
-				orderNumList.add(productService.checkBasket(tmp));
+				orderNumList.add(productService.checkBasket(tmp,orderTotal));
 				
 			} 
 //			System.out.println("리스트");
 //			System.out.println(orderNumList);
-			//오더2 추가
-			//productService.orderInsert2(pVo,cnt,member_id,product_total);
+			
 			
 			//배송지정보추가 
 			productService.deliverInfo(dVo, orderNumList);
@@ -287,7 +286,20 @@ public class ProductController {
 			mv.setViewName("redirect:/product/finish");
 			return mv;
 		}
-		
+		//주문완료22
+		@RequestMapping(value= "/product/finish2",method=RequestMethod.GET)
+		public ModelAndView productFinish2Get(ModelAndView mv,DeliverVO dVo,String basket_member_id,ProductVO pVo,Integer cnt, String member_id, Integer orderTotal){
+			
+			//오더2 추가
+			productService.orderInsert2(pVo,cnt,member_id,orderTotal);
+			
+			//배송지정보추가 
+			//productService.deliverInfo(dVo);
+			
+			mv.setViewName("/product/finish2");
+			return mv;
+		}
+				
 		
 		//주문조회
 		@RequestMapping(value= "/product/orderList",method=RequestMethod.GET)

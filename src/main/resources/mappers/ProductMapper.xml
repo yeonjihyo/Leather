@@ -210,7 +210,7 @@
 		  	#{bVo.basket_product_code},
 		  	#{bVo.basket_member_id},
 		  	#{bVo.cnt},
-		  	#{bVo.basket_total}
+		  	#{orderTotal}
 	  	)
   </insert> 
   <!-- 배송지추가  -->
@@ -269,7 +269,7 @@
 		  	#{pVo.product_code},
 		  	#{member_id},
 		  	#{cnt},
-		  	#{pVo.product_total}
+		  	#{orderTotal}
 	  	)
   </insert>
   <!-- 주문페이지에 order2리스트 -->

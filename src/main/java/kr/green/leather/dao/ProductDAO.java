@@ -41,7 +41,7 @@ public interface ProductDAO {
 
 	BasketVO getBasket(@Param("tmp")Integer tmp);
 	
-	void orderInsert(@Param("bVo")BasketVO bVo);
+	void orderInsert(@Param("bVo")BasketVO bVo,@Param("orderTotal")Integer orderTotal);
 
 	void deliverInsert(@Param("dVo")DeliverVO dVo);
 
@@ -53,7 +53,7 @@ public interface ProductDAO {
 
 	ArrayList<BasketVO> getOrder(@Param("member_id")String member_id);
 
-	void orderInsert2(@Param("pVo")ProductVO cPVo,@Param("cnt")Integer cnt, @Param("member_id")String member_id, @Param("product_total")Integer product_total);
+	void orderInsert2(@Param("pVo")ProductVO pVo,@Param("cnt")Integer cnt, @Param("member_id")String member_id, @Param("orderTotal")Integer orderTotal);
 
 	void orderProduct(@Param("pVo")ProductVO pVo);
 

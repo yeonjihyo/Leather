@@ -40,7 +40,7 @@ public interface ProductService {
 
 	void deleteBasket(String basket_no);
 
-	Integer checkBasket(Integer tmp);
+	Integer checkBasket(Integer tmp,Integer orderTotal);
 
 	ArrayList<BasketVO> getBasketList(Integer[] basket_check,Integer[]cnt,Integer []product_total);
 
@@ -52,9 +52,11 @@ public interface ProductService {
 
 	ArrayList<BasketVO> getOrder(String member_id);
 
-	void orderInsert2(ProductVO pVo, Integer cnt, String member_id, Integer product_total);
+	void orderInsert2(ProductVO pVo, Integer cnt, String member_id, Integer orderTotal);
 
 	void orderProduct(ProductVO pVo);
+
+	void deliverInfo(DeliverVO dVo);
 
 	
 

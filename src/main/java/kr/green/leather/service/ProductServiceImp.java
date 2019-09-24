@@ -117,11 +117,11 @@ public class ProductServiceImp implements ProductService{
 	}
 
 	@Override
-	public Integer checkBasket(Integer tmp) {
+	public Integer checkBasket(Integer tmp,Integer orderTotal) {
 		BasketVO bVo = productDao.getBasket(tmp);
 		
 		if(bVo != null) {
-			productDao.orderInsert(bVo);
+			productDao.orderInsert(bVo,orderTotal);
 			return productDao.getOrderLastNum();
 		}
 		return null;
@@ -172,15 +172,22 @@ public class ProductServiceImp implements ProductService{
 	}
 
 	@Override
-	public void orderInsert2(ProductVO pVo, Integer cnt, String member_id, Integer product_total) {
+	public void orderInsert2(ProductVO pVo, Integer cnt, String member_id, Integer orderTotal) {
 		// TODO Auto-generated method stub
-		productDao.orderInsert2(cPVo,cnt,member_id,product_total);
+		productDao.orderInsert2(pVo,cnt,member_id,orderTotal);
 		
 	}
 
 	@Override
 	public void orderProduct(ProductVO pVo) {
 		productDao.orderProduct(pVo);
+		
+	}
+
+	@Override
+	public void deliverInfo(DeliverVO dVo) {
+		//dVo.setDeliver_order_num();
+		//productDao.deliverInsert(dVo);
 		
 	}
 
