@@ -172,7 +172,7 @@ public class ProductServiceImp implements ProductService{
 	}
 
 	@Override
-	public void orProduct(ProductVO cPVo, Integer cnt, String member_id, Integer product_total) {
+	public void orderInsert2(ProductVO pVo, Integer cnt, String member_id, Integer product_total) {
 		// TODO Auto-generated method stub
 		productDao.orderInsert2(cPVo,cnt,member_id,product_total);
 		

@@ -266,10 +266,10 @@
 		  	order_total
 		  	)
 	  	values(
-		  	#{cPVo.product_code},
+		  	#{pVo.product_code},
 		  	#{member_id},
 		  	#{cnt},
-		  	#{cPVo.product_total}
+		  	#{pVo.product_total}
 	  	)
   </insert>
   <!-- 주문페이지에 order2리스트 -->

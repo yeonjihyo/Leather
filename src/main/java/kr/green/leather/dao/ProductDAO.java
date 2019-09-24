@@ -53,7 +53,7 @@ public interface ProductDAO {
 
 	ArrayList<BasketVO> getOrder(@Param("member_id")String member_id);
 
-	void orderInsert2(@Param("cPVo")ProductVO cPVo,@Param("cnt")Integer cnt, @Param("member_id")String member_id, @Param("product_total")Integer product_total);
+	void orderInsert2(@Param("pVo")ProductVO cPVo,@Param("cnt")Integer cnt, @Param("member_id")String member_id, @Param("product_total")Integer product_total);
 
 	void orderProduct(@Param("pVo")ProductVO pVo);
 

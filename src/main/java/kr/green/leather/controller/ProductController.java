@@ -244,16 +244,14 @@ public class ProductController {
 			return mv;
 		}
 		@RequestMapping(value= "/product/order2",method=RequestMethod.POST)
-		public ModelAndView productOrder2Post(ModelAndView mv,ProductVO pVo,Integer cnt, String member_id, Integer product_total){
+		public ModelAndView productOrder2Post(ModelAndView mv,ProductVO pVo,Integer cnt){
 			
-			System.out.println("jsp에서받음 "+pVo);
+//			System.out.println("jsp에서받음 "+pVo);
 //			System.out.println(cnt);
-//			System.out.println(member_id);
-//			System.out.println(product_total);
 			
-			//productService.orProduct(cPVo,cnt,member_id,product_total);
 			
-			productService.orderProduct(pVo);
+			
+//			productService.orderProduct(pVo);
 			System.out.println(pVo);
 			mv.addObject("pVo",pVo);
 			mv.addObject("cnt",cnt);
@@ -269,7 +267,7 @@ public class ProductController {
 			return mv;
 		}
 		@RequestMapping(value= "/product/finish",method=RequestMethod.POST)
-		public ModelAndView productFinishPost(ModelAndView mv, Integer []basket_check,DeliverVO dVo,String basket_member_id){
+		public ModelAndView productFinishPost(ModelAndView mv, Integer []basket_check,DeliverVO dVo,String basket_member_id,ProductVO pVo,Integer cnt, String member_id, Integer product_total){
 			ArrayList<Integer> orderNumList = new ArrayList<Integer>();
 			//체크한항목을 넘겨받아 주문리스트 db 저장
 			for(Integer tmp : basket_check) {//체크된 값을 하나씩 끄집어내서  tmp에 저장 
@@ -279,6 +277,8 @@ public class ProductController {
 			} 
 //			System.out.println("리스트");
 //			System.out.println(orderNumList);
+			//오더2 추가
+			//productService.orderInsert2(pVo,cnt,member_id,product_total);
 			
 			//배송지정보추가 
 			productService.deliverInfo(dVo, orderNumList);

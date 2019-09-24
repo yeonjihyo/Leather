@@ -13,16 +13,8 @@
 	</style>
 	<script type="text/javascript">
 		$(document).ready(function () {
-			//주문금액에 따른 배송비 계산하기
-			$('.calc').
-			var deliverycost = 0;
-			var total= $('input[name=total]').val();
-			if(total <50000 && total>0){
-				total + parseInt(3000); 				
-			}else{
-				total + parseInt(0); 
-			} 
-			$('input[name=orderTotal]').val(total);
+			//금액계산한거불러오기
+			total();
 			
 			//새로운 배송지 선택시 
 			$('#newInfo').click(function () {
@@ -36,8 +28,20 @@
 				$('#deliver_address2').val($('#deliver_address4').val()).prop('readonly',true);
 				$('#deliver_phone').val($('#deliver_phone2').val()).prop('readonly',true);
 			});
-			
 		});
+		function total() {
+			//주문금액에 따른 배송비 계산하기
+			var deliverycost = 0;
+			var total= $('input[name=total]').val();
+			
+			if(total <50000 && total>0){
+				total=parseInt(total)+parseInt(3000);
+				$('input[name=deliverycost]').val(3000);
+			}else{
+				$('input[name=deliverycost]').val(0);
+			} 
+			$('input[name=orderTotal]').val(total);
+		}
 	</script>
 </head>
 <body>
