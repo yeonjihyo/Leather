@@ -294,7 +294,8 @@ public class ProductController {
 			productService.orderInsert2(pVo,cnt,member_id,orderTotal);
 			
 			//배송지정보추가 
-			//productService.deliverInfo(dVo);
+			productService.deliverInfo(dVo);
+			System.out.println(dVo);
 			
 			mv.setViewName("/product/finish2");
 			return mv;

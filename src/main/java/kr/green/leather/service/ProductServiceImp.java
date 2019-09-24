@@ -186,8 +186,10 @@ public class ProductServiceImp implements ProductService{
 
 	@Override
 	public void deliverInfo(DeliverVO dVo) {
+		//오더브이오에있는 오더 넘을 딜리버오더넘에 넣어주는 과정 
 		//dVo.setDeliver_order_num();
 		//productDao.deliverInsert(dVo);
+		
 		
 	}
 
