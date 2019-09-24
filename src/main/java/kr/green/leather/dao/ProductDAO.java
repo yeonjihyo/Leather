@@ -55,6 +55,8 @@ public interface ProductDAO {
 
 	void orderInsert2(@Param("cPVo")ProductVO cPVo,@Param("cnt")Integer cnt, @Param("member_id")String member_id, @Param("product_total")Integer product_total);
 
+	void orderProduct(@Param("pVo")ProductVO pVo);
+
 
 	
 

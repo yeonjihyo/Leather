@@ -273,11 +273,13 @@
 	  	)
   </insert>
   <!-- 주문페이지에 order2리스트 -->
-  <select id="getOrder2" resultType="kr.green.leather.vo.OrderVO">
+  <select id="orderProduct" resultType="kr.green.leather.vo.ProductVO">
   	SELECT 
 	* 
 	FROM 
 		product
+	where product_code=#{pVo.product_code}
+		;
 		
 	    
   </select> 

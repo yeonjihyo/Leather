@@ -244,16 +244,20 @@ public class ProductController {
 			return mv;
 		}
 		@RequestMapping(value= "/product/order2",method=RequestMethod.POST)
-		public ModelAndView productOrder2Post(ModelAndView mv,ProductVO cPVo,Integer cnt, String member_id, Integer product_total){
+		public ModelAndView productOrder2Post(ModelAndView mv,ProductVO pVo,Integer cnt, String member_id, Integer product_total){
 			
-			System.out.println(cPVo);
-			System.out.println(cnt);
-			System.out.println(member_id);
-			System.out.println(product_total);
+			System.out.println("jsp에서받음 "+pVo);
+//			System.out.println(cnt);
+//			System.out.println(member_id);
+//			System.out.println(product_total);
 			
-			productService.orProduct(cPVo,cnt,member_id,product_total);
-			//
-			mv.setViewName("redirect:/product/order2");
+			//productService.orProduct(cPVo,cnt,member_id,product_total);
+			
+			productService.orderProduct(pVo);
+			System.out.println(pVo);
+			mv.addObject("pVo",pVo);
+			mv.addObject("cnt",cnt);
+			mv.setViewName("/product/order2");
 			return mv;
 		}
 		//주문완료

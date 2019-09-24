@@ -54,6 +54,8 @@ public interface ProductService {
 
 	void orProduct(ProductVO cPVo, Integer cnt, String member_id, Integer product_total);
 
+	void orderProduct(ProductVO pVo);
+
 	
 
 

@@ -8,10 +8,21 @@
 	<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/common.css">
 	<title>주문</title>
 	<style type="text/css">
-	
+	.orderList2 input{
+	border:none;}
 	</style>
 	<script type="text/javascript">
 		$(document).ready(function () {
+			//주문금액에 따른 배송비 계산하기
+			$('.calc').
+			var deliverycost = 0;
+			var total= $('input[name=total]').val();
+			if(total <50000 && total>0){
+				total + parseInt(3000); 				
+			}else{
+				total + parseInt(0); 
+			} 
+			$('input[name=orderTotal]').val(total);
 			
 			//새로운 배송지 선택시 
 			$('#newInfo').click(function () {
@@ -25,6 +36,7 @@
 				$('#deliver_address2').val($('#deliver_address4').val()).prop('readonly',true);
 				$('#deliver_phone').val($('#deliver_phone2').val()).prop('readonly',true);
 			});
+			
 		});
 	</script>
 </head>
@@ -32,41 +44,32 @@
 	<h3 class=" div-center border-bottom" style="margin-top: 50px; margin-bottom:50px; padding-bottom: 10px;">|주문</h3>
 	<form action="<%=request.getContextPath()%>/product/finish" method="post">
 		<input type="hidden" name="basket_member_id" value="${user.member_id}">
-		<table class="table table-hover" style="min-width: 1080px;">
-		    <tr>
+		<table class="orderList2 table table-hover" style="min-width: 1080px;">
+		   <tr>
 		      <th>상품코드</th>
 		      <th>상품명</th>
 		      <th>금액</th>
 		      <th>수량</th>
 		      <th>합계</th>
+		   </tr>
+	  	   <tr>
+		      <td><input name="product_code"  value="${pVo.product_code}" style="text-align: center;" readonly></td>
+		      <td><input name="product_title" value="${pVo.product_title}" style="text-align: center;" readonly></td>
+		      <td><input name="product_price"  value="${pVo.product_price}" style="text-align: center;" readonly></td>
+		      <td><input type="number" name="cnt" style="width: 50px; text-align: center;"  value="${cnt}" readonly></td>
+		      <td><input name="product_total" style="text-align: center;" value="${pVo.product_total}" readonly></td>
+		      <input type="hidden" id="basket_state" name="basket_state" value="${pVo.product_state}">
 		    </tr>
-		  	<c:if test="${list.size() ne 0}">
-	    		<!--items: 컨트롤러에서 가져올애, var : 여기서사용할끄집어낼이름  --> 
-	    		<c:forEach items="${list}" var="order"> 
-				    <tr>
-				      <td><input name="order_product_code"  value="${order.product_code}" style="text-align: center;" readonly></td>
-				      <td><input name="product_title" value="${order.product_title}" style="text-align: center;" readonly></td>
-				      <td><input name="product_price"  value="${order.product_price}" style="text-align: center;" readonly></td>
-				      <td><input type="number" name="cnt" style="width: 50px; text-align: center;"  value="${order.cnt}" readonly></td>
-				      <td><input name="product_total" style="text-align: center;" value="${order.product_total}" readonly></td>
-				      <input type="hidden" id="basket_state" name="basket_state" value="${order.product_state}">
-				    </tr>
-		   		</c:forEach>
-	     	 </c:if>
-	     	 <c:if test="${list.size() eq 0}">
-	      		<tr>
-			        <td colspan="5" class="">주문상품이 존재하지 않습니다.</td>
-		      	</tr>
-	    	 </c:if>
+	     	 
 	    </table>
 	    <div style="width: 1080px; height: 100px; border:1px solid black; ">
-		    <span class="float-right" style="font-size:15px; padding: 20px;" style="padding-right:10px; width: 150px; text-align: right;" readonly>
-		    	제품구매금액 <input type="number" name="total" value="${total }" readonly>
+		    <span class="float-right calc" style="font-size:15px; padding: 20px;" style="padding-right:10px; width: 150px; text-align: right;" readonly>
+		    	제품구매금액 <input type="number" name="total" value="${pVo.product_total }" readonly>
 		    	+
-		    	배송비<input type="number" name="deliverycost" value="${deliverycost }" style="padding-right:10px; width: 150px; text-align: right;" readonly>
+		    	배송비<input type="number" name="deliverycost" value="" style="padding-right:10px; width: 150px; text-align: right;" readonly>
 		    	=
 		    	합계 :
-		    	<input class="border-none" type="number" name="orderTotal" value="${orderTotal }"  style="padding-right:10px; width: 150px; text-align: right;" readonly> 
+		    	<input class="border-none" type="number" name="orderTotal" value=""  style="padding-right:10px; width: 150px; text-align: right;" readonly> 
 		    	원
 		   	</span>
 	    </div>

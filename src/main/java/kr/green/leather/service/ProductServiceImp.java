@@ -178,4 +178,10 @@ public class ProductServiceImp implements ProductService{
 		
 	}
 
+	@Override
+	public void orderProduct(ProductVO pVo) {
+		productDao.orderProduct(pVo);
+		
+	}
+
 }
