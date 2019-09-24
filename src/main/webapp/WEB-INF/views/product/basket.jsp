@@ -101,7 +101,7 @@
 <body>
 	<h3 class=" div-center border-bottom" style="margin-top: 50px; margin-bottom:50px; padding-bottom: 10px;">|장바구니</h3>
 	<form action="<%=request.getContextPath()%>/product/order" method="get">
-	<input name="basket_member_id" value="${user.member_id}"><br>
+	<input type="hidden" name="basket_member_id" value="${user.member_id}"><br>
 	<a href="#" style="color: black; text-decoration: none;" class="deleteBasket">선택상품삭제</a>
 	<table class="table table-hover" style="min-width: 1080px;">
 	    <tr>
