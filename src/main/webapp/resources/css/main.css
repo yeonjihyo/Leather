@@ -73,7 +73,7 @@ width: 1080px;
 
 /*메인하단,정보*/
 .info-box{
-	border: 1px solid navy;
+	/*border: 1px solid navy;*/
 	float: left;
 	width: 200px;
 	height: 175px;

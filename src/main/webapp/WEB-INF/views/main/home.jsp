@@ -74,12 +74,12 @@
 		</div>
 		<!-- 메인하단.정보 -->
 		<div class="main-info">
-			<div class="info-box map-info">지도</div>
-			<div class="info-box instagram">인스타</div>
+			<div class="info-box map-info"><img alt="" src="<%=request.getContextPath()%>/resources/img/main/companyInfo.jpg"></div>
+			<div class="info-box instagram"><img alt="" src="<%=request.getContextPath()%>/resources/img/main/insta.jpg"></div>
 			<!-- <div class="info-box qna"></div> -->
-			<div class="info-box notice">공지사항</div>
-			<div class="info-box call-info"><b>CALL CENTER</b></div>
-			<div class="info-box bank-info"><b>BANK INFO</b></div>
+			<div class="info-box notice"><img alt="" src="<%=request.getContextPath()%>/resources/img/main/NOTICE2.jpg"></div>
+			<div class="info-box call-info"><img alt="" src="<%=request.getContextPath()%>/resources/img/main/callInfo.jpg"></div>
+			<div class="info-box bank-info"><img alt="" src="<%=request.getContextPath()%>/resources/img/main/bankInfo.jpg"></div>
 		</div>
 
 	</div>
