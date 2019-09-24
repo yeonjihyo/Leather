@@ -269,7 +269,7 @@ public class ProductController {
 			if(user != null) {
 			String member_id=user.getMember_id();
 			list=productService.getOrder(member_id);
-			System.out.println(list);
+//			System.out.println(list);
 			}
 			mv.addObject("list",list);
 			mv.setViewName("/product/orderList");
