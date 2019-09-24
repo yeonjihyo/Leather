@@ -1,5 +1,7 @@
 package kr.green.leather.vo;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class OrderVO extends BasketVO {
@@ -37,11 +39,21 @@ public class OrderVO extends BasketVO {
 	public void setOrder_progress(String order_progress) {
 		this.order_progress = order_progress;
 	}
-	public Date getOrder_date() {
-		return order_date;
+	public String getOrder_date() {
+		//날자와 시간을 원하는 형식으로 보이게 하기위한 방법
+				SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+				return f.format(order_date);
 	}
 	public void setOrder_date(Date order_date) {
 		this.order_date = order_date;
+	}
+	public void setProduct_registered(String order_date) {
+		SimpleDateFormat transFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		try {
+			this.order_date = transFormat.parse(order_date);
+		}catch (ParseException e) {
+			e.printStackTrace();
+		}
 	}
 	public int getDeliverycost() {
 		return deliverycost;

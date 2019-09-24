@@ -50,6 +50,8 @@ public interface ProductService {
 
 	ArrayList<ProductVO> getMainProductList2(String product_state);
 
+	ArrayList<BasketVO> getOrder(String member_id);
+
 	
 
 

@@ -1,3 +1,4 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -9,7 +10,7 @@
 <body>
 	
 	<form action="<%=request.getContextPath()%>/product/orderList" method="get">
-		아이디<input  name="basket_member_id" value="${user.member_id}">
+		아이디<input  name="member_id" value="${user.member_id}">
 		<table class="table table-hover" style="min-width: 1080px;">
 		    <tr>
 		      <th style="text-align: center;">주문일자</th>
@@ -18,13 +19,12 @@
 		      <th style="text-align: center;">주문상태</th>
 		    </tr>
 		  	<c:if test="${list.size() ne 0}">
-	    		<!--items: 컨트롤러에서 가져올애, var : 여기서사용할끄집어낼이름  --> 
 	    		<c:forEach items="${list}" var="orderList"> 
 				    <tr class="">
 				      <td><input name="order_date"  value="${orderList.order_date}" style="text-align: center;" readonly></td>
 				      <td><input name="order_num"  value="${orderList.order_num}" style="text-align: center;" readonly></td>
 				      <td><input name="order_total"  value="${orderList.order_total}" style="text-align: center;" readonly></td>
-				      <td><input name="order_state"  value="${orderList.order_state}" style="text-align: center;" readonly></td>
+				      <td><input name="order_progress"  value="${orderList.order_progress}" style="text-align: center;" readonly></td>
 				    </tr>
 		   		</c:forEach>
 	     	 </c:if>

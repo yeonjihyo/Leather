@@ -263,12 +263,15 @@ public class ProductController {
 		}
 		//주문조회
 		@RequestMapping(value= "/product/orderList",method=RequestMethod.GET)
-		public ModelAndView productOrderListGet(ModelAndView mv){
-			
-			
-		
-			
-			
+		public ModelAndView productOrderListGet(ModelAndView mv,HttpServletRequest r){
+			MemberVO user = (MemberVO) r.getSession().getAttribute("user");
+			ArrayList<BasketVO> list = null;
+			if(user != null) {
+			String member_id=user.getMember_id();
+			list=productService.getOrder(member_id);
+			System.out.println(list);
+			}
+			mv.addObject("list",list);
 			mv.setViewName("/product/orderList");
 			return mv;
 		}

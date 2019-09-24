@@ -51,6 +51,8 @@ public interface ProductDAO {
 
 	Integer getOrderLastNum();
 
+	ArrayList<BasketVO> getOrder(@Param("member_id")String member_id);
+
 
 
 	

@@ -246,5 +246,13 @@
 	<select id="getOrderLastNum" resultType="int">
 		select max(order_num)	from leather.order;
 	</select> 
-		 
+	<!-- 주문조회 -->	 
+	<select id="getOrder" resultType="kr.green.leather.vo.OrderVO">
+		select
+			*
+		from
+			leather.order
+		where
+			order_member_id=#{member_id};
+	</select>
 </mapper> 
