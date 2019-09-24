@@ -59,16 +59,25 @@
 				$('input[name=product_total]').val(total);
 				
 			});
+			$('#buybtn').click(function(){
+				$('.form-productInfo').attr('action','<%=request.getContextPath()%>/product/display2');
+			})
 			$('.form-productInfo').submit(function () {
+				
+			
 				var member_id=$('input[name=member_id]').val();
 				if(member_id ==null || member_id == ''){
 					alert('로그인을 하세요');
 					location.href = "<%=request.getContextPath()%>/signin";
 					return false;
 				}else{
-					alert('장바구니에 추가되었습니다');
+					if($('.form-productInfo').attr('action') == "/leather/product/display"){
+						alert('장바구니에 추가되었습니다');
+					}
 				}
+			
 			})
+			
 		});
 		
 
@@ -118,7 +127,7 @@
 			 	</div>
 			 	<div class="product-order float-left">
 					<button type="submit" class="basMove btn btn-navy2" style="width: 200px; height: 50px;">장바구니</button>
-					<button type="submit" class="orMove btn btn-navy2" style="width: 200px; height: 50px;">구매하기</button>
+					<button type="submit" class="orMove btn btn-navy2" style="width: 200px; height: 50px;" id="buybtn">구매하기</button>
 				</div>
 			</div>
 		</form>
