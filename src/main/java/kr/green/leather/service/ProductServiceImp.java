@@ -165,12 +165,6 @@ public class ProductServiceImp implements ProductService{
 		return productDao.getMainProductListAll2(product_state);
 	}
 
-	@Override
-	public ArrayList<OrderVO> getOrder(Integer[] basket_check,String basket_member_id) {
-		// TODO Auto-generated method stub
-		return productDao.selectOrder(basket_check,basket_member_id);
-	}
-
 	
 
 	

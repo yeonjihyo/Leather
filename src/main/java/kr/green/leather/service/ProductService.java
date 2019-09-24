@@ -50,7 +50,7 @@ public interface ProductService {
 
 	ArrayList<ProductVO> getMainProductList2(String product_state);
 
-	ArrayList<OrderVO> getOrder(Integer[] basket_check,String basket_member_id);
+	
 
 
 	

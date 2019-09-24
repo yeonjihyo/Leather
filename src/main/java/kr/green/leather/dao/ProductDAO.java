@@ -49,8 +49,6 @@ public interface ProductDAO {
 
 	ArrayList<ProductVO> getMainProductListAll2(@Param("product_state")String product_state);
 
-	ArrayList<OrderVO> selectOrder(@Param("basket_check")Integer[] basket_check,@Param("basket_member_id")String basket_member_id);
-
 	Integer getOrderLastNum();
 
 

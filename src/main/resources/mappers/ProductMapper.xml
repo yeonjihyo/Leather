@@ -242,16 +242,9 @@
 	<select id="getMainProductListAll2" resultType="kr.green.leather.vo.ProductVO">
 	    select * from product order by product_views desc limit 6;   
  	 </select>
- 	 <!-- 주문리스트  -->
-  <select id="selectOrder" resultType="kr.green.leather.vo.OrderVO">
-  		select
-  			*
-  		from 
-			leather.order
-		where
-			order_member_id=#{basket_member_id};		
-  </select>
+ 	<!--  -->
 	<select id="getOrderLastNum" resultType="int">
 		select max(order_num)	from leather.order;
-	</select> 	 
+	</select> 
+		 
 </mapper> 
