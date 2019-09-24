@@ -6,11 +6,16 @@
 <head>
 <meta charset="EUC-KR">
 <title>Insert title here</title>
+<style type="text/css">
+	table input {
+	border:none;
+	}
+</style>
 </head>
 <body>
-	
+	<h3 class=" div-center border-bottom" style="margin-top: 50px; margin-bottom:50px; padding-bottom: 10px;">|주문조회</h3>
 	<form action="<%=request.getContextPath()%>/product/orderList" method="get">
-		아이디<input  name="member_id" value="${user.member_id}">
+		<input type="hidden" name="member_id" value="${user.member_id}">
 		<table class="table table-hover" style="min-width: 1080px;">
 		    <tr>
 		      <th style="text-align: center;">주문일자</th>

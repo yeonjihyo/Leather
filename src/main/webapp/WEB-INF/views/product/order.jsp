@@ -31,7 +31,7 @@
 <body>
 	<h3 class=" div-center border-bottom" style="margin-top: 50px; margin-bottom:50px; padding-bottom: 10px;">|주문</h3>
 	<form action="<%=request.getContextPath()%>/product/finish" method="post">
-		아이디<input  name="basket_member_id" value="${user.member_id}">
+		<input type="hidden" name="basket_member_id" value="${user.member_id}">
 		<table class="table table-hover" style="min-width: 1080px;">
 		    <tr>
 		      <th>상품코드</th>
