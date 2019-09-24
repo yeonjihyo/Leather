@@ -117,8 +117,8 @@
 			 		<span class="float-right" style="font-size:30px;">총금액 : <input class="border-none" type="number" name="product_total" value="${product.product_price}" style="padding-right:10px; width: 150px; text-align: right;" readonly>원</span> 
 			 	</div>
 			 	<div class="product-order float-left">
-					<button type="submit" class="btn btn-navy2" style="width: 200px; height: 50px;">장바구니</button>
-					<a href="<%=request.getContextPath()%>/" class="div-center"><button type="button" class="btn btn-navy2" style="width: 200px; height: 50px;">구매하기</button></a>
+					<button type="submit" class="basMove btn btn-navy2" style="width: 200px; height: 50px;">장바구니</button>
+					<button type="submit" class="orMove btn btn-navy2" style="width: 200px; height: 50px;">구매하기</button>
 				</div>
 			</div>
 		</form>
