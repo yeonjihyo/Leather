@@ -58,6 +58,8 @@ public interface ProductService {
 
 	void deliverInfo(DeliverVO dVo,Integer order_num);
 
+	void deleteProduct(String product_code);
+
 	
 
 

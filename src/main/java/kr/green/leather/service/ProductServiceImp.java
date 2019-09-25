@@ -193,4 +193,15 @@ public class ProductServiceImp implements ProductService{
 		
 	}
 
+	@Override
+	public void deleteProduct(String product_code) {
+		ProductVO product = productDao.selectProduct(product_code);
+		if(product == null){
+			return;
+		}
+		product.setProduct_state("D");
+		productDao.updateProduct(product);
+		
+	}
+
 }

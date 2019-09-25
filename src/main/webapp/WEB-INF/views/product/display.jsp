@@ -94,6 +94,9 @@
 			<a href="<%=request.getContextPath()%>/product/modify?product_code=${product.product_code}">
 				<button type="button" class="btn btn-navy">수정</button>
 			</a>
+			<a href="<%=request.getContextPath()%>/product/delete?product_code=${product.product_code}">
+				<button type="button" class="btn btn-navy">삭제</button>
+			</a>
 		</c:if>
 	</div>
 	<div class="detail clearfix border-bottom">

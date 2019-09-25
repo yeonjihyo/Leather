@@ -180,6 +180,16 @@ public class ProductController {
 		    return "redirect:/product/modify";
 		}
 		
+		//제품 삭제
+		@RequestMapping(value= "/product/delete",method=RequestMethod.GET)
+		public ModelAndView boardDeleteGet(ModelAndView mv,String product_code,HttpServletRequest r){
+			if(productService.isWriter(product_code, r)) {
+				productService.deleteProduct(product_code);
+			}
+		    mv.setViewName("redirect:/product/list");
+		    return mv;
+		}
+		
 		//장바구니
 		@RequestMapping(value= "/product/basket",method=RequestMethod.GET)
 		public ModelAndView productBasketGet(ModelAndView mv, HttpServletRequest r){
@@ -281,6 +291,8 @@ public class ProductController {
 			
 			//배송지정보추가 
 			productService.deliverInfo(dVo, orderNumList);
+			
+			//카트비우기 
 			
 			
 			mv.setViewName("redirect:/product/finish");
