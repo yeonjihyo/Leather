@@ -52,11 +52,11 @@ public interface ProductService {
 
 	ArrayList<BasketVO> getOrder(String member_id);
 
-	void orderInsert2(ProductVO pVo, Integer cnt, String member_id, Integer orderTotal);
+	Integer orderInsert2(ProductVO pVo, Integer cnt, String member_id, Integer orderTotal);
 
 	void orderProduct(ProductVO pVo);
 
-	void deliverInfo(DeliverVO dVo);
+	void deliverInfo(DeliverVO dVo,Integer order_num);
 
 	
 

@@ -251,8 +251,8 @@ public class ProductController {
 			
 			
 			
-//			productService.orderProduct(pVo);
-			System.out.println(pVo);
+			productService.orderProduct(pVo);
+			//System.out.println(pVo);
 			mv.addObject("pVo",pVo);
 			mv.addObject("cnt",cnt);
 			mv.setViewName("/product/order2");
@@ -289,13 +289,16 @@ public class ProductController {
 		//주문완료22
 		@RequestMapping(value= "/product/finish2",method=RequestMethod.GET)
 		public ModelAndView productFinish2Get(ModelAndView mv,DeliverVO dVo,String basket_member_id,ProductVO pVo,Integer cnt, String member_id, Integer orderTotal){
-			
+			System.out.println(member_id);
+			Integer order_num;
 			//오더2 추가
-			productService.orderInsert2(pVo,cnt,member_id,orderTotal);
+			order_num=productService.orderInsert2(pVo,cnt,member_id,orderTotal);
 			
+			System.out.println(order_num);
 			//배송지정보추가 
-			productService.deliverInfo(dVo);
+			productService.deliverInfo(dVo,order_num);
 			System.out.println(dVo);
+			
 			
 			mv.setViewName("/product/finish2");
 			return mv;
