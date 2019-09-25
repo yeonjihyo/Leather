@@ -107,26 +107,26 @@
    	<ul class="pagination" style="justify-content: center;">
 	    <c:if test="${pageMaker.prev}">
 	        <li class="page-item">
-	            <a class="page-link" href="<%=request.getContextPath()%>/product/list?product_maincategory=${product_maincategory}&product_subcategory=${product_subcategory}&page=${pageMaker.startPage-1}"><i class="fas fa-chevron-left"></i></a>
+	            <a class="page-link" href="<%=request.getContextPath()%>/product/list?product_maincategory=${product_maincategory}&product_subcategory=${product_subcategory}&page=${pageMaker.startPage-1}&search=${pageMaker.criteria.search}"><i class="fas fa-chevron-left"></i></a>
 	        </li>
 	    </c:if>
 	    <c:forEach begin="${pageMaker.startPage }" end="${pageMaker.endPage}" var="index">
 	        <c:choose>
 	        <c:when test="${pageMaker.criteria.page != index }">
 		        <li class="page-item">
-		            <a class="page-link" href="<%=request.getContextPath()%>/product/list?product_maincategory=${product_maincategory}&product_subcategory=${product_subcategory}&page=${index}">${index}</a>
+		            <a class="page-link" href="<%=request.getContextPath()%>/product/list?product_maincategory=${product_maincategory}&product_subcategory=${product_subcategory}&page=${index}&search=${pageMaker.criteria.search}">${index}</a>
 		        </li>
 	        </c:when>
 	        <c:otherwise>
 	        	<li class="page-item active">
-		            <a class="page-link" href="<%=request.getContextPath()%>/product/list?product_maincategory=${product_maincategory}&product_subcategory=${product_subcategory}&page=${index}">${index}</a>
+		            <a class="page-link" href="<%=request.getContextPath()%>/product/list?product_maincategory=${product_maincategory}&product_subcategory=${product_subcategory}&page=${index}&search=${pageMaker.criteria.search}">${index}</a>
 		        </li>
 	        </c:otherwise>
 	        </c:choose>
 	    </c:forEach>
 	    <c:if test="${pageMaker.next}">
 	        <li class="page-item">
-	            <a class="page-link" href="<%=request.getContextPath()%>/product/list?product_maincategory=${product_maincategory}&product_subcategory=${product_subcategory}&page=${pageMaker.endPage+1}"><i class="fas fa-chevron-right"></i></a>
+	            <a class="page-link" href="<%=request.getContextPath()%>/product/list?product_maincategory=${product_maincategory}&product_subcategory=${product_subcategory}&page=${pageMaker.endPage+1}&search=${pageMaker.criteria.search}"><i class="fas fa-chevron-right"></i></a>
 	        </li>
 	    </c:if>
 	</ul>

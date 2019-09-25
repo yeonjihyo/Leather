@@ -40,9 +40,9 @@
 						</div>
 					</a>
 					<div class="search-box float-right">
-						<form action="#" >
-							<div class="search"><input type="text"></div>
-							<div class="search-btn"><i class="fas fa-search search-icon"></i></div>
+						<form action="<%=request.getContextPath()%>/product/list" >
+							<div class="search"><input type="text" name="search" value="${pageMaker.criteria.search}"></div>
+							<button class="search-btn"><i class="fas fa-search search-icon"></i></button>
 						</form>
 					</div>
 				</div>
