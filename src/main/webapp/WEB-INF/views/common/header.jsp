@@ -26,7 +26,7 @@
 						</c:if>
 						<c:if test="${user ne null}">
 							<a href="<%=request.getContextPath()%>/product/basket">장바구니</a> |
-							<a href="#">회원정보수정</a> |
+							<!-- <a href="#">회원정보수정</a> | -->
 							<a href="<%=request.getContextPath()%>/product/orderList">주문배송조회</a> |
 							<a href="<%=request.getContextPath()%>/signout">로그아웃</a>
 						</c:if>	
