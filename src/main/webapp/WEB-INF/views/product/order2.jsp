@@ -10,6 +10,9 @@
 	<style type="text/css">
 	.orderList2 input{
 	border:none;}
+	.orList2 input{
+			border:none;
+		}
 	</style>
 	<script type="text/javascript">
 		$(document).ready(function () {
@@ -67,7 +70,7 @@
 	     	 
 	    </table>
 	    <div style="width: 1080px; height: 100px; border:1px solid black; ">
-		    <span class="float-right calc" style="font-size:15px; padding: 20px;" style="padding-right:10px; width: 150px; text-align: right;" readonly>
+		    <span class="orList2 float-right calc" style="font-size:15px; padding: 20px;" style="padding-right:10px; width: 150px; text-align: right;" readonly>
 		    	제품구매금액 <input type="number" name="total" value="${pVo.product_total }" readonly>
 		    	+
 		    	배송비<input type="number" name="deliverycost" value="" style="padding-right:10px; width: 150px; text-align: right;" readonly>

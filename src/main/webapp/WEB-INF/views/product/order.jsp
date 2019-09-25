@@ -8,7 +8,12 @@
 	<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/common.css">
 	<title>주문</title>
 	<style type="text/css">
-	
+		.orList input{
+			border:none;
+		}
+		.orLast input{
+			border:none;
+		}
 	</style>
 	<script type="text/javascript">
 		$(document).ready(function () {
@@ -43,9 +48,9 @@
 		  	<c:if test="${list.size() ne 0}">
 	    		<!--items: 컨트롤러에서 가져올애, var : 여기서사용할끄집어낼이름  --> 
 	    		<c:forEach items="${list}" var="order"> 
-				    <tr>
+				    <tr class="orList">
 				    
-				      <input type="text"class="basket_check" name="basket_check" value="${order.basket_no}" style="text-align: center;" readonly>
+				      <input type="hidden"class="basket_check" name="basket_check" value="${order.basket_no}" style="text-align: center;" readonly>
 				      <td><input name="basket_product_code"  value="${order.basket_product_code}" style="text-align: center;" readonly></td>
 				      <td><input name="product_title" value="${order.product_title}" style="text-align: center;" readonly></td>
 				      <td><input name="product_price"  value="${order.product_price}" style="text-align: center;" readonly></td>
@@ -62,7 +67,7 @@
 	    	 </c:if>
 	    </table>
 	    <div style="width: 1080px; height: 100px; border:1px solid black; ">
-		    <span class="float-right" style="font-size:15px; padding: 20px;" style="padding-right:10px; width: 150px; text-align: right;" readonly>
+		    <span class=" orLast float-right" style="font-size:15px; padding: 20px;" style="padding-right:10px; width: 150px; text-align: right;" readonly>
 		    	제품구매금액 <input type="number" name="total" value="${total }" readonly>
 		    	+
 		    	배송비<input type="number" name="deliverycost" value="${deliverycost }" style="padding-right:10px; width: 150px; text-align: right;" readonly>
