@@ -35,7 +35,7 @@ CREATE TABLE `deliver` (
   PRIMARY KEY (`deliver_no`),
   KEY `deliver_order_num_idx` (`deliver_order_num`),
   CONSTRAINT `deliver_order_num` FOREIGN KEY (`deliver_order_num`) REFERENCES `order` (`order_num`)
-) ENGINE=InnoDB AUTO_INCREMENT=64 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=66 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -44,7 +44,7 @@ CREATE TABLE `deliver` (
 
 LOCK TABLES `deliver` WRITE;
 /*!40000 ALTER TABLE `deliver` DISABLE KEYS */;
-INSERT INTO `deliver` VALUES (58,172,'홍길동','청주시서원구','사창동',123456,'01000000000'),(59,173,'홍길동','청주시서원구','사창동',123456,'01000000000'),(60,174,'홍길동','청주시서원구','사창동',123456,'01000000000'),(61,175,'홍길동','청주시서원구','사창동',123456,'01000000000'),(62,176,'홍길동','청주시흥덕구','복대동',123123,'01012345678'),(63,177,'홍길동','청주시흥덕구','복대동',123123,'01012345678');
+INSERT INTO `deliver` VALUES (58,172,'홍길동','청주시서원구','사창동',123456,'01000000000'),(59,173,'홍길동','청주시서원구','사창동',123456,'01000000000'),(60,174,'홍길동','청주시서원구','사창동',123456,'01000000000'),(61,175,'홍길동','청주시서원구','사창동',123456,'01000000000'),(62,176,'홍길동','청주시흥덕구','복대동',123123,'01012345678'),(63,177,'홍길동','청주시흥덕구','복대동',123123,'01012345678'),(64,178,' 이순신','청주시 서원구','산남동',666666,'01098765432'),(65,179,' 이순신','청주시 서원구','산남동',666666,'01098765432');
 /*!40000 ALTER TABLE `deliver` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -57,4 +57,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-09-25 14:11:59
+-- Dump completed on 2019-09-25 16:48:26

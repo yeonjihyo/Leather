@@ -37,7 +37,7 @@ CREATE TABLE `basket` (
   KEY `basket_member_id_idx` (`basket_member_id`),
   CONSTRAINT `basket_member_id` FOREIGN KEY (`basket_member_id`) REFERENCES `member` (`member_id`),
   CONSTRAINT `basket_product_code` FOREIGN KEY (`basket_product_code`) REFERENCES `product` (`product_code`)
-) ENGINE=InnoDB AUTO_INCREMENT=167 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=169 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -46,7 +46,7 @@ CREATE TABLE `basket` (
 
 LOCK TABLES `basket` WRITE;
 /*!40000 ALTER TABLE `basket` DISABLE KEYS */;
-INSERT INTO `basket` VALUES (154,'tool003','bbb123123',0,19500,3,'D'),(155,'thread006','bbb123123',0,33000,1,'D'),(156,'tool004','bbb123123',0,18000,1,'I'),(157,'tool004','bbb123123',0,18000,1,'I'),(158,'tool004','bbb123123',0,18000,1,'I'),(162,'thread005','aaa123123',0,66000,2,'I'),(163,'tool003','aaa123123',0,65000,10,'I'),(164,'thread007','aaa123123',0,33000,1,'D'),(165,'thread007','aaa123123',0,33000,1,'D'),(166,'tool004','aaa123123',0,18000,1,'I');
+INSERT INTO `basket` VALUES (154,'tool003','bbb123123',0,19500,3,'D'),(155,'thread006','bbb123123',0,33000,1,'D'),(156,'tool004','bbb123123',0,18000,1,'I'),(157,'tool004','bbb123123',0,18000,1,'I'),(158,'tool004','bbb123123',0,18000,1,'I'),(162,'thread005','aaa123123',0,66000,2,'I'),(163,'tool003','aaa123123',0,65000,10,'I'),(164,'thread007','aaa123123',0,33000,1,'D'),(165,'thread007','aaa123123',0,33000,1,'D'),(166,'tool004','aaa123123',0,18000,1,'I'),(167,'thread007','a12345678',0,66000,2,'I'),(168,'tool003','a12345678',0,6500,1,'D');
 /*!40000 ALTER TABLE `basket` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -59,4 +59,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-09-25 14:12:00
+-- Dump completed on 2019-09-25 16:48:27

@@ -39,7 +39,7 @@ CREATE TABLE `order` (
   KEY `order_product_code_idx` (`order_product_code`),
   CONSTRAINT `order_member_id` FOREIGN KEY (`order_member_id`) REFERENCES `member` (`member_id`),
   CONSTRAINT `order_product_code` FOREIGN KEY (`order_product_code`) REFERENCES `product` (`product_code`)
-) ENGINE=InnoDB AUTO_INCREMENT=178 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=180 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -48,7 +48,7 @@ CREATE TABLE `order` (
 
 LOCK TABLES `order` WRITE;
 /*!40000 ALTER TABLE `order` DISABLE KEYS */;
-INSERT INTO `order` VALUES (172,'aaa123123','thread007','결제완료','2019-09-25 11:44:26',NULL,66000,1,'I'),(173,'aaa123123','thread007','결제완료','2019-09-25 11:44:26',NULL,66000,1,'I'),(174,'aaa123123','thread005','결제완료','2019-09-25 12:03:17',NULL,36000,1,'I'),(175,'aaa123123','tool003','결제완료','2019-09-25 12:03:48',NULL,9500,1,'I'),(176,'bbb123123','tool003','결제완료','2019-09-25 13:35:16',NULL,52500,3,'I'),(177,'bbb123123','thread006','결제완료','2019-09-25 13:35:16',NULL,52500,1,'I');
+INSERT INTO `order` VALUES (172,'aaa123123','thread007','결제완료','2019-09-25 11:44:26',NULL,66000,1,'I'),(173,'aaa123123','thread007','결제완료','2019-09-25 11:44:26',NULL,66000,1,'I'),(174,'aaa123123','thread005','결제완료','2019-09-25 12:03:17',NULL,36000,1,'I'),(175,'aaa123123','tool003','결제완료','2019-09-25 12:03:48',NULL,9500,1,'I'),(176,'bbb123123','tool003','결제완료','2019-09-25 13:35:16',NULL,52500,3,'I'),(177,'bbb123123','thread006','결제완료','2019-09-25 13:35:16',NULL,52500,1,'I'),(178,'a12345678','tool003','결제완료','2019-09-25 15:20:57',NULL,9500,1,'I'),(179,'a12345678','tool004','결제완료','2019-09-25 15:22:43',NULL,54000,3,'I');
 /*!40000 ALTER TABLE `order` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -61,4 +61,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-09-25 14:12:00
+-- Dump completed on 2019-09-25 16:48:27
