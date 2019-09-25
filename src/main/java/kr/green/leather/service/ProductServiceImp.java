@@ -204,4 +204,16 @@ public class ProductServiceImp implements ProductService{
 		
 	}
 
+	@Override
+	public void emptyBasket(Integer tmp,String basket_state) {
+		
+		BasketVO bVo = productDao.getBasket(tmp);
+		
+		if(bVo != null) {
+			productDao.updateBasket(bVo,basket_state);
+			 
+		}
+		
+	}
+
 }

@@ -201,7 +201,6 @@ public class ProductController {
 				list = productService.getBasketList(member_id);
 				mv.setViewName("/product/basket");
 			}
-			//System.out.println(list);
 			//System.out.println("productBasketGet list : " + list);
 		    mv.addObject("list",list);
 		    return mv;
@@ -277,13 +276,14 @@ public class ProductController {
 			return mv;
 		}
 		@RequestMapping(value= "/product/finish",method=RequestMethod.POST)
-		public ModelAndView productFinishPost(ModelAndView mv, Integer []basket_check,DeliverVO dVo,String basket_member_id,ProductVO pVo,Integer cnt, String member_id, Integer orderTotal){
+		public ModelAndView productFinishPost(String basket_state,ModelAndView mv, Integer []basket_check,DeliverVO dVo,String basket_member_id,ProductVO pVo,Integer cnt, String member_id, Integer orderTotal){
 			ArrayList<Integer> orderNumList = new ArrayList<Integer>();
-			//체크한항목을 넘겨받아 주문리스트 db 저장
+			
 			for(Integer tmp : basket_check) {//체크된 값을 하나씩 끄집어내서  tmp에 저장 
-				
+				//체크한항목을 넘겨받아 주문 db 저장
 				orderNumList.add(productService.checkBasket(tmp,orderTotal));
-				
+				//카트비우기 
+				productService.emptyBasket(tmp,basket_state);
 			} 
 //			System.out.println("리스트");
 //			System.out.println(orderNumList);
@@ -292,7 +292,6 @@ public class ProductController {
 			//배송지정보추가 
 			productService.deliverInfo(dVo, orderNumList);
 			
-			//카트비우기 
 			
 			
 			mv.setViewName("redirect:/product/finish");

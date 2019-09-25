@@ -283,4 +283,11 @@
 		
 	    
   </select> 
+  <!-- 주문완료시 장바구니 삭제  -->
+  <update id="updateBasket">
+  	update basket
+  		set basket_state='D'	
+  		where
+  			basket_no=#{bVo.basket_no}
+  </update>
 </mapper> 

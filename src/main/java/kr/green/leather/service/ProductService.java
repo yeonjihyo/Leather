@@ -60,6 +60,8 @@ public interface ProductService {
 
 	void deleteProduct(String product_code);
 
+	void emptyBasket(Integer tmp,String basket_state);
+
 	
 
 

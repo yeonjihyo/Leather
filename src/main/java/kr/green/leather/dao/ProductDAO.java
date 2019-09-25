@@ -57,6 +57,10 @@ public interface ProductDAO {
 
 	void orderProduct(@Param("pVo")ProductVO pVo);
 
+	void updateBasket(@Param("bVo")BasketVO bVo, @Param("basket_state")String basket_state);
+
+
+
 
 	
 
