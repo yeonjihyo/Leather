@@ -1,6 +1,6 @@
 CREATE DATABASE  IF NOT EXISTS `leather` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `leather`;
--- MySQL dump 10.13  Distrib 8.0.17, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.15, for Win64 (x86_64)
 --
 -- Host: localhost    Database: leather
 -- ------------------------------------------------------
@@ -9,7 +9,7 @@ USE `leather`;
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!50503 SET NAMES utf8 */;
+ SET NAMES utf8 ;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
@@ -23,7 +23,7 @@ USE `leather`;
 
 DROP TABLE IF EXISTS `basket`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `basket` (
   `basket_no` int(11) NOT NULL AUTO_INCREMENT,
   `basket_product_code` varchar(45) NOT NULL,
@@ -37,7 +37,7 @@ CREATE TABLE `basket` (
   KEY `basket_member_id_idx` (`basket_member_id`),
   CONSTRAINT `basket_member_id` FOREIGN KEY (`basket_member_id`) REFERENCES `member` (`member_id`),
   CONSTRAINT `basket_product_code` FOREIGN KEY (`basket_product_code`) REFERENCES `product` (`product_code`)
-) ENGINE=InnoDB AUTO_INCREMENT=164 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=167 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -46,7 +46,7 @@ CREATE TABLE `basket` (
 
 LOCK TABLES `basket` WRITE;
 /*!40000 ALTER TABLE `basket` DISABLE KEYS */;
-INSERT INTO `basket` VALUES (151,'thread005','aaa123123',0,33000,1,'I'),(152,'tool003','aaa123123',0,13000,2,'I'),(153,'tool004','aaa123123',0,18000,1,'I'),(154,'tool003','bbb123123',0,19500,3,'I'),(155,'thread006','bbb123123',0,33000,1,'I'),(156,'tool004','bbb123123',0,18000,1,'I'),(157,'tool004','bbb123123',0,18000,1,'I'),(158,'tool004','bbb123123',0,18000,1,'I'),(159,'thread006','aaa123123',0,33000,1,'I'),(160,'tool004','aaa123123',0,36000,2,'I'),(161,'thread007','aaa123123',0,99000,3,'I'),(162,'thread005','aaa123123',0,66000,2,'I'),(163,'tool003','aaa123123',0,65000,10,'I');
+INSERT INTO `basket` VALUES (154,'tool003','bbb123123',0,19500,3,'D'),(155,'thread006','bbb123123',0,33000,1,'D'),(156,'tool004','bbb123123',0,18000,1,'I'),(157,'tool004','bbb123123',0,18000,1,'I'),(158,'tool004','bbb123123',0,18000,1,'I'),(162,'thread005','aaa123123',0,66000,2,'I'),(163,'tool003','aaa123123',0,65000,10,'I'),(164,'thread007','aaa123123',0,33000,1,'D'),(165,'thread007','aaa123123',0,33000,1,'D'),(166,'tool004','aaa123123',0,18000,1,'I');
 /*!40000 ALTER TABLE `basket` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -59,4 +59,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-09-24 23:44:23
+-- Dump completed on 2019-09-25 14:12:00

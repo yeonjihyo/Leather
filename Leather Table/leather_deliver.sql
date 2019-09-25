@@ -1,6 +1,6 @@
 CREATE DATABASE  IF NOT EXISTS `leather` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `leather`;
--- MySQL dump 10.13  Distrib 8.0.17, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.15, for Win64 (x86_64)
 --
 -- Host: localhost    Database: leather
 -- ------------------------------------------------------
@@ -9,7 +9,7 @@ USE `leather`;
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!50503 SET NAMES utf8 */;
+ SET NAMES utf8 ;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
@@ -23,7 +23,7 @@ USE `leather`;
 
 DROP TABLE IF EXISTS `deliver`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `deliver` (
   `deliver_no` int(11) NOT NULL AUTO_INCREMENT,
   `deliver_order_num` int(11) DEFAULT NULL,
@@ -35,7 +35,7 @@ CREATE TABLE `deliver` (
   PRIMARY KEY (`deliver_no`),
   KEY `deliver_order_num_idx` (`deliver_order_num`),
   CONSTRAINT `deliver_order_num` FOREIGN KEY (`deliver_order_num`) REFERENCES `order` (`order_num`)
-) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=64 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -44,6 +44,7 @@ CREATE TABLE `deliver` (
 
 LOCK TABLES `deliver` WRITE;
 /*!40000 ALTER TABLE `deliver` DISABLE KEYS */;
+INSERT INTO `deliver` VALUES (58,172,'홍길동','청주시서원구','사창동',123456,'01000000000'),(59,173,'홍길동','청주시서원구','사창동',123456,'01000000000'),(60,174,'홍길동','청주시서원구','사창동',123456,'01000000000'),(61,175,'홍길동','청주시서원구','사창동',123456,'01000000000'),(62,176,'홍길동','청주시흥덕구','복대동',123123,'01012345678'),(63,177,'홍길동','청주시흥덕구','복대동',123123,'01012345678');
 /*!40000 ALTER TABLE `deliver` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -56,4 +57,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-09-24 23:44:21
+-- Dump completed on 2019-09-25 14:11:59
