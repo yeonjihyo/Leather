@@ -55,6 +55,7 @@ public class ProductServiceImp implements ProductService{
 	@Override
 	public ArrayList<ProductVO> getProductList(Criteria cri, String product_state) {
 		// TODO Auto-generated method stub
+		System.out.println(cri+product_state);
 		return productDao.getProductListAll(cri, product_state);
 	}
 

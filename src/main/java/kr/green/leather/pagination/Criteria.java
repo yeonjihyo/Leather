@@ -13,6 +13,7 @@ public class Criteria {
 		public Criteria() {
 			this.page = 1;
 			this.perPageNum = 2;
+			this.search="";
 		}
 
 		//getter and setter
@@ -61,4 +62,6 @@ public class Criteria {
 		public int getPageStart() {
 			return (this.page -1) * perPageNum;
 		}
+
+		
 }
