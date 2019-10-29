@@ -126,8 +126,9 @@
 		  		없음
 		      </c:if>
 			</div>
-			<input type="file" class="form-control col-8" name="file2" value="">
-			
+			<div class="form-group col-8 div-center">
+			<input  type="file" class="form-control col-8" name="file2" value="">
+			</div>
 			<div class="form-group col-8 div-center">
 			  <label>상품첨부파일</label>
 			  <c:if test="${product.contentsfile ne '' }">
@@ -142,7 +143,7 @@
 			</div>
 			<div class="div-center col-8 border-bottom" style=" height:30px; padding: 20px 0 20px 0; margin-bottom: 50px;"></div>
 		</div>
-		<input type="text" value="${product.product_registered}" name="product_registered">
+		<input type="hidden" value="${product.product_registered}" name="product_registered">
 		<input type="hidden" name="product_state" value="${product.product_state}">
 		<input type="hidden" name="product_views" value="${product.product_views}">
 		<div class="div-center col-8" style="padding : 20px 0;" >
